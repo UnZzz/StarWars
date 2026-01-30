@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://6jd23jnetrrd"]
+
+[ext_resource type="PackedScene" uid="uid://cm68hrp0k6l61" path="res://addons/NZ_projectiles_demo/Projectiles/Projectile.tscn" id="1_caj0i"]
+[ext_resource type="TileSet" uid="uid://bemnn70eey76b" path="res://addons/NZ_projectiles_demo/Resources/test_tile_set.tres" id="1_pbkik"]
+[ext_resource type="PackedScene" uid="uid://doowcribc7isn" path="res://addons/NZ_projectiles_demo/Projectiles/Projectile_extended.tscn" id="2_1apvk"]
+[ext_resource type="PackedScene" uid="uid://bjndhvlbl8lue" path="res://addons/NZ_projectiles_demo/Characters/TestCharacter.tscn" id="3_1apvk"]
+[ext_resource type="Script" uid="uid://b2jdryimw1v30" path="res://addons/NZ_projectiles_demo/Scripts/Button_change_scene.gd" id="4_locgn"]
+[ext_resource type="PackedScene" uid="uid://b5bhs25pano2" path="res://addons/NZ_projectiles_demo/Static/Static.tscn" id="5_36sf7"]
+
+[node name="Sandbox" type="Node" unique_id=1686620669]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1138631135]
+tile_set = ExtResource("1_pbkik")
+
+[node name="Buttons" type="Node" parent="." unique_id=1473119496]
+
+[node name="Main" type="Button" parent="Buttons" unique_id=461002718]
+offset_left = 832.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 128.0
+focus_mode = 0
+text = "Main"
+script = ExtResource("4_locgn")
+change_to_this_scene = "uid://cgkd4refam0mw"
+
+[node name="Projectiles" type="Node" parent="." unique_id=525738158]
+
+[node name="Projectile" parent="Projectiles" unique_id=2041998572 instance=ExtResource("1_caj0i")]
+position = Vector2(192, 256)
+
+[node name="ProjectileExtended" parent="Projectiles" unique_id=647114827 instance=ExtResource("2_1apvk")]
+position = Vector2(192, 512)
+
+[node name="Characters" type="Node" parent="." unique_id=1534188560]
+
+[node name="TestCharacterTop" parent="Characters" unique_id=149988980 instance=ExtResource("3_1apvk")]
+position = Vector2(960, 256)
+
+[node name="TestCharacteBottom" parent="Characters" unique_id=325952626 instance=ExtResource("3_1apvk")]
+position = Vector2(960, 512)
+
+[node name="Static" type="Node" parent="." unique_id=760120641]
+
+[node name="Static" parent="Static" unique_id=1648070055 instance=ExtResource("5_36sf7")]
+position = Vector2(128, 64)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2139961196]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=618089750]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Buttons/Main" to="Buttons/Main" method="_on_pressed"]

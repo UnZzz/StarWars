@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bmumr0tc8l5dd"]
+
+[ext_resource type="Script" uid="uid://csk7e5ao2i25l" path="res://addons/NZ_projectiles/Scripts/Projectile3D_extended.gd" id="1_y21ow"]
+[ext_resource type="Texture2D" uid="uid://bba8ghb4iej0m" path="res://icon.svg" id="2_mrf1u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_btcti"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xp61x"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_mrf1u")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_pk22u"]
+material = SubResource("StandardMaterial3D_xp61x")
+size = Vector2(0.5, 0.5)
+
+[node name="BaseMask" type="Area3D" unique_id=215948759]
+script = ExtResource("1_y21ow")
+id = "0"
+speed = 20
+life_time = 10.0
+metadata/_custom_type_script = "uid://csk7e5ao2i25l"
+metadata/mask_texture = ExtResource("2_mrf1u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1352630167]
+shape = SubResource("SphereShape3D_btcti")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1127581168]
+mesh = SubResource("QuadMesh_pk22u")

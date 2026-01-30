@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://cgkd4refam0mw"]
+
+[ext_resource type="Script" uid="uid://b2jdryimw1v30" path="res://addons/NZ_projectiles_demo/Scripts/Button_change_scene.gd" id="1_0asq7"]
+[ext_resource type="PackedScene" uid="uid://bjndhvlbl8lue" path="res://addons/NZ_projectiles_demo/Characters/TestCharacter.tscn" id="1_yfy0e"]
+[ext_resource type="Script" uid="uid://df4a3ppscidvn" path="res://addons/NZ_projectiles_demo/Scripts/Activate_projectile.gd" id="2_3q71x"]
+[ext_resource type="PackedScene" uid="uid://cm68hrp0k6l61" path="res://addons/NZ_projectiles_demo/Projectiles/Projectile.tscn" id="2_fsmqh"]
+[ext_resource type="PackedScene" uid="uid://b81fpa7ultf22" path="res://addons/NZ_projectiles_demo/Characters/TestCharacter2.tscn" id="2_scd4e"]
+[ext_resource type="Script" uid="uid://c1hmg7r6x3y8j" path="res://addons/NZ_projectiles_demo/Scripts/3D/Change_scene_no_UID.gd" id="3_lqrl0"]
+[ext_resource type="TileSet" uid="uid://bemnn70eey76b" path="res://addons/NZ_projectiles_demo/Resources/test_tile_set.tres" id="4_h00q3"]
+[ext_resource type="PackedScene" uid="uid://cejtakbq0uny0" path="res://addons/NZ_projectiles_demo/Projectiles/Projectile2.tscn" id="4_ypix7"]
+[ext_resource type="PackedScene" uid="uid://cnb4cjp1rifi7" path="res://addons/NZ_projectiles_demo/Projectiles/Projectile3.tscn" id="5_vmnoe"]
+[ext_resource type="PackedScene" uid="uid://b5bhs25pano2" path="res://addons/NZ_projectiles_demo/Static/Static.tscn" id="6_hplbh"]
+
+[node name="Main" type="Node"]
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Extended" type="Button" parent="Buttons"]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 128.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Extended"
+script = ExtResource("1_0asq7")
+change_to_this_scene = "res://NZ_projectiles/Scenes/Extended.tscn"
+
+[node name="Activate" type="Button" parent="Buttons" node_paths=PackedStringArray("projectile")]
+offset_left = 352.0
+offset_top = 72.0
+offset_right = 480.0
+offset_bottom = 120.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Activate"
+script = ExtResource("2_3q71x")
+projectile = NodePath("../../Projectiles/ProjectileDeactivated")
+
+[node name="3D" type="Button" parent="Buttons" node_paths=PackedStringArray("main_node")]
+offset_left = 712.0
+offset_top = 64.0
+offset_right = 776.0
+offset_bottom = 128.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "3D"
+script = ExtResource("3_lqrl0")
+scene = "res://NZ_projectiles/Scenes/3D/Main.tscn"
+main_node = NodePath("../..")
+
+[node name="Version_2_1" type="Button" parent="Buttons" node_paths=PackedStringArray("main_node")]
+offset_left = 8.0
+offset_top = 568.0
+offset_right = 72.0
+offset_bottom = 632.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "2.1"
+script = ExtResource("3_lqrl0")
+scene = "res://NZ_projectiles/Scenes/Updates/Update_2_1.tscn"
+main_node = NodePath("../..")
+
+[node name="Version_2_2" type="Button" parent="Buttons" node_paths=PackedStringArray("main_node")]
+offset_left = 80.0
+offset_top = 568.0
+offset_right = 144.0
+offset_bottom = 632.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "2.2"
+script = ExtResource("3_lqrl0")
+scene = "res://NZ_projectiles/Scenes/Updates/Update_2_2.tscn"
+main_node = NodePath("../..")
+
+[node name="Version_2_3" type="Button" parent="Buttons" node_paths=PackedStringArray("main_node")]
+offset_left = 152.0
+offset_top = 568.0
+offset_right = 216.0
+offset_bottom = 632.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "2.3"
+script = ExtResource("3_lqrl0")
+scene = "res://NZ_projectiles/Scenes/Updates/Update_2_3.tscn"
+main_node = NodePath("../..")
+
+[node name="Version_2_4" type="Button" parent="Buttons" node_paths=PackedStringArray("main_node")]
+offset_left = 224.0
+offset_top = 568.0
+offset_right = 288.0
+offset_bottom = 632.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "2.4"
+script = ExtResource("3_lqrl0")
+scene = "res://NZ_projectiles/Scenes/Updates/Update_2_4.tscn"
+main_node = NodePath("../..")
+
+[node name="Version_2_5" type="Button" parent="Buttons" node_paths=PackedStringArray("main_node")]
+offset_left = 296.0
+offset_top = 568.0
+offset_right = 360.0
+offset_bottom = 632.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "2.5"
+script = ExtResource("3_lqrl0")
+scene = "res://NZ_projectiles/Scenes/Updates/Update_2_5.tscn"
+main_node = NodePath("../..")
+
+[node name="Version_2_6" type="Button" parent="Buttons" node_paths=PackedStringArray("main_node")]
+offset_left = 368.0
+offset_top = 568.0
+offset_right = 432.0
+offset_bottom = 632.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "2.6"
+script = ExtResource("3_lqrl0")
+scene = "res://NZ_projectiles/Scenes/Updates/Update_2_6.tscn"
+main_node = NodePath("../..")
+
+[node name="Sandbox" type="Button" parent="Buttons"]
+offset_left = 832.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 128.0
+focus_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Sandbox"
+script = ExtResource("1_0asq7")
+change_to_this_scene = "uid://6jd23jnetrrd"
+
+[node name="Static" type="Node" parent="."]
+
+[node name="Static" parent="Static" instance=ExtResource("6_hplbh")]
+position = Vector2(960, 512)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Static"]
+tile_map_data = PackedByteArray(0, 0, 34, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("4_h00q3")
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="TestCharacterMiddle" parent="Characters" instance=ExtResource("1_yfy0e")]
+position = Vector2(768, 384)
+
+[node name="TestCharacterBottom" parent="Characters" instance=ExtResource("1_yfy0e")]
+position = Vector2(832, 512)
+type = 0
+
+[node name="TestCharacterTop" parent="Characters" instance=ExtResource("2_scd4e")]
+position = Vector2(704, 256)
+hp = 30
+
+[node name="Projectiles" type="Node" parent="."]
+
+[node name="Projectile45" parent="Projectiles" instance=ExtResource("4_ypix7")]
+position = Vector2(512, 64)
+rotation = 0.785398
+name_type = &"character_class"
+name_hit = &"got_damage"
+
+[node name="ProjectileDeactivated" parent="Projectiles" instance=ExtResource("2_fsmqh")]
+position = Vector2(416, 152)
+atk = 9000
+speed = 500
+life_time = 2.0
+activated = false
+
+[node name="Projectile0" parent="Projectiles" instance=ExtResource("4_ypix7")]
+position = Vector2(320, 256)
+name_type = &"character_class"
+name_hit = &"got_damage"
+
+[node name="Projectile180" parent="Projectiles" instance=ExtResource("4_ypix7")]
+position = Vector2(1088, 256)
+rotation = 3.14159
+name_type = &"character_class"
+name_hit = &"got_damage"
+
+[node name="ProjectileLeft" parent="Projectiles" instance=ExtResource("2_fsmqh")]
+position = Vector2(176, 384)
+
+[node name="ProjectileMiddle" parent="Projectiles" instance=ExtResource("2_fsmqh")]
+position = Vector2(304, 384)
+
+[node name="ProjectileRight" parent="Projectiles" instance=ExtResource("2_fsmqh")]
+position = Vector2(432, 384)
+
+[node name="Projectile50" parent="Projectiles" instance=ExtResource("5_vmnoe")]
+position = Vector2(48, 512)
+speed = 50
+life_time = 3.0
+name_hit = &"got_damage"
+
+[node name="ProjectileGotDamage" parent="Projectiles" instance=ExtResource("5_vmnoe")]
+position = Vector2(176, 512)
+name_hit = &"got_damage"
+
+[node name="ProjectileNormal" parent="Projectiles" instance=ExtResource("2_fsmqh")]
+position = Vector2(304, 512)
+
+[node name="ProjectileNoStatic" parent="Projectiles" instance=ExtResource("4_ypix7")]
+position = Vector2(432, 512)
+name_type = &"character_class"
+name_hit = &"got_damage"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Buttons/Extended" to="Buttons/Extended" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Activate" to="Buttons/Activate" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/3D" to="Buttons/3D" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Version_2_1" to="Buttons/Version_2_1" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Version_2_2" to="Buttons/Version_2_2" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Version_2_3" to="Buttons/Version_2_3" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Version_2_4" to="Buttons/Version_2_4" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Version_2_5" to="Buttons/Version_2_5" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Version_2_6" to="Buttons/Version_2_6" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Sandbox" to="Buttons/Sandbox" method="_on_pressed"]

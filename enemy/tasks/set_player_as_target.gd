@@ -1,0 +1,44 @@
+@tool
+extends BTAction
+
+# Task parameters.
+
+## Note: Each method declaration is optional.
+## At minimum, you only need to define the "_tick" method.
+var _player : PlayerCharacter
+
+# Called to generate a display name for the task (requires @tool).
+func _generate_name() -> String:
+	return "SetPlayerAsTarget"
+
+
+# Called to initialize the task.
+func _setup() -> void:
+	_player = agent.get_tree().get_nodes_in_group("PlayerCharacter")[0] as PlayerCharacter
+	pass
+
+
+# Called when the task is entered.
+func _enter() -> void:
+	pass
+
+
+# Called when the task is exited.
+func _exit() -> void:
+	pass
+
+
+# Called each time this task is ticked (aka executed).
+func _tick(delta: float) -> Status:
+	blackboard.set_var("target_global_position", _player.global_position)
+	return SUCCESS
+
+
+# Strings returned from this method are displayed as warnings in the editor.
+func _get_configuration_warnings() -> PackedStringArray:
+	var warnings := PackedStringArray()
+	return warnings
+	
+func _on_velocity_computed(safe_velocity: Vector3) -> void:
+	(agent as CharacterBody3D).velocity = safe_velocity
+	return

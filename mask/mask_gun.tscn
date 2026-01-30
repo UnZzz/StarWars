@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ctql3fxefk2g4"]
+
+[ext_resource type="Script" uid="uid://bm1labr13mbpd" path="res://mask/mask_gun.gd" id="1_oab67"]
+[ext_resource type="PackedScene" uid="uid://bmumr0tc8l5dd" path="res://mask/masks/base_mask.tscn" id="1_red2b"]
+[ext_resource type="Texture2D" uid="uid://bba8ghb4iej0m" path="res://icon.svg" id="2_73qar"]
+
+[node name="MaskGun" type="Node3D" unique_id=1764099407]
+script = ExtResource("1_oab67")
+mask_scene = Array[PackedScene]([ExtResource("1_red2b")])
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1268529477]
+modulate = Color(1, 1, 1, 0.32941177)
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("2_73qar")
+expand_mode = 2
