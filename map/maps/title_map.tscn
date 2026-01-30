@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://eif2c5eyaoeq"]
+
+[ext_resource type="PackedScene" uid="uid://b8jf8bxldbpxo" path="res://map/maps/map.tscn" id="1_jtjiu"]
+[ext_resource type="PackedScene" uid="uid://bvyheyu4b4e55" path="res://map/components/player_start_point/player_start_point.tscn" id="2_ji76p"]
+[ext_resource type="PackedScene" uid="uid://cryxvw4awqp31" path="res://map/components/extraction_point/extraction_point.tscn" id="3_ji76p"]
+[ext_resource type="PackedScene" uid="uid://dn45jadr8y3du" path="res://map/maps/test_map.tscn" id="4_j8bau"]
+
+[node name="Map" unique_id=752743956 node_paths=PackedStringArray("player_start_point") instance=ExtResource("1_jtjiu")]
+player_start_point = NodePath("Components/PlayerStartPoint")
+
+[node name="PlayerStartPoint" parent="Components" parent_id_path=PackedInt32Array(71344139) index="0" unique_id=253034820 instance=ExtResource("2_ji76p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.54767, 1.4999962, -31.614048)
+
+[node name="ExtractionPoint" parent="Components" parent_id_path=PackedInt32Array(71344139) index="1" unique_id=1238818511 node_paths=PackedStringArray("map_root") instance=ExtResource("3_ji76p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1.1874802, -32)
+next_map = ExtResource("4_j8bau")
+map_root = NodePath("../..")

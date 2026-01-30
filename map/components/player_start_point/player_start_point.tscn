@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bvyheyu4b4e55"]
+
+[ext_resource type="Script" uid="uid://chx5jj0kulj0r" path="res://map/components/player_start_point/player_start_point.gd" id="1_synl6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5yjma"]
+
+[node name="PlayerStartPoint" type="Area3D" unique_id=253034820]
+script = ExtResource("1_synl6")
+
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1186681734]
+shape = SubResource("CapsuleShape3D_5yjma")
+debug_color = Color(0, 1, 0, 1)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=787747568]
+gizmo_extents = 2.0

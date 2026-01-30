@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cryxvw4awqp31"]
+
+[ext_resource type="Script" uid="uid://b45u3kk6ye4rw" path="res://map/components/extraction_point/extraction_point.gd" id="1_4bs7n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wso0y"]
+size = Vector3(2, 1, 2)
+
+[node name="ExtractionPoint" type="Area3D" unique_id=1238818511]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_4bs7n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1065520727]
+shape = SubResource("BoxShape3D_wso0y")
+debug_color = Color(0.96528405, 0, 0.50583917, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

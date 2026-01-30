@@ -15,6 +15,11 @@ run/main_scene="uid://1kf2ay1ki5d0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerManager="*uid://csb6bqaexh6vx"
+WaveManager="*uid://pxfcl13tykot"
+
 [display]
 
 window/size/viewport_width=3840
@@ -39,7 +44,10 @@ folder_colors={
 "res://map/": "orange",
 "res://mask/": "yellow",
 "res://player/": "green",
-"res://ui/": "blue"
+"res://singleton/": "pink",
+"res://states/": "purple",
+"res://ui/": "blue",
+"res://ui/intro_screen/": "blue"
 }
 
 [input]

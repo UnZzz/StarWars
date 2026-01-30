@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1jr3cpiq4jhj"]
+
+[ext_resource type="Script" uid="uid://bw4eqpl42hslg" path="res://map/components/spawn_area/spawn_area.gd" id="1_goi5r"]
+[ext_resource type="PackedScene" uid="uid://dqe7fqlyndeb4" path="res://enemy/base_star.tscn" id="2_1mmsn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mmsn"]
+
+[node name="SpawnArea" type="Area3D" unique_id=1285392178]
+script = ExtResource("1_goi5r")
+enemy_scenes = Array[PackedScene]([ExtResource("2_1mmsn")])
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1080779571]
+aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=256976238]
+shape = SubResource("BoxShape3D_1mmsn")
+debug_color = Color(1, 0, 0.654902, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1525783044]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

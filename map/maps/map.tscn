@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b8jf8bxldbpxo"]
+
+[ext_resource type="Script" uid="uid://b1g2qyswc2jq7" path="res://map/maps/map.gd" id="1_j851c"]
+[ext_resource type="Material" uid="uid://cmlreoo2qwhp4" path="res://addons/Arts/structure_material.tres" id="2_g2dcw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6i3h"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_43bpn"]
+sky_material = SubResource("ProceduralSkyMaterial_l6i3h")
+
+[sub_resource type="Environment" id="Environment_hcsmq"]
+background_mode = 2
+sky = SubResource("Sky_43bpn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_7ikk4"]
+vertices = PackedVector3Array(-23.703613, 1, -83.79703, -23.703613, 1, 31.952972, 160.29639, 1, 31.952972, 160.29639, 1, -83.79703)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_radius = 1.0
+
+[node name="Map" type="Node3D" unique_id=752743956]
+script = ExtResource("1_j851c")
+
+[node name="Environment" type="Node3D" parent="." unique_id=1627753690]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=140801785]
+environment = SubResource("Environment_hcsmq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=789622418]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -22, 101, 4)
+shadow_enabled = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1353544295]
+navigation_mesh = SubResource("NavigationMesh_7ikk4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=808119587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.29639, 0, -25.898514)
+use_collision = true
+collision_mask = 2
+size = Vector3(186, 1, 117.79703)
+material = ExtResource("2_g2dcw")
+
+[node name="Components" type="Node3D" parent="." unique_id=71344139]
