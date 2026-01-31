@@ -4,6 +4,16 @@
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_2el1o"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_uvkam"]
+var/navigation_agent_node/name = &"navigation_agent_node"
+var/navigation_agent_node/type = 22
+var/navigation_agent_node/value = NodePath("")
+var/navigation_agent_node/hint = 0
+var/navigation_agent_node/hint_string = ""
+var/target_global_position/name = &"target_global_position"
+var/target_global_position/type = 9
+var/target_global_position/value = Vector3(0, 0, 0)
+var/target_global_position/hint = 0
+var/target_global_position/hint_string = ""
 
 [sub_resource type="BTAction" id="BTAction_y136q"]
 script = ExtResource("1_fid2c")
