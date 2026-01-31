@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="1_1v1wt"]
 [ext_resource type="PackedScene" uid="uid://ctql3fxefk2g4" path="res://mask/mask_gun.tscn" id="2_6ahhe"]
+[ext_resource type="PackedScene" uid="uid://bvl4w0g0yp6b" path="res://ui/hud/wave_info/wave_info.tscn" id="3_ni121"]
 
 [node name="PlayerCharacter" unique_id=2077823591 instance=ExtResource("1_1v1wt")]
 jump_height = 1.0
@@ -10,5 +11,14 @@ nb_jumps_in_air_allowed = 0
 [node name="MaskGun" parent="CameraHolder/Camera" parent_id_path=PackedInt32Array(1801503883) index="1" unique_id=1764099407 instance=ExtResource("2_6ahhe")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.715, 0)
 
-[node name="HUD" parent="." index="5" unique_id=260967479]
+[node name="WaveInfo" parent="HUD" parent_id_path=PackedInt32Array(260967479) index="0" unique_id=504770476 instance=ExtResource("3_ni121")]
+mouse_filter = 2
+
+[node name="PlayCharInfos" parent="HUD" parent_id_path=PackedInt32Array(260967479) index="1" unique_id=1089203379]
+visible = false
+
+[node name="PlayCharInfos2" parent="HUD" parent_id_path=PackedInt32Array(260967479) index="2" unique_id=546325341]
+visible = false
+
+[node name="Crosshair" parent="HUD" parent_id_path=PackedInt32Array(260967479) index="4" unique_id=1562439428]
 visible = false

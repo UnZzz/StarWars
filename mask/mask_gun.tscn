@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bm1labr13mbpd" path="res://mask/mask_gun.gd" id="1_oab67"]
 [ext_resource type="PackedScene" uid="uid://bmumr0tc8l5dd" path="res://mask/masks/base_mask.tscn" id="1_red2b"]
-[ext_resource type="Texture2D" uid="uid://751a250uc6in" path="res://assets/star_mask_5point.png" id="3_oab67"]
+[ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="3_oab67"]
 
 [node name="MaskGun" type="Node3D" unique_id=1764099407]
 script = ExtResource("1_oab67")
