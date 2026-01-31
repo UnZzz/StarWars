@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 		set_now_mask_rotation_degree(get_now_mask_rotation_degree() - 30)
 	if(Input.is_action_just_pressed("fire")):
 		fire()
+		AudioManager.plyr_gun_shoot.play()
 	return
 	
 func fire() -> void:

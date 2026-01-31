@@ -15,6 +15,7 @@ func enter(play_char_ref : CharacterBody3D) -> void:
 		walljump()
 	else:
 		jump()
+		AudioManager.plyr_jump.play()
 	
 func verifications() -> void:
 	if play_char.floor_snap_length != 0.0:  play_char.floor_snap_length = 0.0

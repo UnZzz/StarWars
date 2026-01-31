@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://rdf5c3u1k4e5"]
+
+[ext_resource type="Script" uid="uid://cpc56f6dj5gwi" path="res://audio/audio_manager.gd" id="1_drlug"]
+[ext_resource type="AudioStream" uid="uid://54rmq7805bbh" path="res://assets/audio/music/mus_main_scene.mp3" id="2_mhfhn"]
+[ext_resource type="AudioStream" uid="uid://d3qbwxlu2w73x" path="res://assets/audio/sfx/plyr_gun_shoot_01.wav" id="3_mhfhn"]
+[ext_resource type="AudioStream" uid="uid://db1kfag5ejb50" path="res://assets/audio/sfx/plyr_gun_shoot_02.wav" id="4_i1k7u"]
+[ext_resource type="AudioStream" uid="uid://b2ucoiuy56cdc" path="res://assets/audio/sfx/plyr_gun_shoot_03.wav" id="5_8j4p3"]
+[ext_resource type="AudioStream" uid="uid://bcd6bfknj8lfs" path="res://assets/audio/sfx/plyr_fs_left_01.wav" id="6_6wlj3"]
+[ext_resource type="AudioStream" uid="uid://b7y61ub8lcobj" path="res://assets/audio/sfx/plyr_fs_left_02.wav" id="7_0xv67"]
+[ext_resource type="AudioStream" uid="uid://ck72naekfcv3u" path="res://assets/audio/sfx/plyr_fs_right_01.wav" id="8_oyqdx"]
+[ext_resource type="AudioStream" uid="uid://cdecjlqttsmhr" path="res://assets/audio/sfx/plyr_fs_right_02.wav" id="9_tmngx"]
+[ext_resource type="AudioStream" uid="uid://upktdinfrreh" path="res://assets/audio/sfx/plyr_jump_01.wav" id="10_tmngx"]
+[ext_resource type="AudioStream" uid="uid://c0kt6govfyket" path="res://assets/audio/sfx/plyr_jump_02.wav" id="11_h3g62"]
+[ext_resource type="AudioStream" uid="uid://5wtls011uwx" path="res://assets/audio/sfx/plyr_jump_03.wav" id="12_gnfy0"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mhfhn"]
+random_pitch = 1.1892071
+random_volume_offset_db = 2.12
+streams_count = 3
+stream_0/stream = ExtResource("3_mhfhn")
+stream_1/stream = ExtResource("4_i1k7u")
+stream_2/stream = ExtResource("5_8j4p3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6wlj3"]
+streams_count = 2
+stream_0/stream = ExtResource("6_6wlj3")
+stream_1/stream = ExtResource("7_0xv67")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0xv67"]
+streams_count = 2
+stream_0/stream = ExtResource("8_oyqdx")
+stream_1/stream = ExtResource("9_tmngx")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oyqdx"]
+random_pitch = 1.0905077
+streams_count = 2
+stream_0/stream = SubResource("AudioStreamRandomizer_6wlj3")
+stream_1/stream = SubResource("AudioStreamRandomizer_0xv67")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pyj8m"]
+streams_count = 3
+stream_0/stream = ExtResource("10_tmngx")
+stream_1/stream = ExtResource("11_h3g62")
+stream_2/stream = ExtResource("12_gnfy0")
+
+[node name="AudioManager" type="Node2D" unique_id=1083692004]
+script = ExtResource("1_drlug")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=158938632]
+stream = ExtResource("2_mhfhn")
+volume_db = -12.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="SFX_GunShoot" type="AudioStreamPlayer" parent="." unique_id=1879664619]
+stream = SubResource("AudioStreamRandomizer_mhfhn")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="SFX_Plyr_FS" type="AudioStreamPlayer" parent="." unique_id=578985861]
+stream = SubResource("AudioStreamRandomizer_oyqdx")
+volume_db = -8.0
+bus = &"Player"
+
+[node name="SFX_Plyr_Jump" type="AudioStreamPlayer" parent="." unique_id=523727329]
+stream = SubResource("AudioStreamRandomizer_pyj8m")
+volume_db = -9.0
+bus = &"Player"
