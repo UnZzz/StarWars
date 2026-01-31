@@ -9,12 +9,17 @@ var type = 1
 @onready var scary_face : MeshInstance3D = $ScaryFace
 @onready var happy_face : MeshInstance3D = $HappyFace
 
+var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
+var current_face_angle : int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	scary_face.visible = false
 	happy_face.visible = true
 	add_to_group("enemies")
 	current_face_angle = _possible_angles.pick_random()
+	scary_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
+	happy_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -48,7 +53,7 @@ func _physics_process(delta: float) -> void:
 
 func hit(atk: int) -> void:
 	print("atk: ", atk)
-	if(abs(atk) < 30):
+	if(abs(current_face_angle - atk) % 180 == 0):
 		queue_free()
 	pass
 
