@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cbdursyywdc6t"]
+
+[ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="1_u4w6l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yum44"]
+load_path = "res://.godot/imported/star_faceangry_5point.png-ac4a266788a181be8ea8f988a20ee50d.s3tc.ctex"
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_u4w6l")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_yum44")
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/rotation_angle = 0.0
