@@ -14,6 +14,11 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	move_and_slide()
+	for idx in range(0,get_slide_collision_count()):
+		var collied_body = get_slide_collision(idx)
+		var collider = collied_body.get_collider()
+		if(collider is PlayerCharacter):
+			PlayerManager.stop_player()
 	pass
 
 func hit(atk: int) -> void:

@@ -46,6 +46,7 @@ material = ExtResource("4_gts7o")
 
 [node name="ExtractionPoint" parent="Components" parent_id_path=PackedInt32Array(71344139) index="0" unique_id=1238818511 node_paths=PackedStringArray("map_root") instance=ExtResource("2_uqeew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.6417427)
+next_map = "uid://dn45jadr8y3du"
 map_root = NodePath("../..")
 
 [node name="PlayerStartPoint" parent="Components" parent_id_path=PackedInt32Array(71344139) index="1" unique_id=253034820 instance=ExtResource("3_5xiwj")]

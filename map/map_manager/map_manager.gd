@@ -1,4 +1,5 @@
 extends Node
+class_name MapManager
 
 @export var init_map : PackedScene
 
@@ -17,7 +18,6 @@ func switch_to(map : PackedScene):
 	pass
 
 func _ready() -> void:
-	switch_to(init_map)
 	pass
 	
 func _on_map_switch_emitted(map : PackedScene):
