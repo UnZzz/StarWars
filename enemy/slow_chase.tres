@@ -1,0 +1,28 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://dfl6kcg6ow4qt"]
+
+[ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_fid2c"]
+[ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_2el1o"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_uvkam"]
+
+[sub_resource type="BTAction" id="BTAction_y136q"]
+script = ExtResource("1_fid2c")
+
+[sub_resource type="BTAction" id="BTAction_fam0b"]
+script = ExtResource("2_2el1o")
+movement_speed = 10.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
+time_limit = 1.0
+children = [SubResource("BTAction_fam0b")]
+
+[sub_resource type="BTSequence" id="BTSequence_ttaj7"]
+children = [SubResource("BTAction_y136q"), SubResource("BTTimeLimit_4n5wd")]
+metadata/_weight_ = 2.3502880658436203
+
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_a4w72"]
+children = [SubResource("BTSequence_ttaj7")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_uvkam")
+root_task = SubResource("BTProbabilitySelector_a4w72")
