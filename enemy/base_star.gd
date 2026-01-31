@@ -21,7 +21,6 @@ func _ready() -> void:
 	happy_face.visible = true
 	add_to_group("enemies")
 	current_face_angle = _possible_angles.pick_random()
-	$Rotation.text = str(current_face_angle)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
