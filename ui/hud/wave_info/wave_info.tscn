@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bvl4w0g0yp6b"]
+
+[ext_resource type="Script" uid="uid://bxhbw0gqreejk" path="res://ui/hud/wave_info/wave_info.gd" id="1_coisd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gm505"]
+font_size = 64
+
+[node name="WaveInfo" type="Control" unique_id=504770476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_coisd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=731116150]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=155675790]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=827311038]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1287225228]
+layout_mode = 2
+text = "Wave Number"
+label_settings = SubResource("LabelSettings_gm505")
+
+[node name="WaveNumber" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1528461127]
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_gm505")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1398279003]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=647127719]
+layout_mode = 2
+text = "Current Enemy Count"
+label_settings = SubResource("LabelSettings_gm505")
+
+[node name="EnemyCount" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1647722589]
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_gm505")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1545738817]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1632649589]
+layout_mode = 2
+text = "Time Left"
+label_settings = SubResource("LabelSettings_gm505")
+
+[node name="TimeLeft" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2094005003]
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_gm505")

@@ -8,6 +8,7 @@ signal map_event_emitted(event_name : StringName)
 
 func switch_to(map : PackedScene):
 	if(now_map != null):
+		call_deferred("remove_child", now_map)
 		now_map.queue_free()
 	
 	now_map = map.instantiate()

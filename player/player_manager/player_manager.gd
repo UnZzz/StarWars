@@ -1,7 +1,5 @@
 extends Node
 
-class_name PlayerManger
-
 @export var _character_player_scene : PackedScene
 
 signal player_is_dead
