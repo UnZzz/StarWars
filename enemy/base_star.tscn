@@ -60,12 +60,48 @@ script = ExtResource("3_uvkam")
 script = ExtResource("3_eushb")
 movement_speed = 10.0
 
-[sub_resource type="BTSequence" id="BTSequence_6txa2"]
-children = [SubResource("BTAction_wjncu"), SubResource("BTAction_eushb")]
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_6txa2"]
+time_limit = 0.5
+children = [SubResource("BTAction_eushb")]
+
+[sub_resource type="BTSequence" id="BTSequence_rr5jx"]
+children = [SubResource("BTAction_wjncu"), SubResource("BTTimeLimit_6txa2")]
+
+[sub_resource type="BTAction" id="BTAction_y136q"]
+script = ExtResource("3_uvkam")
+
+[sub_resource type="BTAction" id="BTAction_fam0b"]
+script = ExtResource("3_eushb")
+movement_speed = 5.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
+time_limit = 0.1
+children = [SubResource("BTAction_fam0b")]
+
+[sub_resource type="BTSequence" id="BTSequence_ttaj7"]
+children = [SubResource("BTAction_y136q"), SubResource("BTTimeLimit_4n5wd")]
+
+[sub_resource type="BTAction" id="BTAction_xdmdl"]
+script = ExtResource("3_uvkam")
+
+[sub_resource type="BTAction" id="BTAction_86jjl"]
+script = ExtResource("3_eushb")
+movement_speed = 20.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_up2hq"]
+time_limit = 1.0
+children = [SubResource("BTAction_86jjl")]
+
+[sub_resource type="BTSequence" id="BTSequence_7tikv"]
+children = [SubResource("BTAction_xdmdl"), SubResource("BTTimeLimit_up2hq")]
+metadata/_weight_ = 0.1
+
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_4ws3g"]
+children = [SubResource("BTSequence_rr5jx"), SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv")]
 
 [sub_resource type="BehaviorTree" id="BehaviorTree_eushb"]
 blackboard_plan = SubResource("BlackboardPlan_j4wau")
-root_task = SubResource("BTSequence_6txa2")
+root_task = SubResource("BTProbabilitySelector_4ws3g")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_eushb"]
 var/navigation_agent_node/name = &"navigation_agent_node"
