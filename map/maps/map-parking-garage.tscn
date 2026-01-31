@@ -4,6 +4,8 @@
 [ext_resource type="Material" uid="uid://cmlreoo2qwhp4" path="res://addons/Arts/structure_material.tres" id="2_hbirn"]
 [ext_resource type="PackedScene" uid="uid://cryxvw4awqp31" path="res://map/components/extraction_point/extraction_point.tscn" id="3_iqwfa"]
 [ext_resource type="PackedScene" uid="uid://bvyheyu4b4e55" path="res://map/components/player_start_point/player_start_point.tscn" id="4_rjdfv"]
+[ext_resource type="PackedScene" uid="uid://d1jr3cpiq4jhj" path="res://map/components/spawn_area/spawn_area.tscn" id="5_rjdfv"]
+[ext_resource type="PackedScene" uid="uid://dtla4qa34a6m7" path="res://map/components/wave_sequencer/wave_sequencer.tscn" id="6_jp5rs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6i3h"]
 sky_top_color = Color(0.02745098, 0.039215688, 0.05882353, 1)
@@ -289,7 +291,7 @@ size = Vector3(4.5606565, 2.9230347, 13.140351)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D49" type="CSGBox3D" parent="NavigationRegion3D" unique_id=132701844]
-transform = Transform3D(1.2292484, 0, 0.15328528, 0, 0.4584687, 0, -0.2537074, 0, 2.0345688, 42.18381, 1.486647, 14.012208)
+transform = Transform3D(1.2292483, 0, 0.15328526, 0, 0.45846868, 0, -0.2537074, 0, 2.0345688, 42.183804, -0.49934536, 14.012209)
 use_collision = true
 collision_mask = 2
 size = Vector3(4.5606565, 2.9230347, 13.140351)
@@ -373,7 +375,14 @@ size = Vector3(4.5606565, 2.9230347, 9.562851)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D44" type="CSGBox3D" parent="NavigationRegion3D" unique_id=49404636]
-transform = Transform3D(1.215428, 0, -0.2393388, 0, 0.4584687, 0, 0.3961374, 0, 2.0116942, -10.821356, -0.23799735, 20.416775)
+transform = Transform3D(1.2154236, 0, -0.23933811, 0, 0.45846748, 0, 0.39613736, 0, 2.0116942, -15.931585, -0.23799735, 21.466606)
+use_collision = true
+collision_mask = 2
+size = Vector3(11.724881, 5.094208, 11.945854)
+material = ExtResource("2_hbirn")
+
+[node name="CSGBox3D59" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2067322920]
+transform = Transform3D(1.2154276, 0, -0.23933874, 0, 0.45846862, 0, 0.39613736, 0, 2.0116942, -7.9274254, -0.77681315, 20.416775)
 use_collision = true
 collision_mask = 2
 size = Vector3(3.8276916, 5.094208, 9.347031)
@@ -408,10 +417,17 @@ size = Vector3(4.5606565, 2.9230347, 13.140351)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D39" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1520412958]
-transform = Transform3D(-0.9570049, 0, -0.78656834, 0, 0.4584687, 0, 1.3018748, 0, -1.5839698, 78.16794, 0.2415843, -3.4854155)
+transform = Transform3D(-0.9570048, 0, -0.7865682, 0, 0.45846865, 0, 1.3018748, 0, -1.5839698, 77.67058, 0.2415843, -6.603154)
 use_collision = true
 collision_mask = 2
 size = Vector3(5.4263244, 6.09111, 15.86705)
+material = ExtResource("2_hbirn")
+
+[node name="CSGBox3D58" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1929383793]
+transform = Transform3D(-0.95699036, 0, -0.786567, 0, 0.4584624, 0, 1.3018748, 0, -1.5839698, 70.68178, 0.2415843, -19.766628)
+use_collision = true
+collision_mask = 2
+size = Vector3(6.6313615, 6.09111, 4.058119)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D56" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1091003538]
@@ -438,9 +454,38 @@ material = ExtResource("2_hbirn")
 [node name="Components" type="Node3D" parent="." unique_id=71344139]
 
 [node name="ExtractionPoint" parent="Components" unique_id=1238818511 node_paths=PackedStringArray("map_root") instance=ExtResource("3_iqwfa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.090883, 1.0188327, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.59102, 11.4833355, -42.673492)
 next_map = "uid://dn45jadr8y3du"
 map_root = NodePath("../..")
 
 [node name="PlayerStartPoint" parent="Components" unique_id=253034820 instance=ExtResource("4_rjdfv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.72858, 6.4745026, 0)
+
+[node name="SpawnArea" parent="Components" unique_id=1285392178 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.18239, 4.209114, 1.0401688)
+
+[node name="SpawnArea2" parent="Components" unique_id=2130151322 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.676205, 3.3208199, -42.44473)
+
+[node name="SpawnArea3" parent="Components" unique_id=1352322687 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.276447, -2.85841, -19.217358)
+
+[node name="SpawnArea4" parent="Components" unique_id=97621255 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3172684, 5.1829414, 6.21924)
+
+[node name="SpawnArea5" parent="Components" unique_id=1287711374 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.965084, 3.4118786, -12.128828)
+
+[node name="SpawnArea6" parent="Components" unique_id=805849723 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.744064, 3.4118786, -43.79525)
+
+[node name="SpawnArea7" parent="Components" unique_id=1983999863 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.32916, 3.4118786, -21.17854)
+
+[node name="SpawnArea8" parent="Components" unique_id=457682756 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.29138, 3.4118786, 5.305393)
+
+[node name="SpawnArea9" parent="Components" unique_id=738320744 instance=ExtResource("5_rjdfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.55223, 9.898327, -37.32671)
+
+[node name="WaveSequencer" parent="Components" unique_id=149701953 instance=ExtResource("6_jp5rs")]

@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_j4wau"]
 [ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="2_wjncu"]
 [ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="3_6txa2"]
-[ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="3_eushb"]
 [ext_resource type="Texture2D" uid="uid://c0ghkmqcw1yps" path="res://assets/star_faceangry_5point.png" id="3_rr5jx"]
+[ext_resource type="BehaviorTree" uid="uid://dfl6kcg6ow4qt" path="res://enemy/slow_chase.tres" id="5_wjncu"]
+[ext_resource type="Script" uid="uid://bbwi6ts7nw0qo" path="res://enemy/tasks/explode.gd" id="6_6txa2"]
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="3_uvkam"]
 [ext_resource type="Script" path="res://enemy/tasks/wander.gd" id="7_rr5jx"]
 [ext_resource type="Script" path="res://enemy/tasks/grow_big.gd" id="8_y136q"]
@@ -43,101 +44,15 @@ billboard_mode = 2
 material = SubResource("StandardMaterial3D_rr5jx")
 size = Vector2(2, 2)
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_j4wau"]
-var/target_global_position/name = &"target_global_position"
-var/target_global_position/type = 9
-var/target_global_position/value = Vector3(0, 0, 0)
-var/target_global_position/hint = 0
-var/target_global_position/hint_string = ""
-var/navigation_agent_node/name = &"navigation_agent_node"
-var/navigation_agent_node/type = 22
-var/navigation_agent_node/value = NodePath("")
-var/navigation_agent_node/hint = 0
-var/navigation_agent_node/hint_string = ""
-
-[sub_resource type="BTAction" id="BTAction_6txa2"]
-script = ExtResource("3_uvkam")
-
-[sub_resource type="BTAction" id="BTAction_rr5jx"]
-script = ExtResource("3_eushb")
-movement_speed = 10.0
-
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_6txa2"]
-time_limit = 0.5
-children = [SubResource("BTAction_rr5jx")]
-
-[sub_resource type="BTSequence" id="BTSequence_rr5jx"]
-children = [SubResource("BTAction_6txa2"), SubResource("BTTimeLimit_6txa2")]
-
-[sub_resource type="BTAction" id="BTAction_y136q"]
-script = ExtResource("3_uvkam")
-
-[sub_resource type="BTAction" id="BTAction_fam0b"]
-script = ExtResource("3_eushb")
-movement_speed = 5.0
-
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
-time_limit = 0.3
-children = [SubResource("BTAction_fam0b")]
-
-[sub_resource type="BTSequence" id="BTSequence_ttaj7"]
-children = [SubResource("BTAction_y136q"), SubResource("BTTimeLimit_4n5wd")]
-
-[sub_resource type="BTAction" id="BTAction_xdmdl"]
-script = ExtResource("3_uvkam")
-
-[sub_resource type="BTAction" id="BTAction_86jjl"]
-script = ExtResource("3_eushb")
-movement_speed = 20.0
-
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_up2hq"]
-time_limit = 1.0
-children = [SubResource("BTAction_86jjl")]
-
-[sub_resource type="BTSequence" id="BTSequence_7tikv"]
-children = [SubResource("BTAction_xdmdl"), SubResource("BTTimeLimit_up2hq")]
-metadata/_weight_ = 0.1
-
-[sub_resource type="BTAction" id="BTAction_wander"]
-script = ExtResource("7_rr5jx")
-
-[sub_resource type="BTAction" id="BTAction_wander_move"]
-script = ExtResource("3_eushb")
-movement_speed = 2.0
-
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_wander"]
-time_limit = 3.0
-children = [SubResource("BTAction_wander_move")]
-
-[sub_resource type="BTSequence" id="BTSequence_wander"]
-children = [SubResource("BTAction_wander"), SubResource("BTTimeLimit_wander")]
-metadata/_weight_ = 0.3
-
-[sub_resource type="BTAction" id="BTAction_4n5wd"]
-script = ExtResource("8_y136q")
-grow_chance = 0.2
-
-[sub_resource type="BTCooldown" id="BTCooldown_y136q"]
-duration = 5.0
-process_pause = true
-children = [SubResource("BTAction_4n5wd")]
-
-[sub_resource type="BTSequence" id="BTSequence_xdmdl"]
-children = [SubResource("BTCooldown_y136q")]
-
-[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_4ws3g"]
-children = [SubResource("BTSequence_rr5jx"), SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv"), SubResource("BTSequence_wander"), SubResource("BTSequence_xdmdl")]
-
-[sub_resource type="BehaviorTree" id="BehaviorTree_eushb"]
-blackboard_plan = SubResource("BlackboardPlan_j4wau")
-root_task = SubResource("BTProbabilitySelector_4ws3g")
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_eushb"]
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_wjncu"]
 var/navigation_agent_node/name = &"navigation_agent_node"
 var/navigation_agent_node/type = 22
 var/navigation_agent_node/value = NodePath("../NavigationAgent3D")
 var/navigation_agent_node/hint = 0
 var/navigation_agent_node/hint_string = ""
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wjncu"]
+radius = 10.0
 
 [node name="BaseStar" type="CharacterBody3D" unique_id=467415892]
 collision_mask = 3
@@ -162,6 +77,16 @@ radius = 1.0
 debug_enabled = true
 
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=842027526]
+
+behavior_tree = ExtResource("5_wjncu")
+blackboard_plan = SubResource("BlackboardPlan_wjncu")
+
+[node name="ProximityExplosion" type="Area3D" parent="." unique_id=1731853795]
+script = ExtResource("6_6txa2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProximityExplosion" unique_id=2036383800]
+shape = SubResource("SphereShape3D_wjncu")
+
 behavior_tree = SubResource("BehaviorTree_eushb")
 blackboard_plan = SubResource("BlackboardPlan_eushb")
 

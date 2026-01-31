@@ -1,0 +1,84 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://diqi0x4kwvy7w"]
+
+[ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_ylg3a"]
+[ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_uytnt"]
+[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="3_k3fkw"]
+[ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="4_5pujf"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_uvkam"]
+
+[sub_resource type="BTAction" id="BTAction_y136q"]
+script = ExtResource("1_ylg3a")
+
+[sub_resource type="BTAction" id="BTAction_fam0b"]
+script = ExtResource("2_uytnt")
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
+time_limit = 0.5
+children = [SubResource("BTAction_fam0b")]
+
+[sub_resource type="BTSequence" id="BTSequence_ttaj7"]
+children = [SubResource("BTAction_y136q"), SubResource("BTTimeLimit_4n5wd")]
+metadata/_weight_ = 2.3502880658436203
+
+[sub_resource type="BTAction" id="BTAction_xdmdl"]
+script = ExtResource("1_ylg3a")
+
+[sub_resource type="BTAction" id="BTAction_86jjl"]
+script = ExtResource("2_uytnt")
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_up2hq"]
+time_limit = 0.3
+children = [SubResource("BTAction_86jjl")]
+
+[sub_resource type="BTSequence" id="BTSequence_7tikv"]
+children = [SubResource("BTAction_xdmdl"), SubResource("BTTimeLimit_up2hq")]
+metadata/_weight_ = 0.6530428467683365
+
+[sub_resource type="BTAction" id="BTAction_4ws3g"]
+script = ExtResource("1_ylg3a")
+
+[sub_resource type="BTAction" id="BTAction_qbfj0"]
+script = ExtResource("2_uytnt")
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_tq03q"]
+time_limit = 1.0
+children = [SubResource("BTAction_qbfj0")]
+
+[sub_resource type="BTSequence" id="BTSequence_6bk02"]
+children = [SubResource("BTAction_4ws3g"), SubResource("BTTimeLimit_tq03q")]
+metadata/_weight_ = 0.6924033491392199
+
+[sub_resource type="BTAction" id="BTAction_bd8ml"]
+script = ExtResource("3_k3fkw")
+
+[sub_resource type="BTAction" id="BTAction_x8wfx"]
+script = ExtResource("2_uytnt")
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_ipixo"]
+time_limit = 3.0
+children = [SubResource("BTAction_x8wfx")]
+
+[sub_resource type="BTSequence" id="BTSequence_g28il"]
+children = [SubResource("BTAction_bd8ml"), SubResource("BTTimeLimit_ipixo")]
+metadata/_weight_ = 8.069010662063107
+
+[sub_resource type="BTAction" id="BTAction_asbe1"]
+script = ExtResource("4_5pujf")
+grow_chance = 0.2
+
+[sub_resource type="BTCooldown" id="BTCooldown_wegm5"]
+duration = 5.0
+process_pause = true
+children = [SubResource("BTAction_asbe1")]
+
+[sub_resource type="BTSequence" id="BTSequence_c5ukq"]
+children = [SubResource("BTCooldown_wegm5")]
+metadata/_weight_ = 0.46102880658436174
+
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_a4w72"]
+children = [SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv"), SubResource("BTSequence_6bk02"), SubResource("BTSequence_g28il"), SubResource("BTSequence_c5ukq")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_uvkam")
+root_task = SubResource("BTProbabilitySelector_a4w72")
