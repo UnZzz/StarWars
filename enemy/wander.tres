@@ -1,8 +1,8 @@
-[gd_resource type="BehaviorTree" format=3 uid="uid://diqi0x4kwvy7w"]
+[gd_resource type="BehaviorTree" format=3 uid="uid://7vwgrgiqa2us"]
 
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_ylg3a"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_uytnt"]
-[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="3_k3fkw"]
+[ext_resource type="Script" path="res://enemy/tasks/wander.gd" id="3_k3fkw"]
 [ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="4_5pujf"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_uvkam"]
