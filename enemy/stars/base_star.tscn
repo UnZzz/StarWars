@@ -4,10 +4,13 @@
 [ext_resource type="Material" uid="uid://8q5xnfb4i1i6" path="res://assets/star.tres" id="2_q1pqd"]
 [ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="2_wjncu"]
 [ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="3_6txa2"]
-[ext_resource type="Texture2D" uid="uid://c0ghkmqcw1yps" path="res://assets/star_faceangry_5point.png" id="3_rr5jx"]
 [ext_resource type="Material" uid="uid://cbdursyywdc6t" path="res://assets/angry.tres" id="4_fam0b"]
+[ext_resource type="Texture2D" uid="uid://n0dcvfy3y0cx" path="res://assets/direction_indicator_5point.png" id="5_guvfx"]
+[ext_resource type="Material" uid="uid://4fc7wc0i1ufy" path="res://assets/indi.tres" id="6_68d2x"]
 [ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="6_ttaj7"]
+[ext_resource type="Material" uid="uid://due1xmelwtnsf" path="res://assets/mask.tres" id="7_mf08w"]
 [ext_resource type="BehaviorTree" uid="uid://nayljaiuh2h0" path="res://enemy/slow_chase.tres" id="7_rr5jx"]
+[ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="8_3hdd0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -26,11 +29,31 @@ size = Vector2(2, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y136q"]
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("3_rr5jx")
+albedo_texture = ExtResource("5_guvfx")
 billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_fam0b"]
 material = SubResource("StandardMaterial3D_y136q")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l10hr"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_guvfx")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_wcy7k"]
+material = SubResource("StandardMaterial3D_l10hr")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtqai"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("8_3hdd0")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_841x3"]
+material = SubResource("StandardMaterial3D_jtqai")
 size = Vector2(2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr5jx"]
@@ -66,15 +89,23 @@ mesh = SubResource("QuadMesh_2o4cy")
 
 [node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=113288210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24334717, 0)
+visible = false
 material_override = ExtResource("4_fam0b")
 instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_fam0b")
 
+[node name="Indicator" type="MeshInstance3D" parent="." unique_id=346035885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24334717, 0)
+material_override = ExtResource("6_68d2x")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
+mesh = SubResource("QuadMesh_wcy7k")
+
 [node name="StarMask" type="MeshInstance3D" parent="." unique_id=201612684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24334717, 0)
-material_override = ExtResource("4_fam0b")
+visible = false
+material_override = ExtResource("7_mf08w")
 instance_shader_parameters/albedo = Color(1, 1, 1, 1)
-mesh = SubResource("QuadMesh_fam0b")
+mesh = SubResource("QuadMesh_841x3")
 
 [node name="HappyFace" type="MeshInstance3D" parent="." unique_id=1969286780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15808105, 0)

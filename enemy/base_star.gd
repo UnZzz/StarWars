@@ -9,6 +9,8 @@ var type = 1
 @onready var scary_face : MeshInstance3D = $ScaryFace
 @onready var happy_face : MeshInstance3D = $HappyFace
 @onready var star_body : MeshInstance3D = $StarBody
+@onready var star_mask : MeshInstance3D = $StarMask
+@onready var indicator : MeshInstance3D = $Indicator
 
 var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
 var current_face_angle : int
@@ -17,11 +19,14 @@ var current_face_angle : int
 func _ready() -> void:
 	scary_face.visible = false
 	happy_face.visible = true
+	star_mask.visible = false
 	add_to_group("enemies")
 	current_face_angle = _possible_angles.pick_random()
 	scary_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 	happy_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 	star_body.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
+	star_mask.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
+	indicator.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,8 +62,13 @@ func _physics_process(delta: float) -> void:
 func hit(atk: int) -> void:
 	print("atk: ", atk)
 	if(abs(current_face_angle - atk) % 180 == 0):
-		queue_free()
+		star_mask.visible = true
+		process_mode = Node.PROCESS_MODE_DISABLED
+		get_tree().create_timer(1.0).timeout.connect(remove)
 	pass
+	
+func remove():
+	queue_free()
 
 func _exit_tree() -> void:
 	WaveManager.current_enemy_count -= 1
