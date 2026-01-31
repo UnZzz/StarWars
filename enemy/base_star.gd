@@ -64,18 +64,19 @@ func _physics_process(delta: float) -> void:
 func hit(atk: int) -> void:
 	print("atk: ", atk)
 	is_shot = true
-	var other_exploded_stars = explosion_area.get_other_exploded_stars()
-	for star in other_exploded_stars:
-		if star.is_in_group("enemies") and star != self and !(star.is_shot):
-			if star.has_method("hit"):
-				star.hit(atk) #this kills the neighbor 
 	if(abs(current_face_angle - atk) % 180 == 0):
-		star_mask.visible = true
-		process_mode = Node.PROCESS_MODE_DISABLED
-		get_tree().create_timer(1.0).timeout.connect(remove)
-		if is_shot:
-			queue_free()
+		var other_exploded_stars = explosion_area.get_other_exploded_stars()
+		for star in other_exploded_stars:
+			if star.is_in_group("enemies") and star != self and !(star.is_shot):
+				if star.has_method("hit"):
+					star.death_persist() #this kills the neighbor 
+		death_persist()
 	pass
+	
+func death_persist():
+	star_mask.visible = true
+	process_mode = Node.PROCESS_MODE_DISABLED
+	get_tree().create_timer(1.0).timeout.connect(remove)
 	
 func remove():
 	queue_free()

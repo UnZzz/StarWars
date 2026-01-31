@@ -55,4 +55,4 @@ func get_now_mask_rotation_degree() -> int:
 	
 func _setup_new_projectile() -> void:
 	_now_projectile = mask_scene.pick_random().instantiate()
-	set_now_mask_rotation_degree(_possible_angles.pick_random())
+	# set_now_mask_rotation_degree(_possible_angles.pick_random())

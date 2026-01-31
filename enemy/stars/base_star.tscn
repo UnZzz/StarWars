@@ -9,10 +9,9 @@
 [ext_resource type="Material" uid="uid://4fc7wc0i1ufy" path="res://assets/indi.tres" id="6_68d2x"]
 [ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="6_ttaj7"]
 [ext_resource type="Material" uid="uid://due1xmelwtnsf" path="res://assets/mask.tres" id="7_mf08w"]
-[ext_resource type="BehaviorTree" uid="uid://dfl6kcg6ow4qt" path="res://enemy/slow_chase.tres" id="7_rr5jx"]
-[ext_resource type="Script" uid="uid://drg72xl38t27g" path="res://enemy/tasks/explode.gd" id="8_q1pqd"]
 [ext_resource type="BehaviorTree" uid="uid://nayljaiuh2h0" path="res://enemy/slow_chase.tres" id="7_rr5jx"]
 [ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="8_3hdd0"]
+[ext_resource type="Script" path="res://enemy/tasks/explode.gd" id="8_q1pqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -76,7 +75,7 @@ var/navigation_agent_node/hint = 0
 var/navigation_agent_node/hint_string = ""
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uov1v"]
-radius = 10.0
+radius = 5.0
 
 [node name="BaseStar" type="CharacterBody3D" unique_id=467415892]
 collision_mask = 3
