@@ -5,6 +5,9 @@ var type = 1
 
 @export var gravity : float = 0.98
 @export var scary_distance : float = 5.0
+var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
+var current_face_angle : int
+
 
 @onready var scary_face : MeshInstance3D = $ScaryFace
 @onready var happy_face : MeshInstance3D = $HappyFace
@@ -13,6 +16,8 @@ var type = 1
 func _ready() -> void:
 	scary_face.visible = false
 	happy_face.visible = true
+	current_face_angle = _possible_angles.pick_random()
+	$Rotation.text = str(current_face_angle)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
