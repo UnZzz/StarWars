@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c0ghkmqcw1yps" path="res://assets/star_faceangry_5point.png" id="3_rr5jx"]
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="3_uvkam"]
 [ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="7_rr5jx"]
+[ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="8_y136q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -112,8 +113,20 @@ children = [SubResource("BTAction_wander_move")]
 children = [SubResource("BTAction_wander"), SubResource("BTTimeLimit_wander")]
 metadata/_weight_ = 0.3
 
+[sub_resource type="BTAction" id="BTAction_4n5wd"]
+script = ExtResource("8_y136q")
+grow_chance = 0.2
+
+[sub_resource type="BTCooldown" id="BTCooldown_y136q"]
+duration = 5.0
+process_pause = true
+children = [SubResource("BTAction_4n5wd")]
+
+[sub_resource type="BTSequence" id="BTSequence_xdmdl"]
+children = [SubResource("BTCooldown_y136q")]
+
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_4ws3g"]
-children = [SubResource("BTSequence_rr5jx"), SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv"), SubResource("BTSequence_wander")]
+children = [SubResource("BTSequence_rr5jx"), SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv"), SubResource("BTSequence_wander"), SubResource("BTSequence_xdmdl")]
 
 [sub_resource type="BehaviorTree" id="BehaviorTree_eushb"]
 blackboard_plan = SubResource("BlackboardPlan_j4wau")
