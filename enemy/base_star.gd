@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 
 func hit(atk: int) -> void:
 	print("atk: ", atk)
-	if(abs(atk) < 30):
+	if(abs(current_face_angle - atk) % 180 == 0):
 		queue_free()
 	pass
 
