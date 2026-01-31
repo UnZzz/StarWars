@@ -8,6 +8,7 @@ var now_wave_idx = 0
 func _ready() -> void:
 	WaveManager.wave_finished.connect(_on_wave_finished)
 	_start_first_wave()
+	print("hello size")
 
 func _on_wave_finished():
 		WaveManager.start_new_wave(wave_sequence[now_wave_idx])
