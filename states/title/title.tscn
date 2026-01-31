@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://euvs0f5uxmb3"]
+
+[ext_resource type="Script" uid="uid://cfy4vqgpo5q7l" path="res://states/title/title.gd" id="1_d00ms"]
+
+[node name="Title" type="LimboState" unique_id=422868450]
+script = ExtResource("1_d00ms")

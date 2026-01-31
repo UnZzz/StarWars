@@ -1,5 +1,4 @@
 extends Node
-class_name MapManager
 
 @export var init_map : PackedScene
 
@@ -8,7 +7,6 @@ signal map_event_emitted(event_name : StringName)
 
 func switch_to(map : PackedScene):
 	if(now_map != null):
-		call_deferred("remove_child", now_map)
 		now_map.queue_free()
 	
 	now_map = map.instantiate()
@@ -19,6 +17,7 @@ func switch_to(map : PackedScene):
 	pass
 
 func _ready() -> void:
+	switch_to(init_map)
 	pass
 	
 func _on_map_switch_emitted(map : PackedScene):
