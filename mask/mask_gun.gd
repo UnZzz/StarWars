@@ -1,6 +1,8 @@
 extends Node3D
 
 @onready var texture_rect : TextureRect = $TextureRect
+@onready var star_mesh : MeshInstance3D = $gun/Hand/MeshInstance3D
+
 @export var mask_scene : Array[PackedScene]
 @export var fire_cooldown : float = 0.5
 
@@ -44,6 +46,7 @@ func set_now_mask_rotation_degree(degree: int) -> void:
 	print("degree: ",degree)
 	_now_projectile.atk = degree
 	texture_rect.rotation_degrees = degree
+	star_mesh.rotation_degrees.z = degree
 	return
 
 func get_now_mask_rotation_degree() -> int:

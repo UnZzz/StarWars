@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var anim = $AnimationPlayer
-@onready var mask_gun = $"../MaskGun"
+@onready var mask_gun = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
