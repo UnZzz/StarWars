@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dqe7fqlyndeb4"]
 
 [ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_j4wau"]
-[ext_resource type="Material" uid="uid://bstsluv64qrw0" path="res://assets/star.tres" id="2_4n5wd"]
 [ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="2_wjncu"]
 [ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="3_6txa2"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="3_eushb"]
@@ -151,7 +150,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_mggwb")
 
 [node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
-material_override = ExtResource("2_4n5wd")
 mesh = SubResource("QuadMesh_2o4cy")
 
 [node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=113288210]

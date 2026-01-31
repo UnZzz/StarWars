@@ -12,7 +12,7 @@ uniform vec3 uv1_scale = vec3(1.0);
 uniform vec3 uv1_offset = vec3(0.0);
 
 /* 🔄 Rotation (radians) */
-uniform float rotation_angle : hint_range(-6.283, 6.283) = 0.0;
+instance uniform float rotation_angle : hint_range(-6.283, 6.283) = 0.0;
 
 /* ---------------- ROTATION FUNCTION ---------------- */
 

@@ -9,16 +9,16 @@ var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
 var current_face_angle : int
 
 
-@onready var scary_face : GeometryInstance3D = $ScaryFace
-@onready var happy_face : GeometryInstance3D = $HappyFace
+@onready var scary_face : MeshInstance3D = $ScaryFace
+@onready var happy_face : MeshInstance3D = $HappyFace
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	scary_face.visible = false
 	happy_face.visible = true
 	current_face_angle = _possible_angles.pick_random()
-	(scary_face.material_override as ShaderMaterial).set_shader_parameter("Rotation Angle", 1)
-	(happy_face.material_override as ShaderMaterial).set_shader_parameter("Rotation Angle", 1)
+	scary_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
+	happy_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 
 	$Rotation.text = str(current_face_angle)
 	
