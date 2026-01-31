@@ -2,9 +2,11 @@ extends Node3D
 
 @onready var texture_rect : TextureRect = $TextureRect
 @export var mask_scene : Array[PackedScene]
+@export var fire_cooldown : float = 0.5
 
 var _possible_angles : Array[int] = [0, 30, 60, 120, 180, 240, 300]
 var _now_projectile : Projectile3D_extended
+var _can_fire : bool = true
 
 func _ready() -> void:
 	_setup_new_projectile()
@@ -21,11 +23,22 @@ func _physics_process(delta: float) -> void:
 	return
 	
 func fire() -> void:
+	if not _can_fire:
+		return
+		
+	_can_fire = false
+	
 	add_child(_now_projectile)
 	_now_projectile.rotate_y(deg_to_rad(180))
 	_now_projectile.top_level = true
+	
+	get_tree().create_timer(fire_cooldown).timeout.connect(_on_cooldown_finished)
+	
 	_setup_new_projectile()
 	return
+
+func _on_cooldown_finished() -> void:
+	_can_fire = true
 
 func set_now_mask_rotation_degree(degree: int) -> void:
 	degree = posmod(degree, 360)
