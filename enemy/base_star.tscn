@@ -20,16 +20,6 @@ billboard_mode = 2
 material = SubResource("StandardMaterial3D_mggwb")
 size = Vector2(2, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr5jx"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("3_6txa2")
-billboard_mode = 2
-
-[sub_resource type="QuadMesh" id="QuadMesh_y136q"]
-material = SubResource("StandardMaterial3D_rr5jx")
-size = Vector2(2, 2)
-
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_j4wau"]
 var/target_global_position/name = &"target_global_position"
 var/target_global_position/type = 9
@@ -63,6 +53,16 @@ var/navigation_agent_node/value = NodePath("../NavigationAgent3D")
 var/navigation_agent_node/hint = 0
 var/navigation_agent_node/hint_string = ""
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr5jx"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_6txa2")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_y136q"]
+material = SubResource("StandardMaterial3D_rr5jx")
+size = Vector2(2, 2)
+
 [node name="BaseStar" type="CharacterBody3D" unique_id=467415892]
 script = ExtResource("1_j4wau")
 
@@ -72,9 +72,6 @@ shape = SubResource("CapsuleShape3D_mggwb")
 [node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
 mesh = SubResource("QuadMesh_2o4cy")
 
-[node name="Face" type="MeshInstance3D" parent="." unique_id=1969286780]
-mesh = SubResource("QuadMesh_y136q")
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=908361554]
 avoidance_enabled = true
 radius = 1.0
@@ -83,3 +80,14 @@ debug_enabled = true
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=842027526]
 behavior_tree = SubResource("BehaviorTree_eushb")
 blackboard_plan = SubResource("BlackboardPlan_eushb")
+
+[node name="RotIndication" type="Label3D" parent="." unique_id=35584361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 2
+text = "Rotation
+"
+
+[node name="FaceNode" type="Node3D" parent="." unique_id=1183818520]
+
+[node name="Face" type="MeshInstance3D" parent="FaceNode" unique_id=1969286780]
+mesh = SubResource("QuadMesh_y136q")

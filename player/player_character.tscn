@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ctql3fxefk2g4" path="res://mask/mask_gun.tscn" id="2_6ahhe"]
 
 [node name="PlayerCharacter" unique_id=2077823591 instance=ExtResource("1_1v1wt")]
+jump_height = 1.0
+nb_jumps_in_air_allowed = 0
 
 [node name="MaskGun" parent="CameraHolder/Camera" parent_id_path=PackedInt32Array(1801503883) index="1" unique_id=1764099407 instance=ExtResource("2_6ahhe")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.715, 0)
