@@ -13,6 +13,8 @@ var type = 1
 func _ready() -> void:
 	scary_face.visible = false
 	happy_face.visible = true
+	add_to_group("enemies")
+	current_face_angle = _possible_angles.pick_random()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,13 +1,12 @@
-[gd_scene format=3 uid="uid://dqe7fqlyndeb4"]
+[gd_scene format=3 uid="uid://dpltptwskh7tr"]
 
 [ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_j4wau"]
 [ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="2_wjncu"]
 [ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="3_6txa2"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="3_eushb"]
 [ext_resource type="Texture2D" uid="uid://c0ghkmqcw1yps" path="res://assets/star_faceangry_5point.png" id="3_rr5jx"]
-[ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="3_uvkam"]
-[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="7_rr5jx"]
-[ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="8_y136q"]
+[ext_resource type="BehaviorTree" uid="uid://dfl6kcg6ow4qt" path="res://enemy/slow_chase.tres" id="5_wjncu"]
+[ext_resource type="Script" uid="uid://4mckmg8r2uo6" path="res://enemy/tasks/explode.gd" id="6_6txa2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -161,5 +160,11 @@ radius = 1.0
 debug_enabled = true
 
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=842027526]
-behavior_tree = SubResource("BehaviorTree_eushb")
-blackboard_plan = SubResource("BlackboardPlan_eushb")
+behavior_tree = ExtResource("5_wjncu")
+blackboard_plan = SubResource("BlackboardPlan_wjncu")
+
+[node name="ProximityExplosion" type="Area3D" parent="." unique_id=1731853795]
+script = ExtResource("6_6txa2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProximityExplosion" unique_id=2036383800]
+shape = SubResource("SphereShape3D_wjncu")
