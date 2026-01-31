@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csb6bqaexh6vx"]
 
-[ext_resource type="Script" uid="uid://c2ogb1blun7e3" path="res://singleton/player_manager/player_manager.gd" id="1_2adrt"]
+[ext_resource type="Script" uid="uid://c2ogb1blun7e3" path="res://player/player_manager/player_manager.gd" id="1_2adrt"]
 [ext_resource type="PackedScene" uid="uid://d4mw0q65j7xqc" path="res://player/player_character.tscn" id="2_t3x8j"]
 
 [node name="PlayerManager" type="Node" unique_id=781707039]
