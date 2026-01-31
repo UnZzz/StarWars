@@ -7,9 +7,6 @@
 [node name="Map" unique_id=752743956 node_paths=PackedStringArray("player_start_point") instance=ExtResource("1_jtjiu")]
 player_start_point = NodePath("Components/PlayerStartPoint")
 
-[node name="DirectionalLight3D" parent="Environment" parent_id_path=PackedInt32Array(1627753690) index="1" unique_id=789622418]
-sky_mode = 0
-
 [node name="PlayerStartPoint" parent="Components" parent_id_path=PackedInt32Array(71344139) index="0" unique_id=253034820 instance=ExtResource("2_ji76p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.54767, 1.4999962, -31.614048)
 

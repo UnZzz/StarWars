@@ -5,15 +5,9 @@ var type = 1
 
 @export var gravity : float = 0.98
 @export var scary_distance : float = 5.0
-var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
-var current_face_angle : int
-
 
 @onready var scary_face : MeshInstance3D = $ScaryFace
 @onready var happy_face : MeshInstance3D = $HappyFace
-@onready var explosion_area : Area3D = $ProximityExplosion
-@onready var is_shot : bool = false
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,15 +48,8 @@ func _physics_process(delta: float) -> void:
 
 func hit(atk: int) -> void:
 	print("atk: ", atk)
-	is_shot = true
-	var other_exploded_stars = explosion_area.get_other_exploded_stars()
-	for star in other_exploded_stars:
-		if star.is_in_group("enemies") and star != self and !(star.is_shot):
-			if star.has_method("hit"):
-				star.hit(atk) #this kills the neighbor 
-	if(abs(current_face_angle - atk) % 180 == 0):
-		if is_shot:
-			queue_free()
+	if(abs(atk) < 30):
+		queue_free()
 	pass
 
 func _exit_tree() -> void:

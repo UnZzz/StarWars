@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dpg464qx5r7cb"]
+[gd_scene format=3 uid="uid://drd8kjxu647we"]
 
 [ext_resource type="Script" uid="uid://b1g2qyswc2jq7" path="res://map/maps/map.gd" id="1_2rymc"]
 [ext_resource type="Material" uid="uid://cmlreoo2qwhp4" path="res://addons/Arts/structure_material.tres" id="2_hbirn"]
