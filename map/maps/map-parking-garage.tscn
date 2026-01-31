@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ck4v2twvnegsb"]
+[gd_scene format=3 uid="uid://byumqlbbhfl71"]
 
 [ext_resource type="Script" uid="uid://b1g2qyswc2jq7" path="res://map/maps/map.gd" id="1_2rymc"]
 [ext_resource type="Material" uid="uid://cmlreoo2qwhp4" path="res://addons/Arts/structure_material.tres" id="2_hbirn"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bvyheyu4b4e55" path="res://map/components/player_start_point/player_start_point.tscn" id="4_rjdfv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6i3h"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.02745098, 0.039215688, 0.05882353, 1)
+sky_horizon_color = Color(0.023529412, 0.023529412, 0.02745098, 1)
+sky_cover_modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
+ground_bottom_color = Color(0.019607844, 0.019607844, 0.019607844, 1)
+ground_horizon_color = Color(0.30980393, 0.3137255, 0.32941177, 1)
 
 [sub_resource type="Sky" id="Sky_43bpn"]
 sky_material = SubResource("ProceduralSkyMaterial_l6i3h")
