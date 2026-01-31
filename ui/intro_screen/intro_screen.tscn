@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://ctf2vwiorcngb"]
 
 [ext_resource type="Script" uid="uid://dortumbdrfouf" path="res://ui/intro_screen/intro_screen.gd" id="1_kjf88"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_7wudq"]
-font_size = 128
+[ext_resource type="Texture2D" uid="uid://b777yixs85n3e" path="res://assets/title.png" id="2_nt3h5"]
 
 [node name="IntrolScreen" type="Control" unique_id=1374681205]
 layout_mode = 3
@@ -14,28 +12,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kjf88")
 
-[node name="Label" type="Label" parent="." unique_id=613092218]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "THIS IS INTRO
-YES
-JUST A INTRO
-FOR STARWARS"
-label_settings = SubResource("LabelSettings_7wudq")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=999098853]
+layout_mode = 0
+offset_right = 3974.0
+offset_bottom = 2254.0
+color = Color(0, 0, 0, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=1121517369]
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1422269567]
+position = Vector2(1926.0001, 1058.0001)
+scale = Vector2(1.5819671, 1.5819672)
+texture = ExtResource("2_nt3h5")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
