@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dnhvpvh4nlc1o"]
+
+[ext_resource type="Script" uid="uid://bu5t3lwiepvuw" path="res://map/map_test_driver/map_test_driver.gd" id="1_1plks"]
+[ext_resource type="PackedScene" uid="uid://br2bjmw2gorlf" path="res://map/map_manager/map_manager.tscn" id="2_0w6bc"]
+[ext_resource type="PackedScene" uid="uid://ck4v2twvnegsb" path="res://map/maps/map-parking-garage.tscn" id="3_hqtya"]
+
+[node name="MapTestDriver" type="Node3D" unique_id=1797997702]
+script = ExtResource("1_1plks")
+
+[node name="MapManager" parent="." unique_id=1680218052 instance=ExtResource("2_0w6bc")]
+init_map = ExtResource("3_hqtya")

@@ -16,7 +16,7 @@ func switch_to(map : PackedScene):
 	add_child(now_map)
 	now_map.connect("to_next_map", _on_map_switch_emitted)
 	PlayerManager.spawn_player_at(now_map.player_start_point)
-	pass
+	
 
 func _ready() -> void:
 	pass
