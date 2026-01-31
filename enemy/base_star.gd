@@ -10,6 +10,7 @@ var type = 1
 @onready var happy_face : MeshInstance3D = $HappyFace
 @onready var explosion_area : Area3D = $ProximityExplosion
 @onready var is_shot : bool = false
+@onready var star_body : MeshInstance3D = $StarBody
 
 var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
 var current_face_angle : int
@@ -23,6 +24,7 @@ func _ready() -> void:
 	happy_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 	add_to_group("enemies")
 	explosion_area
+	star_body.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
