@@ -96,7 +96,7 @@ func _grow_enemy(enemy: BaseStar) -> void:
 	var original_mat = star_body.get_active_material(0)
 	if original_mat:
 		var glow = original_mat.duplicate() as StandardMaterial3D
-		glow.albedo_color = Color.RED
+		# glow.albedo_color = Color.RED
 		star_body.set_surface_override_material(0, glow)
 
 func _shrink_back(enemy: BaseStar) -> void:

@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://dqe7fqlyndeb4"]
 
 [ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_j4wau"]
+[ext_resource type="Material" uid="uid://bstsluv64qrw0" path="res://assets/star.tres" id="2_4n5wd"]
 [ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="2_wjncu"]
 [ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="3_6txa2"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="3_eushb"]
 [ext_resource type="Texture2D" uid="uid://c0ghkmqcw1yps" path="res://assets/star_faceangry_5point.png" id="3_rr5jx"]
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="3_uvkam"]
+[ext_resource type="Material" uid="uid://cbdursyywdc6t" path="res://assets/angry.tres" id="4_fam0b"]
+[ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="6_ttaj7"]
 [ext_resource type="Script" path="res://enemy/tasks/wander.gd" id="7_rr5jx"]
-[ext_resource type="Script" path="res://enemy/tasks/grow_big.gd" id="8_y136q"]
+[ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="8_y136q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -148,12 +151,15 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_mggwb")
 
 [node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
+material_override = ExtResource("2_4n5wd")
 mesh = SubResource("QuadMesh_2o4cy")
 
 [node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=113288210]
+material_override = ExtResource("4_fam0b")
 mesh = SubResource("QuadMesh_fam0b")
 
 [node name="HappyFace" type="MeshInstance3D" parent="." unique_id=1969286780]
+material_override = ExtResource("6_ttaj7")
 mesh = SubResource("QuadMesh_y136q")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=908361554]
