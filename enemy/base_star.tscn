@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dqe7fqlyndeb4"]
 
-[ext_resource type="Texture2D" uid="uid://bba8ghb4iej0m" path="res://icon.svg" id="1_2o4cy"]
 [ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_j4wau"]
+[ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="2_wjncu"]
+[ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="3_6txa2"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="3_eushb"]
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="3_uvkam"]
 
@@ -9,13 +10,24 @@
 radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mggwb"]
+render_priority = -1
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("1_2o4cy")
+albedo_texture = ExtResource("2_wjncu")
 billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_2o4cy"]
 material = SubResource("StandardMaterial3D_mggwb")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr5jx"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_6txa2")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_y136q"]
+material = SubResource("StandardMaterial3D_rr5jx")
 size = Vector2(2, 2)
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_j4wau"]
@@ -57,8 +69,11 @@ script = ExtResource("1_j4wau")
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1004183964]
 shape = SubResource("CapsuleShape3D_mggwb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=467282083]
+[node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
 mesh = SubResource("QuadMesh_2o4cy")
+
+[node name="Face" type="MeshInstance3D" parent="." unique_id=1969286780]
+mesh = SubResource("QuadMesh_y136q")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=908361554]
 avoidance_enabled = true

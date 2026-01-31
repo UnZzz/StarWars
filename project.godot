@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/NZ_projectiles/plugin.cfg", "res://addon
 
 folder_colors={
 "res://addons/": "gray",
+"res://assets/": "gray",
 "res://enemy/": "red",
 "res://map/": "orange",
 "res://mask/": "yellow",

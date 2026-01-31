@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://csk7e5ao2i25l" path="res://addons/NZ_projectiles/Scripts/Projectile3D_extended.gd" id="1_y21ow"]
 [ext_resource type="Texture2D" uid="uid://bba8ghb4iej0m" path="res://icon.svg" id="2_mrf1u"]
+[ext_resource type="Texture2D" uid="uid://751a250uc6in" path="res://assets/star_mask_5point.png" id="3_7ysig"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_btcti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xp61x"]
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("2_mrf1u")
+albedo_texture = ExtResource("3_7ysig")
 billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_pk22u"]
