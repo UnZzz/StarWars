@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ghkmqcw1yps"
-path.s3tc="res://.godot/imported/star_faceangry_5point.png-ac4a266788a181be8ea8f988a20ee50d.s3tc.ctex"
+uid="uid://c3hm64ycxe2o3"
+path.s3tc="res://.godot/imported/star_mask_5point2.png-7478a5e47c95e04692023c832d8582e3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/star_faceangry_5point.png"
-dest_files=["res://.godot/imported/star_faceangry_5point.png-ac4a266788a181be8ea8f988a20ee50d.s3tc.ctex"]
+source_file="res://assets/star_mask_5point2.png"
+dest_files=["res://.godot/imported/star_mask_5point2.png-7478a5e47c95e04692023c832d8582e3.s3tc.ctex"]
 
 [params]
 

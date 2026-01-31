@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://281a5yn6de6s"]
+
+[ext_resource type="Script" uid="uid://cc04ywq27fk0x" path="res://ui/result_screen/result_screen.gd" id="1_48uev"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_503od"]
+font_size = 128
+
+[node name="ResultScreen" type="Control" unique_id=1692504521]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48uev")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1393230235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.01666665, 0, 0.23921569)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=589161327]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.5
+offset_top = -167.5
+offset_right = 324.5
+offset_bottom = 167.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1887493965]
+layout_mode = 2
+text = "YOU DEAD"
+label_settings = SubResource("LabelSettings_503od")
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1868898608]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "RESTART"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

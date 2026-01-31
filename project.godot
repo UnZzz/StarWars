@@ -24,8 +24,8 @@ WaveManager="*uid://pxfcl13tykot"
 
 window/size/viewport_width=3840
 window/size/viewport_height=2160
-window/size/window_width_override=960
-window/size/window_height_override=540
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -45,10 +45,10 @@ folder_colors={
 "res://map/": "orange",
 "res://mask/": "yellow",
 "res://player/": "green",
-"res://singleton/": "pink",
 "res://states/": "purple",
 "res://ui/": "blue",
-"res://ui/intro_screen/": "blue"
+"res://ui/intro_screen/": "blue",
+"res://wave/": "pink"
 }
 
 [input]
