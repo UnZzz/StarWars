@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://vylyljhci6yd" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ctf2vwiorcngb" path="res://ui/intro_screen/intro_screen.tscn" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://br2bjmw2gorlf" path="res://map/map_manager/map_manager.tscn" id="2_272bh"]
-[ext_resource type="PackedScene" uid="uid://eif2c5eyaoeq" path="res://map/maps/title_map.tscn" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://jsgb63lmavaa" path="res://states/intro/intro.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dak3kh8ma2sy3" path="res://states/playing/playing.tscn" id="5_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dn45jadr8y3du" path="res://map/maps/test_map.tscn" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bxr031rtkjdw8" path="res://states/result/result.tscn" id="6_kek77"]
 [ext_resource type="PackedScene" uid="uid://281a5yn6de6s" path="res://ui/result_screen/result_screen.tscn" id="8_5vw27"]
 
@@ -23,7 +23,7 @@ intro_scene_root = NodePath("IntrolScreen")
 map_manager = NodePath("MapManager")
 
 [node name="MapManager" parent="LimboHSM/Playing" unique_id=481284308 instance=ExtResource("2_272bh")]
-init_map = ExtResource("3_5vw27")
+init_map = ExtResource("6_5vw27")
 
 [node name="Result" parent="LimboHSM" unique_id=2060480389 node_paths=PackedStringArray("intro_scene_root") instance=ExtResource("6_kek77")]
 intro_scene_root = NodePath("ResultScreen")

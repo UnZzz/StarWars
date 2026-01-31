@@ -53,19 +53,19 @@ var/navigation_agent_node/value = NodePath("")
 var/navigation_agent_node/hint = 0
 var/navigation_agent_node/hint_string = ""
 
-[sub_resource type="BTAction" id="BTAction_wjncu"]
+[sub_resource type="BTAction" id="BTAction_6txa2"]
 script = ExtResource("3_uvkam")
 
-[sub_resource type="BTAction" id="BTAction_eushb"]
+[sub_resource type="BTAction" id="BTAction_rr5jx"]
 script = ExtResource("3_eushb")
 movement_speed = 10.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_6txa2"]
 time_limit = 0.5
-children = [SubResource("BTAction_eushb")]
+children = [SubResource("BTAction_rr5jx")]
 
 [sub_resource type="BTSequence" id="BTSequence_rr5jx"]
-children = [SubResource("BTAction_wjncu"), SubResource("BTTimeLimit_6txa2")]
+children = [SubResource("BTAction_6txa2"), SubResource("BTTimeLimit_6txa2")]
 
 [sub_resource type="BTAction" id="BTAction_y136q"]
 script = ExtResource("3_uvkam")
@@ -121,7 +121,6 @@ shape = SubResource("CapsuleShape3D_mggwb")
 mesh = SubResource("QuadMesh_2o4cy")
 
 [node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=113288210]
-visible = false
 mesh = SubResource("QuadMesh_fam0b")
 
 [node name="HappyFace" type="MeshInstance3D" parent="." unique_id=1969286780]
