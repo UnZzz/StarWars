@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://da2wqnqpljpxd"]
+
+[ext_resource type="Script" uid="uid://bmo28j5t00snv" path="res://map/components/jump_point/jump_point.gd" id="1_flwq3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6x05j"]
+radius = 4.0
+
+[node name="JumpPoint" type="Area3D" unique_id=164171841]
+script = ExtResource("1_flwq3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1202583047]
+shape = SubResource("SphereShape3D_6x05j")
+debug_color = Color(0, 1, 0.73333335, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
