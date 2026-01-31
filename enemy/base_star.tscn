@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="3_eushb"]
 [ext_resource type="Texture2D" uid="uid://c0ghkmqcw1yps" path="res://assets/star_faceangry_5point.png" id="3_rr5jx"]
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="3_uvkam"]
-[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="7_rr5jx"]
-[ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="8_y136q"]
+[ext_resource type="Script" path="res://enemy/tasks/wander.gd" id="7_rr5jx"]
+[ext_resource type="Script" path="res://enemy/tasks/grow_big.gd" id="8_y136q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -144,6 +144,7 @@ collision_mask = 3
 script = ExtResource("1_j4wau")
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1004183964]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_mggwb")
 
 [node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
@@ -163,3 +164,7 @@ debug_enabled = true
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=842027526]
 behavior_tree = SubResource("BehaviorTree_eushb")
 blackboard_plan = SubResource("BlackboardPlan_eushb")
+
+[node name="Rotation" type="Label3D" parent="." unique_id=1035925262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0996094, 0)
+billboard = 2

@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dtla4qa34a6m7" path="res://map/components/wave_sequencer/wave_sequencer.tscn" id="6_jp5rs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6i3h"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.02745098, 0.039215688, 0.05882353, 1)
+sky_horizon_color = Color(0.023529412, 0.023529412, 0.02745098, 1)
+sky_cover_modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
+ground_bottom_color = Color(0.019607844, 0.019607844, 0.019607844, 1)
+ground_horizon_color = Color(0.30980393, 0.3137255, 0.32941177, 1)
 
 [sub_resource type="Sky" id="Sky_43bpn"]
 sky_material = SubResource("ProceduralSkyMaterial_l6i3h")
