@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="1_1v1wt"]
 [ext_resource type="PackedScene" uid="uid://ctql3fxefk2g4" path="res://mask/mask_gun.tscn" id="2_6ahhe"]
 [ext_resource type="PackedScene" uid="uid://bvl4w0g0yp6b" path="res://ui/hud/wave_info/wave_info.tscn" id="3_ni121"]
+[ext_resource type="PackedScene" uid="uid://cu2vjbdlqc5pu" path="res://assets/gun.blend" id="3_tncax"]
+[ext_resource type="Script" uid="uid://hmf41p7xadtr" path="res://assets/gun.gd" id="4_2brt4"]
 
 [node name="PlayerCharacter" unique_id=2077823591 instance=ExtResource("1_1v1wt")]
 jump_height = 1.0
@@ -10,6 +12,35 @@ nb_jumps_in_air_allowed = 0
 
 [node name="MaskGun" parent="CameraHolder/Camera" parent_id_path=PackedInt32Array(1801503883) index="1" unique_id=1764099407 instance=ExtResource("2_6ahhe")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.715, 0)
+
+[node name="gun" parent="CameraHolder/Camera" parent_id_path=PackedInt32Array(1801503883) index="2" unique_id=1045324354 instance=ExtResource("3_tncax")]
+transform = Transform3D(-0.5996873, 0, 0.019369857, 0, 0.6, 0, -0.019369857, 0, -0.5996873, 0.4902405, -1.2430809, -0.8143581)
+script = ExtResource("4_2brt4")
+
+[node name="Hand" parent="CameraHolder/Camera/gun" index="0" unique_id=1470707364]
+transform = Transform3D(0.6716269, 0, 0, 0, 0.15390977, -0.6537542, 0, 0.6537542, 0.15390977, -0.17778108, 0.93506, -1.411388)
+
+[node name="Skeleton3D" parent="CameraHolder/Camera/gun/Hand" index="10" unique_id=1224220185]
+bones/0/position = Vector3(2.220446e-16, -0.039352402, -0.009264516)
+bones/1/rotation = Quaternion(-0.5171032, -0.17957523, -0.19593045, 0.81361437)
+bones/2/rotation = Quaternion(0.32889473, -0.05541808, -0.22686836, 0.91503435)
+bones/3/rotation = Quaternion(0.22145495, -0.23949647, -0.50959516, 0.796186)
+bones/4/rotation = Quaternion(-0.15989031, 2.9309884e-14, -3.812082e-08, 0.98713475)
+bones/5/rotation = Quaternion(0.25466767, -3.108624e-15, 6.071752e-08, 0.9670286)
+bones/6/rotation = Quaternion(-0.0003813025, 0.021143852, -0.22583503, 0.9739361)
+bones/7/rotation = Quaternion(0.052095544, -0.018710045, -0.28654498, 0.9564665)
+bones/8/rotation = Quaternion(0.0041354895, 6.661338e-15, 9.859835e-10, 0.99999154)
+bones/9/rotation = Quaternion(0.21589185, 0.19133498, -0.35674587, 0.8885461)
+bones/10/rotation = Quaternion(-0.04920347, -0.16083555, -0.5618641, 0.8099505)
+bones/11/rotation = Quaternion(0.06357917, -0.08325333, -0.49866566, 0.86044127)
+bones/12/rotation = Quaternion(0.13729708, 2.3370191e-14, 3.273417e-08, 0.99052995)
+bones/13/rotation = Quaternion(0.04460162, 0.052174218, -0.494795, 0.8662947)
+bones/14/rotation = Quaternion(0.0095660705, 0.011249651, -0.257158, 0.9662565)
+bones/15/rotation = Quaternion(0.073228195, -0.08152516, -0.61715907, 0.7791701)
+bones/16/rotation = Quaternion(0.29446185, -7.438494e-15, 7.020518e-08, 0.95566326)
+bones/17/rotation = Quaternion(-0.051545095, -0.100595824, -0.3788882, 0.91851366)
+bones/18/rotation = Quaternion(-0.091868885, -0.026322514, -0.24140373, 0.9657078)
+bones/19/rotation = Quaternion(-0.08126992, 0.11658333, -0.6140164, 0.77639395)
 
 [node name="WaveInfo" parent="HUD" parent_id_path=PackedInt32Array(260967479) index="0" unique_id=504770476 instance=ExtResource("3_ni121")]
 mouse_filter = 2
@@ -22,3 +53,5 @@ visible = false
 
 [node name="Crosshair" parent="HUD" parent_id_path=PackedInt32Array(260967479) index="4" unique_id=1562439428]
 visible = false
+
+[editable path="CameraHolder/Camera/gun"]
