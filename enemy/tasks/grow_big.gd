@@ -6,6 +6,7 @@ extends BTAction
 @export var growth_factor: float = 2.0
 @export var growth_duration: float = 5.0
 @export var max_scale: float = 5.0
+@export var color: Color = Color.RED
 
 var _has_grown: bool = false
 var _original_scale: float = 1.0
@@ -95,9 +96,8 @@ func _grow_enemy(enemy: BaseStar) -> void:
 	
 	var original_mat = star_body.get_active_material(0)
 	if original_mat:
-		var glow = original_mat.duplicate() as StandardMaterial3D
-		glow.albedo_color = Color.RED
-		star_body.set_surface_override_material(0, glow)
+		star_body.set_instance_shader_parameter("albedo", color)
+		
 
 func _shrink_back(enemy: BaseStar) -> void:
 	var star_body = enemy.get_node_or_null("StarBody") as MeshInstance3D
@@ -125,7 +125,9 @@ func _shrink_back(enemy: BaseStar) -> void:
 	if nav_agent:
 		nav_agent.radius = _original_scale
 	
-	star_body.set_surface_override_material(0, null)
+	var original_mat = star_body.get_active_material(0)
+	if original_mat:
+		star_body.set_instance_shader_parameter("albedo", Color.WHITE)
 	
 	_is_shrinking = true
 	

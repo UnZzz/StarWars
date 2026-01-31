@@ -18,7 +18,7 @@ func _generate_name() -> String:
 func _setup() -> void:
 	var agent_node = blackboard.get_var("navigation_agent_node")
 	_navigation_agent = agent_node
-	_navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+	_navigation_agent.velocity_computed.connect(_on_velocity_computed)
 	pass
 
 
