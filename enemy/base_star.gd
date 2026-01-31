@@ -8,6 +8,8 @@ var type = 1
 
 @onready var scary_face : MeshInstance3D = $ScaryFace
 @onready var happy_face : MeshInstance3D = $HappyFace
+@onready var explosion_area : Area3D = $ProximityExplosion
+@onready var is_shot : bool = false
 
 var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
 var current_face_angle : int
@@ -16,10 +18,11 @@ var current_face_angle : int
 func _ready() -> void:
 	scary_face.visible = false
 	happy_face.visible = true
-	add_to_group("enemies")
 	current_face_angle = _possible_angles.pick_random()
 	scary_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 	happy_face.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
+	add_to_group("enemies")
+	explosion_area
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -53,8 +56,15 @@ func _physics_process(delta: float) -> void:
 
 func hit(atk: int) -> void:
 	print("atk: ", atk)
+	is_shot = true
+	var other_exploded_stars = explosion_area.get_other_exploded_stars()
+	for star in other_exploded_stars:
+		if star.is_in_group("enemies") and star != self and !(star.is_shot):
+			if star.has_method("hit"):
+				star.hit(atk) #this kills the neighbor 
 	if(abs(current_face_angle - atk) % 180 == 0):
-		queue_free()
+		if is_shot:
+			queue_free()
 	pass
 
 func _exit_tree() -> void:

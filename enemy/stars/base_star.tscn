@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://cbdursyywdc6t" path="res://assets/angry.tres" id="4_fam0b"]
 [ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="6_ttaj7"]
 [ext_resource type="BehaviorTree" uid="uid://dfl6kcg6ow4qt" path="res://enemy/slow_chase.tres" id="7_rr5jx"]
+[ext_resource type="Script" uid="uid://drg72xl38t27g" path="res://enemy/tasks/explode.gd" id="8_q1pqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -49,6 +50,9 @@ var/navigation_agent_node/value = NodePath("../NavigationAgent3D")
 var/navigation_agent_node/hint = 0
 var/navigation_agent_node/hint_string = ""
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_uov1v"]
+radius = 10.0
+
 [node name="BaseStar" type="CharacterBody3D" unique_id=467415892]
 collision_mask = 3
 script = ExtResource("1_j4wau")
@@ -79,3 +83,9 @@ blackboard_plan = SubResource("BlackboardPlan_eushb")
 [node name="Rotation" type="Label3D" parent="." unique_id=1035925262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0996094, 0)
 billboard = 2
+
+[node name="ProximityExplosion" type="Area3D" parent="." unique_id=2072447290]
+script = ExtResource("8_q1pqd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProximityExplosion" unique_id=493603303]
+shape = SubResource("SphereShape3D_uov1v")
