@@ -5,9 +5,6 @@ var type = 1
 
 @export var gravity : float = 0.98
 @export var scary_distance : float = 5.0
-var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
-var current_face_angle : int
-
 
 @onready var scary_face : MeshInstance3D = $ScaryFace
 @onready var happy_face : MeshInstance3D = $HappyFace
@@ -20,8 +17,7 @@ func _ready() -> void:
 	scary_face.visible = false
 	happy_face.visible = true
 	add_to_group("enemies")
-	current_face_angle = _possible_angles.pick_random()
-	$Rotation.text = str(current_face_angle)
+	explosion_area
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -61,7 +57,7 @@ func hit(atk: int) -> void:
 		if star.is_in_group("enemies") and star != self and !(star.is_shot):
 			if star.has_method("hit"):
 				star.hit(atk) #this kills the neighbor 
-	if(abs(current_face_angle - atk) % 180 == 0):
+	if(abs(atk) < 30):
 		if is_shot:
 			queue_free()
 	pass

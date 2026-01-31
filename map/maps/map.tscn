@@ -4,11 +4,8 @@
 [ext_resource type="Material" uid="uid://cmlreoo2qwhp4" path="res://addons/Arts/structure_material.tres" id="2_g2dcw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6i3h"]
-sky_top_color = Color(0.025752066, 0.03744299, 0.057448253, 1)
-sky_horizon_color = Color(0.022676118, 0.022675993, 0.025925085, 1)
-sky_cover_modulate = Color(0.06469653, 0.06469653, 0.06469653, 1)
-ground_bottom_color = Color(0.019925633, 0.019925632, 0.019925632, 1)
-ground_horizon_color = Color(0.30825487, 0.31470218, 0.32760945, 1)
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
 [sub_resource type="Sky" id="Sky_43bpn"]
 sky_material = SubResource("ProceduralSkyMaterial_l6i3h")
@@ -16,8 +13,8 @@ sky_material = SubResource("ProceduralSkyMaterial_l6i3h")
 [sub_resource type="Environment" id="Environment_hcsmq"]
 background_mode = 2
 sky = SubResource("Sky_43bpn")
-ambient_light_sky_contribution = 0.25
 tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7ikk4"]
 vertices = PackedVector3Array(-23.703613, 1, -83.79703, -23.703613, 1, 31.952972, 160.29639, 1, 31.952972, 160.29639, 1, -83.79703)
@@ -34,7 +31,6 @@ environment = SubResource("Environment_hcsmq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=789622418]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -22, 101, 4)
-light_energy = 0.556
 shadow_enabled = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1353544295]

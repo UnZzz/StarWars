@@ -4,7 +4,7 @@ extends Node3D
 @export var mask_scene : Array[PackedScene]
 @export var fire_cooldown : float = 0.5
 
-var _possible_angles : Array[int] = [0, 60, 120, 180, 240, 300]
+var _possible_angles : Array[int] = [0, 30, 60, 120, 180, 240, 300]
 var _now_projectile : Projectile3D_extended
 var _can_fire : bool = true
 
