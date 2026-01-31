@@ -70,6 +70,12 @@ material_override = ExtResource("4_fam0b")
 instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_fam0b")
 
+[node name="StarMask" type="MeshInstance3D" parent="." unique_id=201612684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24334717, 0)
+material_override = ExtResource("4_fam0b")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
+mesh = SubResource("QuadMesh_fam0b")
+
 [node name="HappyFace" type="MeshInstance3D" parent="." unique_id=1969286780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15808105, 0)
 material_override = ExtResource("6_ttaj7")
