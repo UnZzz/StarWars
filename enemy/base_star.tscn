@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="3_eushb"]
 [ext_resource type="Texture2D" uid="uid://c0ghkmqcw1yps" path="res://assets/star_faceangry_5point.png" id="3_rr5jx"]
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="3_uvkam"]
+[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="7_rr5jx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -75,7 +76,7 @@ script = ExtResource("3_eushb")
 movement_speed = 5.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
-time_limit = 0.1
+time_limit = 0.3
 children = [SubResource("BTAction_fam0b")]
 
 [sub_resource type="BTSequence" id="BTSequence_ttaj7"]
@@ -96,8 +97,23 @@ children = [SubResource("BTAction_86jjl")]
 children = [SubResource("BTAction_xdmdl"), SubResource("BTTimeLimit_up2hq")]
 metadata/_weight_ = 0.1
 
+[sub_resource type="BTAction" id="BTAction_wander"]
+script = ExtResource("7_rr5jx")
+
+[sub_resource type="BTAction" id="BTAction_wander_move"]
+script = ExtResource("3_eushb")
+movement_speed = 2.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_wander"]
+time_limit = 3.0
+children = [SubResource("BTAction_wander_move")]
+
+[sub_resource type="BTSequence" id="BTSequence_wander"]
+children = [SubResource("BTAction_wander"), SubResource("BTTimeLimit_wander")]
+metadata/_weight_ = 0.3
+
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_4ws3g"]
-children = [SubResource("BTSequence_rr5jx"), SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv")]
+children = [SubResource("BTSequence_rr5jx"), SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv"), SubResource("BTSequence_wander")]
 
 [sub_resource type="BehaviorTree" id="BehaviorTree_eushb"]
 blackboard_plan = SubResource("BlackboardPlan_j4wau")
