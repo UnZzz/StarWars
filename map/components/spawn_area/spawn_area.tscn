@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://d1jr3cpiq4jhj"]
 
 [ext_resource type="Script" uid="uid://bw4eqpl42hslg" path="res://map/components/spawn_area/spawn_area.gd" id="1_goi5r"]
-[ext_resource type="PackedScene" uid="uid://dqe7fqlyndeb4" path="res://enemy/base_star.tscn" id="2_1mmsn"]
+[ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="3_5dlar"]
+[ext_resource type="PackedScene" uid="uid://cn8mg0ilis261" path="res://enemy/stars/slow_star.tscn" id="3_68g8v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1mmsn"]
 
 [node name="SpawnArea" type="Area3D" unique_id=1285392178]
 script = ExtResource("1_goi5r")
-enemy_scenes = Array[PackedScene]([ExtResource("2_1mmsn")])
+enemy_scenes = Array[PackedScene]([ExtResource("3_68g8v"), ExtResource("3_5dlar")])
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1080779571]
 aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dpltptwskh7tr"]
+
+[ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_j4wau"]
+[ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="2_wjncu"]
+[ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="3_6txa2"]
+[ext_resource type="Texture2D" uid="uid://c0ghkmqcw1yps" path="res://assets/star_faceangry_5point.png" id="3_rr5jx"]
+[ext_resource type="Material" uid="uid://cbdursyywdc6t" path="res://assets/angry.tres" id="4_fam0b"]
+[ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="6_ttaj7"]
+[ext_resource type="BehaviorTree" uid="uid://dfl6kcg6ow4qt" path="res://enemy/slow_chase.tres" id="7_rr5jx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mggwb"]
+render_priority = -1
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_wjncu")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_2o4cy"]
+material = SubResource("StandardMaterial3D_mggwb")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y136q"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_rr5jx")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_fam0b"]
+material = SubResource("StandardMaterial3D_y136q")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr5jx"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_6txa2")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_y136q"]
+material = SubResource("StandardMaterial3D_rr5jx")
+size = Vector2(2, 2)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_eushb"]
+var/navigation_agent_node/name = &"navigation_agent_node"
+var/navigation_agent_node/type = 22
+var/navigation_agent_node/value = NodePath("../NavigationAgent3D")
+var/navigation_agent_node/hint = 0
+var/navigation_agent_node/hint_string = ""
+
+[node name="BaseStar" type="CharacterBody3D" unique_id=467415892]
+collision_mask = 3
+script = ExtResource("1_j4wau")
+
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1004183964]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_mggwb")
+
+[node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
+mesh = SubResource("QuadMesh_2o4cy")
+
+[node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=113288210]
+material_override = ExtResource("4_fam0b")
+mesh = SubResource("QuadMesh_fam0b")
+
+[node name="HappyFace" type="MeshInstance3D" parent="." unique_id=1969286780]
+material_override = ExtResource("6_ttaj7")
+mesh = SubResource("QuadMesh_y136q")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=908361554]
+avoidance_enabled = true
+radius = 1.0
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=842027526]
+behavior_tree = ExtResource("7_rr5jx")
+blackboard_plan = SubResource("BlackboardPlan_eushb")
+
+[node name="Rotation" type="Label3D" parent="." unique_id=1035925262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0996094, 0)
+billboard = 2

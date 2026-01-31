@@ -1,0 +1,95 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://br38mqw82iwkf"]
+
+[ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_6hh5b"]
+[ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_nj5ii"]
+[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="3_cwvmx"]
+[ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="4_3oa0o"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_j4wau"]
+var/target_global_position/name = &"target_global_position"
+var/target_global_position/type = 9
+var/target_global_position/value = Vector3(0, 0, 0)
+var/target_global_position/hint = 0
+var/target_global_position/hint_string = ""
+var/navigation_agent_node/name = &"navigation_agent_node"
+var/navigation_agent_node/type = 22
+var/navigation_agent_node/value = NodePath("")
+var/navigation_agent_node/hint = 0
+var/navigation_agent_node/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_6txa2"]
+script = ExtResource("1_6hh5b")
+
+[sub_resource type="BTAction" id="BTAction_rr5jx"]
+script = ExtResource("2_nj5ii")
+movement_speed = 10.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_6txa2"]
+time_limit = 0.5
+children = [SubResource("BTAction_rr5jx")]
+
+[sub_resource type="BTSequence" id="BTSequence_rr5jx"]
+children = [SubResource("BTAction_6txa2"), SubResource("BTTimeLimit_6txa2")]
+
+[sub_resource type="BTAction" id="BTAction_y136q"]
+script = ExtResource("1_6hh5b")
+
+[sub_resource type="BTAction" id="BTAction_fam0b"]
+script = ExtResource("2_nj5ii")
+movement_speed = 5.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
+time_limit = 0.3
+children = [SubResource("BTAction_fam0b")]
+
+[sub_resource type="BTSequence" id="BTSequence_ttaj7"]
+children = [SubResource("BTAction_y136q"), SubResource("BTTimeLimit_4n5wd")]
+
+[sub_resource type="BTAction" id="BTAction_xdmdl"]
+script = ExtResource("1_6hh5b")
+
+[sub_resource type="BTAction" id="BTAction_86jjl"]
+script = ExtResource("2_nj5ii")
+movement_speed = 20.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_up2hq"]
+time_limit = 1.0
+children = [SubResource("BTAction_86jjl")]
+
+[sub_resource type="BTSequence" id="BTSequence_7tikv"]
+children = [SubResource("BTAction_xdmdl"), SubResource("BTTimeLimit_up2hq")]
+metadata/_weight_ = 0.1
+
+[sub_resource type="BTAction" id="BTAction_wander"]
+script = ExtResource("3_cwvmx")
+
+[sub_resource type="BTAction" id="BTAction_wander_move"]
+script = ExtResource("2_nj5ii")
+movement_speed = 2.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_wander"]
+time_limit = 3.0
+children = [SubResource("BTAction_wander_move")]
+
+[sub_resource type="BTSequence" id="BTSequence_wander"]
+children = [SubResource("BTAction_wander"), SubResource("BTTimeLimit_wander")]
+metadata/_weight_ = 0.3
+
+[sub_resource type="BTAction" id="BTAction_4n5wd"]
+script = ExtResource("4_3oa0o")
+grow_chance = 0.2
+
+[sub_resource type="BTCooldown" id="BTCooldown_y136q"]
+duration = 5.0
+process_pause = true
+children = [SubResource("BTAction_4n5wd")]
+
+[sub_resource type="BTSequence" id="BTSequence_xdmdl"]
+children = [SubResource("BTCooldown_y136q")]
+
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_4ws3g"]
+children = [SubResource("BTSequence_rr5jx"), SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv"), SubResource("BTSequence_wander"), SubResource("BTSequence_xdmdl")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_j4wau")
+root_task = SubResource("BTProbabilitySelector_4ws3g")
