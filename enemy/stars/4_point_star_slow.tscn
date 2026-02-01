@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="8_sr4qq"]
 [ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="9_npqin"]
 [ext_resource type="BehaviorTree" uid="uid://nayljaiuh2h0" path="res://enemy/slow_chase.tres" id="10_wwchc"]
-[ext_resource type="Script" uid="uid://drg72xl38t27g" path="res://enemy/tasks/explode.gd" id="11_lu0nd"]
+[ext_resource type="Script" path="res://enemy/tasks/explode.gd" id="11_lu0nd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
