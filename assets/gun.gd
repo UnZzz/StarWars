@@ -25,7 +25,13 @@ func gun_animation():
 
 func play_particles():
 	particle1.restart()
+	particle2.restart()
+	particle3.restart()
 	particle1.emitting = true
+	particle2.emitting = true
+	particle3.emitting = true
 	
 	await get_tree().create_timer(0.2).timeout
 	particle1.emitting = false
+	particle2.emitting = false
+	particle3.emitting = false
