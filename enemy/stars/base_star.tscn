@@ -122,6 +122,7 @@ blackboard_plan = SubResource("BlackboardPlan_68d2x")
 
 [node name="Rotation" type="Label3D" parent="." unique_id=1035925262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0996094, 0)
+visible = false
 billboard = 2
 
 [node name="ProximityExplosion" type="Area3D" parent="." unique_id=2072447290]

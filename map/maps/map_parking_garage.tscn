@@ -221,11 +221,13 @@ environment = ExtResource("2_kxpcs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=789622418]
 transform = Transform3D(-0.9132195, -0.056517974, -0.40352932, -0.30523357, -0.5611683, 0.7693651, -0.2699308, 0.82576984, 0.4952187, 21.417322, 16.324059, -5.489418)
+light_energy = 0.3
 light_angular_distance = 89.9
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment" unique_id=1785502520]
 transform = Transform3D(-0.8660238, -0.4330157, 0.2500005, 0, 0.49999815, 0.8660265, -0.50000286, 0.7499995, -0.4330103, 135.59543, 9.925716, -36.78002)
+light_energy = 0.3
 light_angular_distance = 84.73
 shadow_enabled = true
 
