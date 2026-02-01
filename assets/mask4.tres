@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://donbdgytfrvey"]
+
+[ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="1_qogo8"]
+[ext_resource type="Texture2D" uid="uid://b6nsbh81yqinm" path="res://assets/star_mask_4point.png" id="2_qogo8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qogo8")
+shader_parameter/texture_albedo = ExtResource("2_qogo8")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)

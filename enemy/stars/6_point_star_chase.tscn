@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://rsnsgt4xgsds"]
+[gd_scene format=3 uid="uid://ca28w4dsiup30"]
 
 [ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_4b620"]
-[ext_resource type="BehaviorTree" uid="uid://beaay0px5w4i5" path="res://enemy/persistent_chase.tres" id="2_4b620"]
+[ext_resource type="BehaviorTree" uid="uid://vrv1c8gxnbrd" path="res://enemy/persistent_chase.tres" id="2_4b620"]
 [ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="2_avj3h"]
 [ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="3_3px7g"]
 

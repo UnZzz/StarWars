@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://4c1qvhdnf4mc"]
+
+[ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="1_vdtmu"]
+[ext_resource type="Texture2D" uid="uid://cx0qgf8b2jopw" path="res://assets/star_base_4point.png" id="2_vdtmu"]
+
+[resource]
+render_priority = -1
+shader = ExtResource("1_vdtmu")
+shader_parameter/texture_albedo = ExtResource("2_vdtmu")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
