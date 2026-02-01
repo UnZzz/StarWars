@@ -107,7 +107,7 @@ instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_fam0b")
 
 [node name="Indicator" type="MeshInstance3D" parent="." unique_id=346035885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13935089, 0.28757608, 0.053940415)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044467866, 0.27095675, 0.045475066)
 material_override = ExtResource("7_1nabx")
 instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_wcy7k")
