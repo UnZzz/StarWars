@@ -17,6 +17,7 @@ sky_material = SubResource("ProceduralSkyMaterial_l6i3h")
 
 [sub_resource type="Environment" id="Environment_hcsmq"]
 background_mode = 2
+background_energy_multiplier = 0.4
 sky = SubResource("Sky_43bpn")
 tonemap_mode = 2
 glow_enabled = true
@@ -109,7 +110,6 @@ max_enemy_count = 75.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [node name="Map2" type="Node3D" unique_id=752743956 node_paths=PackedStringArray("player_start_point")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 120.59187)
 script = ExtResource("1_2rymc")
 player_start_point = NodePath("Components/PlayerStartPoint")
 
@@ -120,13 +120,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.669552, 0, 0)
 environment = SubResource("Environment_hcsmq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=789622418]
-transform = Transform3D(-0.8660238, -0.4330157, 0.2500005, 0, 0.49999815, 0.8660265, -0.50000286, 0.7499995, -0.4330103, 21.417322, 9.925716, -5.489418)
-light_angular_distance = 48.5
+transform = Transform3D(-0.9132195, -0.056517974, -0.40352932, -0.30523357, -0.5611683, 0.7693651, -0.2699308, 0.82576984, 0.4952187, 21.417322, 16.324059, -5.489418)
+light_angular_distance = 89.9
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment" unique_id=1785502520]
 transform = Transform3D(-0.8660238, -0.4330157, 0.2500005, 0, 0.49999815, 0.8660265, -0.50000286, 0.7499995, -0.4330103, 135.59543, 9.925716, -36.78002)
-light_angular_distance = 48.5
+light_angular_distance = 84.73
 shadow_enabled = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1353544295]
@@ -139,6 +139,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(119.28427, 12.7751465, 30.279358)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1446872612]
 transform = Transform3D(1.238744, 0, 0, 0, 0.45846206, 0, 0, 0, 2.0503263, 3.2571354, 7.3746057, -21.377258)
@@ -146,6 +147,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(51.2156, 1.2137146, 60.80374)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="NavigationRegion3D" unique_id=510981411]
 transform = Transform3D(1.2387172, 0, 0, 0, 0.4584549, 0, 0, 0, 2.0503263, 78.74745, 7.3746057, -23.40004)
@@ -153,6 +155,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(52.844334, 1.2137146, 62.77687)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1055222173]
 transform = Transform3D(1.2387387, 0, 0, 0, 0.45846072, 0, 0, 0, 2.0503263, 150.47694, 7.3746057, -21.377258)
@@ -160,6 +163,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(35.271374, 1.2137146, 60.80374)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=422025918]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.44574696, -0.107253015, 0, 0.4796482, 1.9934332, -8.254667, -2.6906185, -51.571667)
@@ -167,6 +171,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(23.17141, 1.4017334, 32.13893)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=936509489]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 66.21022, -3.3638954, 5.773833)
@@ -174,13 +179,15 @@ use_collision = true
 collision_mask = 2
 size = Vector3(141.49335, 10.986084, 26.992615)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1919830506]
-transform = Transform3D(1.2387677, 0, 0, 0, 0.4584684, 0, 0, 0, 2.0503263, 67.94925, 3.53722, -38.27246)
+transform = Transform3D(1.2387072, 0, 0, 0, 0.4584524, 0, 0, 0, 2.0503263, 67.94925, 3.53722, -38.69278)
 use_collision = true
 collision_mask = 2
-size = Vector3(1.9894409, 19.358185, 17.519836)
+size = Vector3(1.9894409, 19.358185, 17.92984)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1621732124]
 transform = Transform3D(1.2387669, 0, 0, 0, 0.45846817, 0, 0, 0, 2.0503263, 68.06976, 3.2065625, -8.625748)
@@ -188,6 +195,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(1.9894409, 17.915741, 17.519836)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D65" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1380203265]
 transform = Transform3D(1.2387527, 0, 0, 0, 0.45846426, 0, 0, 0, 2.0503263, 70.90646, 2.7983646, -8.679166)
@@ -195,6 +203,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.7295837, 17.476654, 13.101883)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D73" type="CSGBox3D" parent="NavigationRegion3D" unique_id=442262757]
 transform = Transform3D(1.2387366, 0, 0, 0, 0.4584602, 0, 0, 0, 2.0503263, 60.65553, 2.7983646, -18.879402)
@@ -202,6 +211,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(10.697311, 17.476654, 3.1520157)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D67" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1328775411]
 transform = Transform3D(1.238745, 0, 0, 0, 0.4584623, 0, 0, 0, 2.0503263, 72.360275, 3.3971481, -24.281784)
@@ -209,6 +219,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(5.076828, 20.08879, 2.9758682)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2072787685]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 67.94925, 3.1880693, -76.94315)
@@ -216,6 +227,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(1.9894409, 17.835068, 5.9668274)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D51" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1149712233]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 151.014, 2.291861, -65.13496)
@@ -223,6 +235,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(6.6936493, 2.8068066, 20.416512)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D52" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1773143038]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 94.58363, 2.291861, -65.13496)
@@ -230,6 +243,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(6.6936493, 2.8068066, 20.416512)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D53" type="CSGBox3D" parent="NavigationRegion3D" unique_id=965566278]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 122.590454, 2.291861, -48.880264)
@@ -237,6 +251,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(39.551308, 2.8068066, 4.560795)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1186595362]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 67.94925, 3.4480848, 27.593548)
@@ -244,6 +259,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(1.9894409, 18.969345, 5.9668274)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1652070076]
 transform = Transform3D(1.2387651, 0, 0, 0, 0.4584677, 0, 0, 0, 2.0503263, 76.09543, 4.109865, -22.338501)
@@ -251,6 +267,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(11.095261, 21.856262, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1512388019]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 148.60533, 3.4707541, -22.338497)
@@ -258,6 +275,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(11.095261, 19.068237, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D34" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1307974454]
 transform = Transform3D(1.238759, 0, 0, 0, 0.45846602, 0, 0, 0, 2.0503263, 151.92894, 3.4707541, -25.011543)
@@ -265,6 +283,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(5.729271, 19.068237, 2.1415868)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1531720535]
 transform = Transform3D(1.2387681, 0.00087740796, -0.0010105243, -0.00032486088, 0.45846853, -0.00015860832, 0.001672039, 0.00071052223, 2.0503256, 112.63376, 3.2435474, -22.335896)
@@ -272,6 +291,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(35.67915, 18.077087, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1367575898]
 transform = Transform3D(1.2387651, 0, 0, 0, 0.4584677, 0, 0, 0, 2.0503263, -15.760601, 1.7349359, -22.338493)
@@ -279,6 +299,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(16.194603, 27.46859, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D" unique_id=131730854]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 59.90772, 2.7715502, -22.338497)
@@ -286,6 +307,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(11.095261, 16.018066, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="NavigationRegion3D" unique_id=350265802]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 66.06172, 3.4354959, 31.465496)
@@ -293,6 +315,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(142.38147, 18.914429, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="NavigationRegion3D" unique_id=427820231]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 66.06172, 2.252471, -82.80145)
@@ -300,6 +323,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(142.38147, 24.245361, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2131401383]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 153.46983, 3.8460584, -25.43608)
@@ -307,6 +331,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(1.2605591, 20.705444, 57.934296)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="NavigationRegion3D" unique_id=14273008]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, -21.363836, 2.1542234, -25.43608)
@@ -314,6 +339,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(1.2605591, 25.18689, 57.934296)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="NavigationRegion3D" unique_id=968642933]
 transform = Transform3D(1.2387663, 0, 0, 0, 0.45846802, 0, 0, 0, 2.0503263, 23.932919, 1.9039036, -22.338493)
@@ -321,6 +347,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(35.67915, 26.243347, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="NavigationRegion3D" unique_id=315049870]
 transform = Transform3D(1.2387633, 0, 0, 0, 0.4584672, 0, 0, 0, 2.0503263, 27.156967, 1.8718635, -43.402344)
@@ -328,6 +355,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 26.80011, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D24" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1389035077]
 transform = Transform3D(1.2387639, 0, 0, 0, 0.45846736, 0, 0, 0, 2.0503263, 27.156967, 1.8465887, -66.283615)
@@ -335,6 +363,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 26.68985, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D25" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1593534196]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, -99.214645, 0.48012996, 49.905106)
@@ -342,6 +371,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 20.728882, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D27" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1106071138]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, -96.43387, -1.1366131, 49.905106)
@@ -349,6 +379,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 13.676086, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2049480318]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, -118.56055, 1.6820923, 49.905106)
@@ -356,6 +387,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(15.708661, 1.3799133, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1487181357]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, -103.77693, 0.038333654, 44.336906)
@@ -363,6 +395,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(6.585654, 4.0207596, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1230509122]
 transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, -120.268814, -1.1366131, 49.905106)
@@ -370,6 +403,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 13.676086, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="NavigationRegion3D" unique_id=590666627]
 transform = Transform3D(1.2387664, 0, 0, 0, 0.45846805, 0, 0, 0, 2.0503263, 24.067322, 1.3658873, 3.494525)
@@ -377,6 +411,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(12.231466, 24.592865, 8.715058)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D43" type="CSGBox3D" parent="NavigationRegion3D" unique_id=367810781]
 transform = Transform3D(1.2387655, 0, 0, 0, 0.45846778, 0, 0, 0, 2.0503263, -20.01036, 1.8659364, 5.174048)
@@ -384,6 +419,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(12.231466, 26.641693, 8.715058)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D41" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1517242430]
 transform = Transform3D(1.2387668, 0, 0, 0, 0.45846814, 0, 0, 0, 2.0503263, 107.9346, 1.5359312, 20.273273)
@@ -391,6 +427,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 25.334656, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D44" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1589623316]
 transform = Transform3D(1.23875, 0, 0, 0, 0.45846355, 0, 0, 0, 2.0503263, 95.83064, -1.4801183, 25.2482)
@@ -398,6 +435,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(18.98635, 12.177582, 6.8298044)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D42" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2048393261]
 transform = Transform3D(1.2387664, 0, 0, 0, 0.45846805, 0, 0, 0, 2.0503263, 107.9346, 1.8117288, -37.431046)
@@ -405,6 +443,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 26.53778, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D55" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1117959568]
 transform = Transform3D(1.2387655, 0, 0, 0, 0.45846778, 0, 0, 0, 2.0503263, 107.9346, 1.8024389, -67.72534)
@@ -412,6 +451,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 26.497253, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D54" type="CSGBox3D" parent="NavigationRegion3D" unique_id=71163964]
 transform = Transform3D(1.238766, 0, 0, 0, 0.45846793, 0, 0, 0, 2.0503263, 107.9346, 1.476468, -3.4130926)
@@ -419,6 +459,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 25.075256, 1.9769921)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D61" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1424205122]
 transform = Transform3D(1.2052448, 0, -0.8156863, 0, 0.458467, 0, 0.35041353, 0, 1.8701931, 44.74287, 0.8402481, 27.489975)
@@ -426,6 +467,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(3.5532775, 2.9230347, 13.140351)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D71" type="CSGBox3D" parent="NavigationRegion3D" unique_id=479693160]
 transform = Transform3D(0.088540375, 0.0014896207, -2.036922, 0.23517765, 0.45027214, -0.015641814, 1.229735, -0.08622062, -0.116881296, 109.49103, -1.2797382, 19.74181)
@@ -433,6 +475,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(17.732193, 5.7407684, 8.6361)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D74" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1786578297]
 transform = Transform3D(0.088540375, 0.0014896207, -2.036922, 0.23517765, 0.45027143, -0.015641814, 1.229735, -0.08622062, -0.116881296, 13.959248, -1.3619817, 19.958782)
@@ -440,6 +483,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(17.732193, 10.773705, 8.6361)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D72" type="CSGBox3D" parent="NavigationRegion3D" unique_id=918716172]
 transform = Transform3D(0.088540375, 0.0014896207, -2.036922, 0.23517765, 0.45027217, -0.015641814, 1.229735, -0.08622062, -0.116881296, 146.27385, -0.22888643, 19.74181)
@@ -447,6 +491,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(17.732193, 5.7407684, 8.6361)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D75" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1293241059]
 transform = Transform3D(-0.16656226, 0.00399632, 2.0402315, 0.23517765, 0.4502721, -0.015641814, -1.2216157, 0.086140834, -0.012886896, 110.1837, -0.22888643, -9.9770155)
@@ -454,6 +499,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(17.732193, 5.7407684, 8.6361)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D31" type="CSGBox3D" parent="NavigationRegion3D" unique_id=877628891]
 transform = Transform3D(1.2035819, -0.06384612, -0.23700613, 0.16925983, 0.45400032, -0.033330202, 0.39613736, 0, 2.011694, 18.321507, -1.2177744, -33.4583)
@@ -461,6 +507,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(6.1987853, 2.9230347, 13.140351)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D33" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1718813600]
 transform = Transform3D(1.2292368, 0, 0.15328383, 0, 0.45846552, 0, -0.2537074, 0, 2.0345688, 63.509518, 0.6897464, -33.11988)
@@ -468,6 +515,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(5.955472, 9.141369, 12.530693)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D50" type="CSGBox3D" parent="NavigationRegion3D" unique_id=445140591]
 transform = Transform3D(1.2292484, 0, 0.15328528, 0.03432785, 0.3650098, -0.2752871, -0.20198913, 1.2406514, 1.6198218, 138.59727, 0.44567907, -73.71614)
@@ -475,6 +523,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(27.60414, 6.09111, 21.210903)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D56" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2003685289]
 transform = Transform3D(-1.1551757, 0, -0.4473402, 0, 0.458465, 0, 0.74041414, 0, -1.911969, 152.60469, -0.48464745, 81.28339)
@@ -482,6 +531,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(10.68609, 2.9230347, 9.4892845)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D68" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1424599781]
 transform = Transform3D(-1.1603363, 0.038553126, -0.42158496, -0.011272592, 0.45174226, 0.32080644, 0.7322125, 0.068050526, -1.8907897, 151.96251, -1.0617025, 61.33609)
@@ -489,6 +539,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(4.5606565, 2.9230347, 3.872199)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D57" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1028149802]
 transform = Transform3D(1.1770382, 0, 0.38931426, 0, 0.4584644, 0, -0.7051406, 0, 1.9246222, 139.32585, -0.48464745, 60.654892)
@@ -496,6 +547,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(4.5606565, 2.9230347, 9.306891)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D69" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1543435853]
 transform = Transform3D(1.1819443, -0.036477458, 0.36421064, -0.011272592, 0.45173422, 0.32080644, -0.6967866, -0.06918533, 1.9026744, 131.16786, -1.0766748, 50.35555)
@@ -503,6 +555,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(4.218886, 5.019623, 7.7436075)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D46" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1275856999]
 transform = Transform3D(1.2154249, 0, -0.23933832, 0, 0.45846784, 0, 0.39613736, 0, 2.0116942, 46.665684, 1.6649193, 18.246544)
@@ -510,6 +563,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(5.996976, 11.967949, 11.931816)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D64" type="CSGBox3D" parent="NavigationRegion3D" unique_id=522022412]
 transform = Transform3D(1.2154247, 0, -0.23933828, 0, 0.45846778, 0, 0.39613736, 0, 2.0116942, 49.71603, 1.664919, 23.268639)
@@ -517,6 +571,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(5.996976, 11.967949, 11.931816)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D47" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1930786253]
 transform = Transform3D(-1.1551757, 0, -0.44733813, 0, 0.45846322, 0, 0.74041414, 0, -1.911969, 66.48624, 2.6853662, -12.744182)
@@ -524,6 +579,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(6.326688, 16.751816, 11.097317)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1611479591]
 transform = Transform3D(1.1036853, 0.103592955, 0.48793414, -0.2560032, 0.4466117, -0.113177836, -0.8290363, 0, 1.8752432, 31.446999, -0.7357048, -67.61941)
@@ -531,6 +587,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(4.5606565, 2.9230347, 13.140351)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D35" type="CSGBox3D" parent="NavigationRegion3D" unique_id=488380038]
 transform = Transform3D(1.2035819, -0.06384612, -0.23700604, 0.16925983, 0.45400015, -0.033330202, 0.39613736, 0, 2.011694, 79.06459, -1.3224769, -33.4583)
@@ -538,6 +595,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(6.1987853, 2.9230347, 13.140351)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1573997077]
 transform = Transform3D(1.1036848, 0.1035928, 0.4879332, -0.25600305, 0.44661093, -0.11317764, -0.8290363, 0, 1.8752432, 108.38742, -0.6329875, -69.321335)
@@ -545,6 +603,7 @@ use_collision = true
 collision_mask = 2
 size = Vector3(4.5606565, 2.9230347, 14.955498)
 material = ExtResource("2_hbirn")
+metadata/_edit_lock_ = true
 
 [node name="Components" type="Node3D" parent="." unique_id=71344139]
 
@@ -552,54 +611,71 @@ material = ExtResource("2_hbirn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.546103, 32.089825, 0)
 next_map = "uid://dn45jadr8y3du"
 map_root = NodePath("../..")
+metadata/_edit_lock_ = true
 
 [node name="PlayerStartPoint" parent="Components" unique_id=253034820 instance=ExtResource("4_rjdfv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.81613, 6.4745026, -12.422058)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea" parent="Components" unique_id=1285392178 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.2774, 1, 6.4225388)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea2" parent="Components" unique_id=845982445 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.30313, 1, -13.941909)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea3" parent="Components" unique_id=448651165 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.366, 1, 7.490877)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea4" parent="Components" unique_id=977197298 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.18916, 1, 6.194685)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea5" parent="Components" unique_id=1119629241 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.61028, 1, 6.7955456)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea6" parent="Components" unique_id=540392695 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6220207, 1, -9.232588)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea7" parent="Components" unique_id=990378086 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.9467, 1, -21.357332)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea8" parent="Components" unique_id=1209006808 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.25607, 1, -20.868704)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea9" parent="Components" unique_id=293046997 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.71333, 1, -42.825912)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea11" parent="Components" unique_id=1623842259 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.808487, 1, -42.825912)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea12" parent="Components" unique_id=940028752 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.29493, 1, -20.177666)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea13" parent="Components" unique_id=3657803 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.06013, 1, -44.376602)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea14" parent="Components" unique_id=2032928138 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.091532, -4.8776016, -18.38877)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea15" parent="Components" unique_id=512632926 instance=ExtResource("5_hrl7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8782883, -0.4316616, -38.12777)
+metadata/_edit_lock_ = true
 
 [node name="SpawnArea10" parent="Components" unique_id=690298273 instance=ExtResource("5_hrl7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.64644, 9.543142, -42.825912)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.00488, 3.0119686, -34.16053)
+metadata/_edit_lock_ = true
 
 [node name="WaveSequencer" parent="Components" unique_id=149701953 instance=ExtResource("6_os8q6")]
 wave_sequence = Array[ExtResource("7_os8q6")]([SubResource("Resource_kxpcs"), SubResource("Resource_lorcm"), SubResource("Resource_ptrnm"), SubResource("Resource_aroxu"), SubResource("Resource_mgemm"), SubResource("Resource_axnj7"), SubResource("Resource_bvnqq"), SubResource("Resource_a735s"), SubResource("Resource_tkaob"), SubResource("Resource_0dxob"), SubResource("Resource_3bkjj"), SubResource("Resource_omd5b"), SubResource("Resource_6oflt"), SubResource("Resource_2ntrb")])
