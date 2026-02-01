@@ -59,8 +59,13 @@ func set_now_mask_rotation_degree(degree: int) -> void:
 func get_now_mask_rotation_degree() -> int:
 	return _now_projectile.atk
 	
+	
+var idx = 0	
+
 func _setup_new_projectile() -> void:
-	_now_projectile = mask_scene.pick_random().instantiate()
+	_now_projectile = mask_scene[idx].instantiate()
+	idx += 1
+	idx = idx % mask_scene.size()
 	var texture : Texture2D = _now_projectile.get_meta("texture")
 	(star_mesh.material_override as StandardMaterial3D).albedo_texture = texture
 	set_now_mask_rotation_degree(current_angle)
