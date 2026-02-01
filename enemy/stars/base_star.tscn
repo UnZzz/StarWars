@@ -102,6 +102,7 @@ mesh = SubResource("QuadMesh_wcy7k")
 
 [node name="StarMask" type="MeshInstance3D" parent="." unique_id=201612684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33754432, 0)
+visible = false
 material_override = ExtResource("7_mf08w")
 instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_841x3")
