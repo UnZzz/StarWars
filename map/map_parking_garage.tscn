@@ -21,7 +21,7 @@ vertices = PackedVector3Array(-23.703613, 1, -83.79703, -23.703613, 1, 31.952972
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_radius = 1.0
 
-[node name="Map" type="Node3D" unique_id=752743956]
+[node name="Map2" type="Node3D" unique_id=752743956]
 script = ExtResource("1_pm7pf")
 
 [node name="Environment" type="Node3D" parent="." unique_id=1627753690]
@@ -30,11 +30,18 @@ script = ExtResource("1_pm7pf")
 environment = SubResource("Environment_hcsmq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=789622418]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -22, 101, 4)
+transform = Transform3D(-0.8660238, -0.4330157, 0.2500005, 0, 0.49999815, 0.8660265, -0.50000286, 0.7499995, -0.4330103, 22.345474, 12.646059, 99.514725)
+light_angular_distance = 65.68
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment" unique_id=1423918903]
+transform = Transform3D(-0.8660238, -0.4330157, 0.2500005, 0, 0.49999815, 0.8660265, -0.50000286, 0.7499995, -0.4330103, 101.993256, 14.201276, 67.42886)
+light_energy = 1.18
+light_angular_distance = 42.97
 shadow_enabled = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1353544295]
-transform = Transform3D(0.80725306, 0, 0, 0, 2.1811738, 0, 0, 0, 0.48772722, 21.35926, 2.2849903, -5.601116)
+transform = Transform3D(0.80725306, 0, 0, 0, 2.1811738, 0, 0, 0, 0.48772722, 21.35926, 2.2849903, 97.34244)
 navigation_mesh = SubResource("NavigationMesh_7ikk4")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=808119587]
@@ -42,6 +49,13 @@ transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 79.96
 use_collision = true
 collision_mask = 2
 size = Vector3(119.28427, 12.7751465, 30.279358)
+material = ExtResource("2_7eorr")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=708139198]
+transform = Transform3D(1.2387586, 0, 0, 0, 0.45846587, 0, 0, 0, 2.0503263, 64.71484, 7.207498, -11.270294)
+use_collision = true
+collision_mask = 2
+size = Vector3(143.90776, 6.310913, 70.66263)
 material = ExtResource("2_7eorr")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=422025918]
