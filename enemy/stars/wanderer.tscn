@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://db58hauj7m8xo"]
+[gd_scene format=3 uid="uid://bel3k7ioe2nyv"]
 
 [ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_trblu"]
 [ext_resource type="BehaviorTree" uid="uid://7vwgrgiqa2us" path="res://enemy/wander.tres" id="2_bnt48"]
@@ -21,12 +21,8 @@ size = Vector2(2, 2)
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_7n3fp"]
 
 [node name="BaseStar2" unique_id=467415892 instance=ExtResource("1_trblu")]
-points = null
 gravity = null
 scary_distance = null
-
-[node name="Hitbox" parent="." index="0" unique_id=1004183964]
-debug_color = Color(1, 1, 1, 0.41960785)
 
 [node name="StarBody" parent="." index="1" unique_id=467282083]
 mesh = SubResource("QuadMesh_5qmfc")
