@@ -22,7 +22,9 @@
 [ext_resource type="AudioStream" uid="uid://cdlldgd0dgyr1" path="res://assets/audio/sfx/ui_evil_laugh_02.wav" id="19_gs81p"]
 [ext_resource type="AudioStream" uid="uid://bdjk8jw0j6a3k" path="res://assets/audio/sfx/ui_evil_laugh_03.wav" id="20_w0cj7"]
 [ext_resource type="AudioStream" uid="uid://dj1gahtvmotmb" path="res://assets/audio/sfx/enemy_smile_face_01.wav" id="22_w0cj7"]
+[ext_resource type="AudioStream" uid="uid://ccqjjkpfwi28u" path="res://assets/audio/sfx/enemy_mask_smash_01.wav" id="23_f526q"]
 [ext_resource type="AudioStream" uid="uid://dhqjfwjv0bqaj" path="res://assets/audio/sfx/plyr_gun_rotate_01.wav" id="23_r57gi"]
+[ext_resource type="AudioStream" uid="uid://biduo1dm8yf6u" path="res://assets/audio/sfx/enemy_mask_smash_02.wav" id="24_6rlbs"]
 [ext_resource type="AudioStream" uid="uid://cyojsvm848255" path="res://assets/audio/sfx/ui_game_enter.wav" id="24_p04la"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_f526q"]
@@ -100,6 +102,11 @@ random_pitch = 1.2471774
 streams_count = 1
 stream_0/stream = ExtResource("22_w0cj7")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_87kw7"]
+streams_count = 2
+stream_0/stream = ExtResource("23_f526q")
+stream_1/stream = ExtResource("24_6rlbs")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1vsaw"]
 streams_count = 1
 stream_0/stream = ExtResource("23_r57gi")
@@ -158,6 +165,10 @@ bus = &"UI"
 stream = SubResource("AudioStreamRandomizer_f526q")
 volume_db = -6.0
 bus = &"Enemy"
+
+[node name="Enemy_MaskSmash" type="AudioStreamPlayer" parent="." unique_id=2045803668]
+stream = SubResource("AudioStreamRandomizer_87kw7")
+volume_db = -7.0
 
 [node name="SFX_Plyr_Gun_Rotate" type="AudioStreamPlayer" parent="." unique_id=142089509]
 stream = SubResource("AudioStreamRandomizer_1vsaw")
