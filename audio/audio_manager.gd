@@ -5,3 +5,6 @@ extends Node
 @onready var plyr_fs: AudioStreamPlayer = $SFX_Plyr_FS
 @onready var plyr_jump: AudioStreamPlayer = $SFX_Plyr_Jump
 @onready var ui_restart: AudioStreamPlayer = $UI_Restart
+@onready var ui_lose: AudioStreamPlayer = $UI_Lose
+#@onready var enemy_vox: AudioStreamPlayer3D = $Enemy_Vox
+@onready var ui_evil_laugh: AudioStreamPlayer = $UI_Evil_Laugh

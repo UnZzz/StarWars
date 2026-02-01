@@ -16,6 +16,7 @@ func _enter() -> void:
 ## Called when state is exited.
 func _exit() -> void:
 	WaveManager.is_active = false
+	AudioManager.ui_evil_laugh.play()
 	pass
 
 ## Called each frame when this state is active.
