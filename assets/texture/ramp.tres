@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bmhvkhfopc58j"]
+
+[ext_resource type="Texture2D" uid="uid://7xlsjtf2efoo" path="res://assets/texture/Poliigon_ConcreteFloorPoured_7656_BaseColor.jpg" id="1_hod4l"]
+[ext_resource type="Texture2D" uid="uid://i0websp0lb6c" path="res://assets/texture/Poliigon_ConcreteFloorPoured_7656_Roughness.jpg" id="2_keihl"]
+
+[resource]
+albedo_color = Color(0.15307656, 0.15307653, 0.15307653, 1)
+albedo_texture = ExtResource("1_hod4l")
+roughness_texture = ExtResource("2_keihl")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_world_triplanar = true
