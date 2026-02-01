@@ -4,9 +4,7 @@
 [ext_resource type="Script" uid="uid://dlm84lgs0idvn" path="res://addons/NZ_projectiles/Scripts/Resources/Hit_extended/HE_ID.gd" id="2_64o0y"]
 [ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="3_7ysig"]
 [ext_resource type="Material" uid="uid://due1xmelwtnsf" path="res://assets/mask.tres" id="4_64o0y"]
-[ext_resource type="PackedScene" uid="uid://b7kfg2p638ta3" path="res://addons/NZ_projectiles_demo/Particles/Particles3D.tscn" id="4_cm6ar"]
-[ext_resource type="Script" uid="uid://cxp2v5xu7q61e" path="res://addons/NZ_projectiles/Scripts/Resources/Other/Particles/Particle_projectile.gd" id="4_hkhhj"]
-[ext_resource type="Script" uid="uid://cl6s62c1w70is" path="res://addons/NZ_projectiles/Scripts/Resources/Remove_projectile/RP_group.gd" id="5_qwuog"]
+[ext_resource type="Script" uid="uid://d2gel8di8e822" path="res://addons/NZ_projectiles/Scripts/Resources/Remove_projectile/RP_default.gd" id="5_hkhhj"]
 [ext_resource type="Texture2D" uid="uid://m6m7dk56y63d" path="res://assets/particles/particle_flash03.png" id="9_45123"]
 
 [sub_resource type="Resource" id="Resource_vki42"]
@@ -15,15 +13,8 @@ ignore_if_there_is_no_needed_extended_function = true
 metadata/_custom_type_script = "uid://dlm84lgs0idvn"
 
 [sub_resource type="Resource" id="Resource_1gdbm"]
-script = ExtResource("4_hkhhj")
-particle_scene = ExtResource("4_cm6ar")
-metadata/_custom_type_script = "uid://cxp2v5xu7q61e"
-
-[sub_resource type="Resource" id="Resource_y2o6m"]
-script = ExtResource("5_qwuog")
-group_name = "name"
-particle_resource = SubResource("Resource_1gdbm")
-metadata/_custom_type_script = "uid://cl6s62c1w70is"
+script = ExtResource("5_hkhhj")
+metadata/_custom_type_script = "uid://d2gel8di8e822"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_btcti"]
 
@@ -68,7 +59,7 @@ size = Vector2(0.1, 0.5)
 [node name="BaseMask" type="Area3D" unique_id=215948759]
 script = ExtResource("1_y21ow")
 r_hit_extended = SubResource("Resource_vki42")
-r_remove_projectile = SubResource("Resource_y2o6m")
+r_remove_projectile = SubResource("Resource_1gdbm")
 id = "5"
 speed = 20
 life_time = 10.0
