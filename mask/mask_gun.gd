@@ -20,9 +20,11 @@ func _physics_process(delta: float) -> void:
 	if(Input.is_action_just_released("rotate_clockwise") or Input.is_action_just_pressed("rotate_clockwise_key")):
 		current_angle += 30
 		set_now_mask_rotation_degree(current_angle)
+		AudioManager.plyr_gun_rotate.play()
 	elif(Input.is_action_just_released("rotate_anti_clockwise") or Input.is_action_just_pressed("rotate_anti_clockwise_key")):
 		current_angle -= 30
 		set_now_mask_rotation_degree(current_angle)
+		AudioManager.plyr_gun_rotate.play()
 	if(Input.is_action_just_pressed("fire")):
 		fire()
 		AudioManager.plyr_gun_shoot.play()

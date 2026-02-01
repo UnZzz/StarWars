@@ -10,3 +10,5 @@ extends Node
 @onready var ui_evil_laugh: AudioStreamPlayer = $UI_Evil_Laugh
 @onready var plyr_dash: AudioStreamPlayer = $SFX_Plyr_Dash
 @onready var enemy_smile_face: AudioStreamPlayer = $Enemy_SmileFace
+@onready var plyr_gun_rotate: AudioStreamPlayer = $SFX_Plyr_Gun_Rotate
+@onready var ui_game_start: AudioStreamPlayer = $UI_Game_Start
