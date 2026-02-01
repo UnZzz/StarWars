@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://csk7e5ao2i25l" path="res://addons/NZ_projectiles/Scripts/Projectile3D_extended.gd" id="1_y21ow"]
 [ext_resource type="Script" uid="uid://dlm84lgs0idvn" path="res://addons/NZ_projectiles/Scripts/Resources/Hit_extended/HE_ID.gd" id="2_64o0y"]
 [ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="3_7ysig"]
+[ext_resource type="Material" uid="uid://due1xmelwtnsf" path="res://assets/mask.tres" id="4_64o0y"]
 
 [sub_resource type="Resource" id="Resource_vki42"]
 script = ExtResource("2_64o0y")
@@ -10,12 +11,6 @@ ignore_if_there_is_no_needed_extended_function = true
 metadata/_custom_type_script = "uid://dlm84lgs0idvn"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_btcti"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xp61x"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("3_7ysig")
-billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_pk22u"]
 size = Vector2(0.5, 0.5)
@@ -33,6 +28,7 @@ metadata/texture = ExtResource("3_7ysig")
 shape = SubResource("SphereShape3D_btcti")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1127581168]
-material_override = SubResource("StandardMaterial3D_xp61x")
+material_override = ExtResource("4_64o0y")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_pk22u")
 metadata/texture = ExtResource("3_7ysig")

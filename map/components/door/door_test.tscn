@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cog6o4y6jcf3n"]
+
+[ext_resource type="PackedScene" uid="uid://xvbfw5dhkj6k" path="res://map/components/door/door.tscn" id="1_4qfsn"]
+
+[node name="DoorTest" type="Node3D" unique_id=735453231]
+
+[node name="Door" parent="." unique_id=196103221 instance=ExtResource("1_4qfsn")]
+
+[node name="Button" type="Button" parent="." unique_id=1714748844]
+offset_right = 1163.0
+offset_bottom = 206.0
+theme_override_font_sizes/font_size = 64
+text = "OPEN"
+
+[node name="Button2" type="Button" parent="." unique_id=1988747049]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1163.0
+offset_bottom = 206.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 64
+text = "CLOSE"
+
+[connection signal="pressed" from="Button" to="Door" method="open"]
+[connection signal="pressed" from="Button2" to="Door" method="close"]

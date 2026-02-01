@@ -2,17 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bmumr0tc8l5dd" path="res://mask/masks/base_mask.tscn" id="1_i8vdp"]
 [ext_resource type="Texture2D" uid="uid://b6nsbh81yqinm" path="res://assets/star_mask_4point.png" id="2_vcwa6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uqyj"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("2_vcwa6")
-billboard_mode = 1
+[ext_resource type="Material" uid="uid://donbdgytfrvey" path="res://assets/mask4.tres" id="3_vcwa6"]
 
 [node name="BaseMask" unique_id=215948759 instance=ExtResource("1_i8vdp")]
 id = "4"
 metadata/texture = ExtResource("2_vcwa6")
 
 [node name="MeshInstance3D" parent="." index="1" unique_id=1127581168]
-material_override = SubResource("StandardMaterial3D_7uqyj")
+material_override = ExtResource("3_vcwa6")
 metadata/texture = ExtResource("2_vcwa6")

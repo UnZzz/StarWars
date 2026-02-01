@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" format=3 uid="uid://3giuo2anj06y"]
+[gd_resource type="BehaviorTree" format=3 uid="uid://b118jawx8l78i"]
 
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_57y8x"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_j76ap"]

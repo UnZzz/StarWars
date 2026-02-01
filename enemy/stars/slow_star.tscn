@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cvfsimek6xppi"]
+
+[ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_467qw"]
+[ext_resource type="BehaviorTree" uid="uid://7vwgrgiqa2us" path="res://enemy/wander.tres" id="2_7n3fp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_467qw"]
+load_path = "res://.godot/imported/star_base_5point.png-6796fb4427360f2335b474b4bd709e3f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n3fp"]
+render_priority = -1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 1, 1, 1)
+albedo_texture = SubResource("CompressedTexture2D_467qw")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_5qmfc"]
+material = SubResource("StandardMaterial3D_7n3fp")
+size = Vector2(2, 2)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_7n3fp"]
+
+[node name="BaseStar" unique_id=467415892 instance=ExtResource("1_467qw")]
+
+[node name="StarBody" parent="." index="1" unique_id=467282083]
+mesh = SubResource("QuadMesh_5qmfc")
+
+[node name="BTPlayer" parent="." index="7" unique_id=842027526]
+behavior_tree = ExtResource("2_7n3fp")
+blackboard_plan = SubResource("BlackboardPlan_7n3fp")
