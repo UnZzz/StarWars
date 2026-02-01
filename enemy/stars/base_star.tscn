@@ -6,12 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="3_6txa2"]
 [ext_resource type="Material" uid="uid://cbdursyywdc6t" path="res://assets/angry.tres" id="4_fam0b"]
 [ext_resource type="Texture2D" uid="uid://n0dcvfy3y0cx" path="res://assets/direction_indicator_5point.png" id="5_guvfx"]
-[ext_resource type="Material" uid="uid://4fc7wc0i1ufy" path="res://assets/indi.tres" id="6_68d2x"]
+[ext_resource type="Material" path="res://assets/indi.tres" id="6_68d2x"]
 [ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="6_ttaj7"]
 [ext_resource type="Material" uid="uid://due1xmelwtnsf" path="res://assets/mask.tres" id="7_mf08w"]
 [ext_resource type="BehaviorTree" uid="uid://nayljaiuh2h0" path="res://enemy/slow_chase.tres" id="7_rr5jx"]
 [ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="8_3hdd0"]
 [ext_resource type="Script" path="res://enemy/tasks/explode.gd" id="8_q1pqd"]
+[ext_resource type="Texture2D" uid="uid://bk7vkl5m75dd0" path="res://assets/particles/particle_flash02.png" id="13_l10hr"]
+[ext_resource type="ArrayMesh" uid="uid://st7qc4c710q2" path="res://assets/particles/particleplanes04.obj" id="14_wcy7k"]
+[ext_resource type="Texture2D" uid="uid://m6m7dk56y63d" path="res://assets/particles/particle_flash03.png" id="15_jtqai"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -72,6 +75,102 @@ size = Vector2(2, 2)
 [sub_resource type="SphereShape3D" id="SphereShape3D_uov1v"]
 radius = 5.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcy7k"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("13_l10hr")
+
+[sub_resource type="Curve" id="Curve_jtqai"]
+_data = [Vector2(0.016069226, 0.96350604), 0.0, 0.0, 0, 0, Vector2(0.9777504, 0.005198598), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ox5ju"]
+curve = SubResource("Curve_jtqai")
+
+[sub_resource type="Curve" id="Curve_841x3"]
+_data = [Vector2(0, 0), 0.0, 28.149717, 0, 0, Vector2(0.9722222, 0.96137846), 0.84117645, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cbp8e"]
+curve = SubResource("Curve_841x3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b38t3"]
+gravity = Vector3(0, 0, 0)
+scale_min = 0.39999998
+scale_max = 0.39999998
+scale_curve = SubResource("CurveTexture_cbp8e")
+color = Color(3.6528325, 3.3799133, 2.0331361, 1)
+alpha_curve = SubResource("CurveTexture_ox5ju")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t308p"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(1, 0.55614966, 0.3228535, 1)
+albedo_texture = ExtResource("15_jtqai")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_e1bkl"]
+_data = [Vector2(0.0069444478, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.6764708, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mr1la"]
+curve = SubResource("Curve_e1bkl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7ag5o"]
+gravity = Vector3(0, 0, 0)
+linear_accel_curve = SubResource("CurveTexture_mr1la")
+scale_curve = SubResource("CurveTexture_cbp8e")
+color = Color(1.602, 1.602, 1.602, 1)
+alpha_curve = SubResource("CurveTexture_ox5ju")
+
+[sub_resource type="QuadMesh" id="QuadMesh_50kwn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k234t"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("15_jtqai")
+
+[sub_resource type="Curve" id="Curve_5g8ov"]
+_data = [Vector2(0, 0.9216054), 0.0, -2.8993545, 0, 0, Vector2(0.8961682, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1w1od"]
+curve = SubResource("Curve_5g8ov")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pj8yb"]
+lifetime_randomness = 1.0
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+color = Color(1.066, 1.066, 1.066, 1)
+alpha_curve = SubResource("CurveTexture_1w1od")
+
+[sub_resource type="QuadMesh" id="QuadMesh_t0mry"]
+size = Vector2(0.2, 1)
+
 [node name="BaseStar" type="CharacterBody3D" unique_id=467415892]
 collision_mask = 3
 script = ExtResource("1_j4wau")
@@ -131,3 +230,37 @@ script = ExtResource("8_q1pqd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ProximityExplosion" unique_id=493603303]
 shape = SubResource("SphereShape3D_uov1v")
+
+[node name="particlecone" type="GPUParticles3D" parent="." unique_id=56910546]
+transform = Transform3D(1, 0, 0, 0, -0.0057071573, 0.9999837, 0, -0.9999837, -0.0057071573, 0, 0.11918235, 0)
+material_override = SubResource("StandardMaterial3D_wcy7k")
+emitting = false
+amount = 2
+lifetime = 0.33
+one_shot = true
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_b38t3")
+draw_pass_1 = ExtResource("14_wcy7k")
+
+[node name="particleflash" type="GPUParticles3D" parent="." unique_id=1176825264]
+material_override = SubResource("StandardMaterial3D_t308p")
+emitting = false
+amount = 1
+lifetime = 0.99
+one_shot = true
+speed_scale = 1.7
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_7ag5o")
+draw_pass_1 = SubResource("QuadMesh_50kwn")
+
+[node name="trail" type="GPUParticles3D" parent="." unique_id=1401016556]
+material_override = SubResource("StandardMaterial3D_k234t")
+emitting = false
+amount = 100
+lifetime = 0.2
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_pj8yb")
+draw_pass_1 = SubResource("QuadMesh_t0mry")
+
+[node name="particle" type="Node3D" parent="." unique_id=1030093173]

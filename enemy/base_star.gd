@@ -24,7 +24,7 @@ var global_target_position : Vector3
 var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
 var current_face_angle : int
 
-var is_hit_wrong : bool = true
+var is_hit_wrong : bool = false
 var is_moving_back : bool = false
 var is_dashing : bool = false
 var anger_timer : float = 0.0
@@ -46,7 +46,6 @@ func _ready() -> void:
 	star_body.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 	star_mask.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
 	indicator.set_instance_shader_parameter("rotation_angle", deg_to_rad(current_face_angle))
-	
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -99,7 +98,7 @@ func hit_extended(atk: int, id: String) -> void:
 	if id.to_int() != points:
 		return
 	
-	if abs(current_face_angle - atk) % 180 < 45:
+	if abs(current_face_angle - atk) % 360 < 45:
 		is_shot = true
 		var other_exploded_stars = explosion_area.get_other_exploded_stars()
 		for star in other_exploded_stars:
@@ -159,13 +158,15 @@ func end_anger_state() -> void:
 		
 	update_face_based_on_distance()
 	
+
+
 func death_persist():
 	star_mask.visible = true
 	AudioManager.enemy_smile_face.play()
 	AudioManager.enemy_mask_smash.play()
 	process_mode = Node.PROCESS_MODE_DISABLED
 	get_tree().create_timer(1.0).timeout.connect(remove)
-	
+
 func remove():
 	WaveManager.now_total_score += 100
 	queue_free()
