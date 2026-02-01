@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dgtqxqnut5nt"]
+
+[ext_resource type="Script" uid="uid://dwqm0nupjqtj2" path="res://mask/new_masks/mask.gd" id="1_sw4ej"]
+[ext_resource type="Material" uid="uid://due1xmelwtnsf" path="res://assets/mask.tres" id="2_45wv3"]
+[ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="3_5w2fe"]
+[ext_resource type="Texture2D" uid="uid://m6m7dk56y63d" path="res://assets/particles/particle_flash03.png" id="4_4aa5d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0lbns"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_eooyx"]
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kve3m"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(1.3932657, 1.0600591, 0.42175046, 1)
+albedo_texture = ExtResource("4_4aa5d")
+
+[sub_resource type="Curve" id="Curve_l5u80"]
+_data = [Vector2(0, 0.9216054), 0.0, -2.8993545, 0, 0, Vector2(0.8961682, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1w1od"]
+curve = SubResource("Curve_l5u80")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2cdb8"]
+lifetime_randomness = 1.0
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(-1, 0, 0)
+spread = 11.455
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+color = Color(1.066, 1.066, 1.066, 1)
+alpha_curve = SubResource("CurveTexture_1w1od")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pltho"]
+size = Vector2(0.1, 0.5)
+
+[node name="Mask" type="Area3D" unique_id=967261044]
+script = ExtResource("1_sw4ej")
+metadata/texture = ExtResource("3_5w2fe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=549825728]
+shape = SubResource("SphereShape3D_0lbns")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=931419727]
+material_override = ExtResource("2_45wv3")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
+mesh = SubResource("QuadMesh_eooyx")
+metadata/texture = ExtResource("3_5w2fe")
+
+[node name="particle" type="Node3D" parent="." unique_id=637437775]
+
+[node name="trail" type="GPUParticles3D" parent="particle" unique_id=712653385]
+material_override = SubResource("StandardMaterial3D_kve3m")
+amount = 100
+lifetime = 0.2
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_2cdb8")
+draw_pass_1 = SubResource("QuadMesh_pltho")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
