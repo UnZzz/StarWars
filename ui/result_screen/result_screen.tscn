@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://281a5yn6de6s"]
 
 [ext_resource type="Script" uid="uid://cc04ywq27fk0x" path="res://ui/result_screen/result_screen.gd" id="1_48uev"]
+[ext_resource type="FontFile" uid="uid://dp7bjbuq8ggv1" path="res://assets/Palikan.ttf" id="2_t4w42"]
+[ext_resource type="FontFile" uid="uid://qv36cjyrefof" path="res://assets/AdventPro-VariableFont_wdth,wght.ttf" id="3_adm8d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_503od"]
-font_size = 128
+font = ExtResource("2_t4w42")
+font_size = 512
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwt0s"]
 
 [node name="ResultScreen" type="Control" unique_id=1692504521]
 layout_mode = 3
@@ -40,12 +45,14 @@ theme_override_constants/separation = 64
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1887493965]
 layout_mode = 2
-text = "YOU DEAD"
+text = "YOU DIED"
 label_settings = SubResource("LabelSettings_503od")
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1868898608]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("3_adm8d")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qwt0s")
 text = "RESTART"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
