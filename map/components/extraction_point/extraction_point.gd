@@ -14,4 +14,6 @@ func _switch_the_map():
 	var packed_scene = load(next_map) as PackedScene
 	map_root.emit_to_next_map(packed_scene)
 	AudioManager.ui_game_start.play()
+	AudioManager.bg_music_lobby.stop()
+	AudioManager.bg_music_map.play()
 	pass
