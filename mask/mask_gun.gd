@@ -7,7 +7,7 @@ extends Node3D
 @export var fire_cooldown : float = 0.5
 
 var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
-var _now_projectile : Projectile3D_extended
+var _now_projectile : Mask
 var _can_fire : bool = true
 var current_angle : int
 

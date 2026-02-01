@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ddhhdodcowty2"]
+
+[ext_resource type="PackedScene" uid="uid://dgtqxqnut5nt" path="res://mask/new_masks/mask.tscn" id="1_q46x1"]
+[ext_resource type="Texture2D" uid="uid://b6nsbh81yqinm" path="res://assets/star_mask_4point.png" id="2_716pv"]
+[ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="3_s0ool"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gjuvu"]
+render_priority = 0
+shader = ExtResource("3_s0ool")
+shader_parameter/texture_albedo = ExtResource("2_716pv")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[node name="Mask" unique_id=967261044 instance=ExtResource("1_q46x1")]
+id = "4"
+metadata/texture = ExtResource("2_716pv")
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=931419727]
+material_override = SubResource("ShaderMaterial_gjuvu")
+metadata/texture = ExtResource("2_716pv")
