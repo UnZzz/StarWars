@@ -8,3 +8,4 @@ extends Node
 @onready var ui_lose: AudioStreamPlayer = $UI_Lose
 #@onready var enemy_vox: AudioStreamPlayer3D = $Enemy_Vox
 @onready var ui_evil_laugh: AudioStreamPlayer = $UI_Evil_Laugh
+@onready var plyr_dash: AudioStreamPlayer = $SFX_Plyr_Dash
