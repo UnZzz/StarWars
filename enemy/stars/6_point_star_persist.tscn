@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://dnncfg6bw3dur"]
 
 [ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_l02vd"]
+[ext_resource type="Material" uid="uid://bhj83uuo5uahq" path="res://assets/star6.tres" id="2_l02vd"]
 [ext_resource type="Texture2D" uid="uid://hs8li5f5ecnb" path="res://assets/star_base_6point.PNG" id="3_l02vd"]
 [ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="4_jru5w"]
 [ext_resource type="Texture2D" uid="uid://c3868otnoqu6q" path="res://assets/star_faceangry_4point.png" id="5_go5xt"]
 [ext_resource type="Texture2D" uid="uid://n0dcvfy3y0cx" path="res://assets/direction_indicator_5point.png" id="6_8k7bb"]
 [ext_resource type="Material" uid="uid://4fc7wc0i1ufy" path="res://assets/indi.tres" id="7_1nabx"]
+[ext_resource type="Material" uid="uid://cujplcrda5rnn" path="res://assets/mask6.tres" id="8_dcxhy"]
 [ext_resource type="Texture2D" uid="uid://bh4x022s31riy" path="res://assets/star_mask_6point.PNG" id="8_pebk6"]
 [ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="10_1wb2n"]
 [ext_resource type="BehaviorTree" uid="uid://vrv1c8gxnbrd" path="res://enemy/persistent_chase.tres" id="10_km0n1"]
 [ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="11_vpp72"]
-[ext_resource type="Script" uid="uid://drg72xl38t27g" path="res://enemy/tasks/explode.gd" id="13_10w6o"]
+[ext_resource type="Script" path="res://enemy/tasks/explode.gd" id="13_10w6o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -93,6 +95,8 @@ shape = SubResource("CapsuleShape3D_mggwb")
 
 [node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23101807, 0)
+material_override = ExtResource("2_l02vd")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_2o4cy")
 
 [node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=113288210]
@@ -110,6 +114,8 @@ mesh = SubResource("QuadMesh_wcy7k")
 
 [node name="StarMask" type="MeshInstance3D" parent="." unique_id=201612684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25555515, 0)
+material_override = ExtResource("8_dcxhy")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_841x3")
 
 [node name="HappyFace" type="MeshInstance3D" parent="." unique_id=1969286780]

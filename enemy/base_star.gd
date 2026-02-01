@@ -131,7 +131,7 @@ func hit_wrong_mask() -> void:
 		velocity = -direction_to_player * move_back_speed
 		dash_target_pos = player_pos
 	
-	star_body.material_override.albedo_color = Color.RED
+	star_body.set_instance_shader_parameter("albedo", Color.RED)
 
 	
 func move_back(delta: float) -> void:
