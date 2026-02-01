@@ -182,10 +182,10 @@ material = ExtResource("2_hbirn")
 metadata/_edit_lock_ = true
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1919830506]
-transform = Transform3D(1.2387677, 0, 0, 0, 0.4584684, 0, 0, 0, 2.0503263, 67.94925, 3.53722, -38.27246)
+transform = Transform3D(1.2387072, 0, 0, 0, 0.4584524, 0, 0, 0, 2.0503263, 67.94925, 3.53722, -38.69278)
 use_collision = true
 collision_mask = 2
-size = Vector3(1.9894409, 19.358185, 17.519836)
+size = Vector3(1.9894409, 19.358185, 17.92984)
 material = ExtResource("2_hbirn")
 metadata/_edit_lock_ = true
 
