@@ -1,0 +1,52 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://b88y6pt524e5"]
+
+[ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_fgrow"]
+[ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_fgrow"]
+[ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="3_fgrow"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_fgrow"]
+var/target_global_position/name = &"target_global_position"
+var/target_global_position/type = 9
+var/target_global_position/value = Vector3(0, 0, 0)
+var/target_global_position/hint = 0
+var/target_global_position/hint_string = ""
+var/navigation_agent_node/name = &"navigation_agent_node"
+var/navigation_agent_node/type = 22
+var/navigation_agent_node/value = NodePath("NavigationAgent3D")
+var/navigation_agent_node/hint = 0
+var/navigation_agent_node/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_fgrow_chase"]
+script = ExtResource("1_fgrow")
+
+[sub_resource type="BTAction" id="BTAction_fgrow_chase_move"]
+script = ExtResource("2_fgrow")
+movement_speed = 25.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_fgrow_chase"]
+time_limit = 1.0
+children = [SubResource("BTAction_fgrow_chase_move")]
+
+[sub_resource type="BTSequence" id="BTSequence_fgrow_chase"]
+children = [SubResource("BTAction_fgrow_chase"), SubResource("BTTimeLimit_fgrow_chase")]
+metadata/_weight_ = 3.0
+
+[sub_resource type="BTAction" id="BTAction_fgrow"]
+script = ExtResource("3_fgrow")
+grow_chance = 0.8
+
+[sub_resource type="BTCooldown" id="BTCooldown_fgrow"]
+duration = 2.0
+process_pause = true
+children = [SubResource("BTAction_fgrow")]
+
+[sub_resource type="BTSequence" id="BTSequence_fgrow"]
+children = [SubResource("BTCooldown_fgrow")]
+metadata/_weight_ = 8.0
+
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_fgrow"]
+children = [SubResource("BTSequence_fgrow_chase"), SubResource("BTSequence_fgrow")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_fgrow")
+root_task = SubResource("BTProbabilitySelector_fgrow")

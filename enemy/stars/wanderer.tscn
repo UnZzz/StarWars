@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cn8mg0ilis261"]
+[gd_scene format=3 uid="uid://db58hauj7m8xo"]
 
-[ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_467qw"]
-[ext_resource type="BehaviorTree" uid="uid://diqi0x4kwvy7w" path="res://enemy/wander.tres" id="2_7n3fp"]
+[ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_trblu"]
+[ext_resource type="BehaviorTree" uid="uid://7vwgrgiqa2us" path="res://enemy/wander.tres" id="2_bnt48"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_467qw"]
 load_path = "res://.godot/imported/star_base_5point.png-6796fb4427360f2335b474b4bd709e3f.s3tc.ctex"
@@ -10,7 +10,7 @@ load_path = "res://.godot/imported/star_base_5point.png-6796fb4427360f2335b474b4
 render_priority = -1
 transparency = 1
 shading_mode = 0
-albedo_color = Color(0, 1, 1, 1)
+albedo_color = Color(1, 0.8980392, 0.24313726, 1)
 albedo_texture = SubResource("CompressedTexture2D_467qw")
 billboard_mode = 2
 
@@ -20,11 +20,17 @@ size = Vector2(2, 2)
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_7n3fp"]
 
-[node name="BaseStar" unique_id=467415892 instance=ExtResource("1_467qw")]
+[node name="BaseStar2" unique_id=467415892 instance=ExtResource("1_trblu")]
+points = null
+gravity = null
+scary_distance = null
+
+[node name="Hitbox" parent="." index="0" unique_id=1004183964]
+debug_color = Color(1, 1, 1, 0.41960785)
 
 [node name="StarBody" parent="." index="1" unique_id=467282083]
 mesh = SubResource("QuadMesh_5qmfc")
 
-[node name="BTPlayer" parent="." index="5" unique_id=842027526]
-behavior_tree = ExtResource("2_7n3fp")
+[node name="BTPlayer" parent="." index="7" unique_id=842027526]
+behavior_tree = ExtResource("2_bnt48")
 blackboard_plan = SubResource("BlackboardPlan_7n3fp")

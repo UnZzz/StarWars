@@ -9,7 +9,6 @@ func _generate_name() -> String:
 	return "WanderRandomly"
 
 func _setup() -> void:
-	# Nothing to setup for wandering
 	pass
 
 

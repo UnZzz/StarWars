@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://dpm66x36j2ssk"]
+
+[ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_s0m24"]
+[ext_resource type="Texture2D" uid="uid://cx0qgf8b2jopw" path="res://assets/star_base_4point.png" id="2_5n10p"]
+[ext_resource type="Texture2D" uid="uid://c3868otnoqu6q" path="res://assets/star_faceangry_4point.png" id="3_5unyv"]
+[ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="3_s0m24"]
+[ext_resource type="Texture2D" uid="uid://n0dcvfy3y0cx" path="res://assets/direction_indicator_5point.png" id="4_3mj8d"]
+[ext_resource type="Material" uid="uid://4fc7wc0i1ufy" path="res://assets/indi.tres" id="5_n513m"]
+[ext_resource type="Texture2D" uid="uid://b6nsbh81yqinm" path="res://assets/star_mask_4point.png" id="7_ewk2u"]
+[ext_resource type="Material" uid="uid://teyi8owmp2n3" path="res://assets/happy.tres" id="8_sr4qq"]
+[ext_resource type="Texture2D" uid="uid://4at5ipa7d0b3" path="res://assets/star_facehappy_5point.png" id="9_npqin"]
+[ext_resource type="BehaviorTree" uid="uid://nayljaiuh2h0" path="res://enemy/slow_chase.tres" id="10_wwchc"]
+[ext_resource type="Script" uid="uid://drg72xl38t27g" path="res://enemy/tasks/explode.gd" id="11_lu0nd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mggwb"]
+render_priority = -1
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_5n10p")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_2o4cy"]
+material = SubResource("StandardMaterial3D_mggwb")
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5n10p"]
+render_priority = 0
+shader = ExtResource("3_s0m24")
+shader_parameter/texture_albedo = ExtResource("3_5unyv")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y136q"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_3mj8d")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_fam0b"]
+material = SubResource("StandardMaterial3D_y136q")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l10hr"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_3mj8d")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_wcy7k"]
+material = SubResource("StandardMaterial3D_l10hr")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtqai"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("7_ewk2u")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_841x3"]
+material = SubResource("StandardMaterial3D_jtqai")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr5jx"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("9_npqin")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_y136q"]
+material = SubResource("StandardMaterial3D_rr5jx")
+size = Vector2(2, 2)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_68d2x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uov1v"]
+radius = 5.0
+
+[node name="4StarSlow" type="CharacterBody3D" unique_id=467415892]
+collision_mask = 3
+script = ExtResource("1_s0m24")
+points = 4
+
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1004183964]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_mggwb")
+
+[node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23101807, 0)
+mesh = SubResource("QuadMesh_2o4cy")
+
+[node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=113288210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23101807, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_5n10p")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
+mesh = SubResource("QuadMesh_fam0b")
+
+[node name="Indicator" type="MeshInstance3D" parent="." unique_id=346035885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24334717, 0.053940415)
+material_override = ExtResource("5_n513m")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
+mesh = SubResource("QuadMesh_wcy7k")
+
+[node name="StarMask" type="MeshInstance3D" parent="." unique_id=201612684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24334717, 0)
+visible = false
+mesh = SubResource("QuadMesh_841x3")
+
+[node name="HappyFace" type="MeshInstance3D" parent="." unique_id=1969286780]
+transform = Transform3D(0.9999789, 0.0064925794, 0, -0.0064925794, 0.9999789, 0, 0, 0, 1, 0, 0.21077955, 0)
+material_override = ExtResource("8_sr4qq")
+instance_shader_parameters/albedo = Color(1, 1, 1, 1)
+mesh = SubResource("QuadMesh_y136q")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=908361554]
+avoidance_enabled = true
+radius = 1.0
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=842027526]
+behavior_tree = ExtResource("10_wwchc")
+blackboard_plan = SubResource("BlackboardPlan_68d2x")
+
+[node name="Rotation" type="Label3D" parent="." unique_id=1035925262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0996094, 0)
+billboard = 2
+
+[node name="ProximityExplosion" type="Area3D" parent="." unique_id=2072447290]
+script = ExtResource("11_lu0nd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProximityExplosion" unique_id=493603303]
+shape = SubResource("SphereShape3D_uov1v")

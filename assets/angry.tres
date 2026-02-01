@@ -9,6 +9,7 @@ load_path = "res://.godot/imported/star_faceangry_5point.png-ac4a266788a181be8ea
 render_priority = 0
 shader = ExtResource("1_u4w6l")
 shader_parameter/texture_albedo = SubResource("CompressedTexture2D_yum44")
+shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/roughness = 0.0
 shader_parameter/metallic = 0.0
 shader_parameter/specular = 0.0
