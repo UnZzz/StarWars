@@ -36,7 +36,7 @@ script = ExtResource("3_fgrow")
 grow_chance = 0.8
 growth_factor = 2.5
 growth_duration = 3.0
-color = Color(0.77254903, 0.14901961, 0.24313726, 1)
+color = Color(0.14027184, 0.0066424604, 0.018594952, 1)
 
 [sub_resource type="BTCooldown" id="BTCooldown_fgrow"]
 duration = 2.0

@@ -17,7 +17,7 @@ var/navigation_agent_node/hint_string = ""
 
 [sub_resource type="BTAction" id="BTAction_hwander"]
 script = ExtResource("3_hwander")
-wander_radius = 20.0
+wander_radius = 30.0
 movement_speed = 4.0
 
 [sub_resource type="BTAction" id="BTAction_rkrdi"]
