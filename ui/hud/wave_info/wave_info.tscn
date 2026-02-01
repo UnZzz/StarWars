@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://bvl4w0g0yp6b"]
 
 [ext_resource type="Script" uid="uid://bxhbw0gqreejk" path="res://ui/hud/wave_info/wave_info.gd" id="1_coisd"]
+[ext_resource type="FontFile" uid="uid://dp7bjbuq8ggv1" path="res://assets/Palikan.ttf" id="2_x31fp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gm505"]
-font_size = 64
+font = ExtResource("2_x31fp")
+font_size = 96
+
+[sub_resource type="LabelSettings" id="LabelSettings_x31fp"]
+font = ExtResource("2_x31fp")
+font_size = 96
 
 [node name="WaveInfo" type="Control" unique_id=504770476]
 layout_mode = 3
@@ -38,7 +44,7 @@ label_settings = SubResource("LabelSettings_gm505")
 [node name="WaveNumber" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1528461127]
 layout_mode = 2
 text = "1"
-label_settings = SubResource("LabelSettings_gm505")
+label_settings = SubResource("LabelSettings_x31fp")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1398279003]
 layout_mode = 2

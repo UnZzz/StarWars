@@ -11,6 +11,8 @@ var is_active : bool = false
 var time_left : int = 0
 var is_having_wave : bool = false
 
+var now_total_score : int = 0
+
 signal wave_finished
 
 func start_new_wave(wave : Wave):

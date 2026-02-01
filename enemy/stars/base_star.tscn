@@ -67,12 +67,7 @@ billboard_mode = 2
 material = SubResource("StandardMaterial3D_rr5jx")
 size = Vector2(2, 2)
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_eushb"]
-var/navigation_agent_node/name = &"navigation_agent_node"
-var/navigation_agent_node/type = 22
-var/navigation_agent_node/value = NodePath("../NavigationAgent3D")
-var/navigation_agent_node/hint = 0
-var/navigation_agent_node/hint_string = ""
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_68d2x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uov1v"]
 radius = 5.0
@@ -123,7 +118,7 @@ radius = 1.0
 
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=842027526]
 behavior_tree = ExtResource("7_rr5jx")
-blackboard_plan = SubResource("BlackboardPlan_eushb")
+blackboard_plan = SubResource("BlackboardPlan_68d2x")
 
 [node name="Rotation" type="Label3D" parent="." unique_id=1035925262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0996094, 0)
