@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_6hh5b"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_nj5ii"]
-[ext_resource type="Script" path="res://enemy/tasks/wander.gd" id="3_cwvmx"]
+[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="3_cwvmx"]
 [ext_resource type="Script" uid="uid://crppfh6uxggs8" path="res://enemy/tasks/grow_big.gd" id="4_3oa0o"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_j4wau"]

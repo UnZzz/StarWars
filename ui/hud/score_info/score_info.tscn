@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bggah5tylxpjs"]
+
+[ext_resource type="Script" uid="uid://r1vkb3sybk4l" path="res://ui/hud/score_info/score_info.gd" id="1_fgfqt"]
+[ext_resource type="FontFile" uid="uid://dp7bjbuq8ggv1" path="res://assets/Palikan.ttf" id="2_801jv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1yhf5"]
+font = ExtResource("2_801jv")
+font_size = 144
+
+[node name="ScoreInfo" type="Control" unique_id=1061871559]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgfqt")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1239115099]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -588.0
+offset_bottom = 224.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1744277206]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1464060955]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=435212537]
+layout_mode = 2
+text = "000'000'000"
+label_settings = SubResource("LabelSettings_1yhf5")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1750630284]
+layout_mode = 2
+text = "SCORE"
+label_settings = SubResource("LabelSettings_1yhf5")
