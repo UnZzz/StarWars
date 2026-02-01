@@ -4,6 +4,8 @@ render_mode blend_mix, depth_draw_opaque, cull_back, unshaded;
 instance uniform vec4 albedo : source_color;
 uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
 
+uniform vec4 color : source_color = vec4(1.,1.,1.,1.);
+
 uniform float roughness : hint_range(0.0, 1.0);
 uniform float metallic : hint_range(0.0, 1.0);
 uniform float specular : hint_range(0.0, 1.0);
@@ -50,7 +52,7 @@ void vertex() {
 
 void fragment() {
 	vec4 tex = texture(texture_albedo, UV);
-	ALBEDO = albedo.rgb * tex.rgb;
+	ALBEDO = albedo.rgb * tex.rgb * color.rgb;
 	
 	ALPHA = albedo.a * tex.a;
 }

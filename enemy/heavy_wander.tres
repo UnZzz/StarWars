@@ -1,0 +1,54 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://b5k8n3nax2y7w"]
+
+[ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_hwander"]
+[ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_hwander"]
+[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="3_hwander"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_hwander"]
+var/target_global_position/name = &"target_global_position"
+var/target_global_position/type = 9
+var/target_global_position/value = Vector3(0, 0, 0)
+var/target_global_position/hint = 0
+var/target_global_position/hint_string = ""
+var/navigation_agent_node/name = &"navigation_agent_node"
+var/navigation_agent_node/type = 22
+var/navigation_agent_node/value = NodePath("NavigationAgent3D")
+var/navigation_agent_node/hint = 0
+var/navigation_agent_node/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_hwander_chase"]
+script = ExtResource("1_hwander")
+
+[sub_resource type="BTAction" id="BTAction_hwander_chase_move"]
+script = ExtResource("2_hwander")
+movement_speed = 3.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_hwander_chase"]
+time_limit = 0.5
+children = [SubResource("BTAction_hwander_chase_move")]
+
+[sub_resource type="BTSequence" id="BTSequence_hwander_chase"]
+children = [SubResource("BTAction_hwander_chase"), SubResource("BTTimeLimit_hwander_chase")]
+metadata/_weight_ = 1.0
+
+[sub_resource type="BTAction" id="BTAction_hwander"]
+script = ExtResource("3_hwander")
+
+[sub_resource type="BTAction" id="BTAction_hwander_move"]
+script = ExtResource("2_hwander")
+movement_speed = 2.5
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_hwander"]
+time_limit = 4.0
+children = [SubResource("BTAction_hwander_move")]
+
+[sub_resource type="BTSequence" id="BTSequence_hwander"]
+children = [SubResource("BTAction_hwander"), SubResource("BTTimeLimit_hwander")]
+metadata/_weight_ = 12.0
+
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_hwander"]
+children = [SubResource("BTSequence_hwander_chase"), SubResource("BTSequence_hwander")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_hwander")
+root_task = SubResource("BTProbabilitySelector_hwander")

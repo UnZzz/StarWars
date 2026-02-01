@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_fid2c"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_2el1o"]
+[ext_resource type="Script" uid="uid://3dxppsuvl3i8" path="res://enemy/tasks/wander.gd" id="3_2el1o"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_uvkam"]
 
@@ -13,15 +14,26 @@ script = ExtResource("2_2el1o")
 movement_speed = 10.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
-time_limit = 1.0
+time_limit = 2.0
 children = [SubResource("BTAction_fam0b")]
 
 [sub_resource type="BTSequence" id="BTSequence_ttaj7"]
 children = [SubResource("BTAction_y136q"), SubResource("BTTimeLimit_4n5wd")]
 metadata/_weight_ = 2.3502880658436203
 
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_xuao5"]
+time_limit = 3.0
+
+[sub_resource type="BTAction" id="BTAction_wt680"]
+children = [SubResource("BTTimeLimit_xuao5")]
+script = ExtResource("3_2el1o")
+
+[sub_resource type="BTSequence" id="BTSequence_gxpj4"]
+children = [SubResource("BTAction_wt680")]
+metadata/_weight_ = 0.78
+
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_a4w72"]
-children = [SubResource("BTSequence_ttaj7")]
+children = [SubResource("BTSequence_ttaj7"), SubResource("BTSequence_gxpj4")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_uvkam")
