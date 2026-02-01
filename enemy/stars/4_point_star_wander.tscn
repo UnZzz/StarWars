@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cocwoxtovn6y1"]
 
 [ext_resource type="Script" uid="uid://cwf88yfhkjafi" path="res://enemy/base_star.gd" id="1_04guk"]
-[ext_resource type="Material" uid="uid://4c1qvhdnf4mc" path="res://assets/star4.tres" id="2_04guk"]
 [ext_resource type="Texture2D" uid="uid://cx0qgf8b2jopw" path="res://assets/star_base_4point.png" id="3_04guk"]
 [ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="4_1veg2"]
 [ext_resource type="Texture2D" uid="uid://cvfu2eyjd4wn5" path="res://assets/star_facesad_6point.png" id="4_04guk"]
@@ -16,6 +15,81 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
+
+[sub_resource type="Shader" id="Shader_pvjgj"]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, unshaded;
+
+instance uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+
+uniform vec4 color : source_color = vec4(1.,1.,1.,1.);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform float metallic : hint_range(0.0, 1.0);
+uniform float specular : hint_range(0.0, 1.0);
+
+uniform vec3 uv1_scale = vec3(1.0);
+uniform vec3 uv1_offset = vec3(0.0);
+
+/* 🔄 Rotation (radians) */
+instance uniform float rotation_angle : hint_range(-6.283, 6.283) = 0.0;
+
+/* ---------------- ROTATION FUNCTION ---------------- */
+
+mat3 rotate_y(float angle) {
+	float s = sin(angle);
+	float c = cos(angle);
+
+	return mat3(
+		vec3(c, -s, 0.0),
+		vec3(s, c, 0.0),
+		vec3(0.0, 0.0, 1)
+	);
+}
+
+/* ---------------- VERTEX ---------------- */
+
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+
+	/* Rotate mesh in local space */
+	VERTEX = rotate_y(rotation_angle) * VERTEX;
+
+	/* Y-Billboard */
+	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
+		vec4(normalize(cross(vec3(0.0, 1.0, 0.0), MAIN_CAM_INV_VIEW_MATRIX[2].xyz)), 0.0),
+		vec4(0.0, 1.0, 0.0, 0.0),
+		vec4(normalize(cross(MAIN_CAM_INV_VIEW_MATRIX[0].xyz, vec3(0.0, 1.0, 0.0))), 0.0),
+		MODEL_MATRIX[3]
+	);
+
+	MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
+}
+
+/* ---------------- FRAGMENT ---------------- */
+
+void fragment() {
+	vec4 tex = texture(texture_albedo, UV);
+	ALBEDO = albedo.rgb * tex.rgb * color.rgb;
+	
+	ALPHA = albedo.a * tex.a;
+}
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u8uv7"]
+load_path = "res://.godot/imported/star_base_4point.png-41a8957238a4117d66f52327fa7ebd36.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_04guk"]
+render_priority = -1
+shader = SubResource("Shader_pvjgj")
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_u8uv7")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mggwb"]
 render_priority = -1
@@ -95,8 +169,8 @@ shape = SubResource("CapsuleShape3D_mggwb")
 
 [node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23101807, 0)
-material_override = ExtResource("2_04guk")
-instance_shader_parameters/albedo = Color(1, 1, 1, 1)
+material_override = SubResource("ShaderMaterial_04guk")
+instance_shader_parameters/albedo = Color(0.30980393, 0.6666667, 0.58431375, 1)
 mesh = SubResource("QuadMesh_2o4cy")
 
 [node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=1173086346]
@@ -109,7 +183,7 @@ mesh = SubResource("QuadMesh_fam0b")
 [node name="Indicator" type="MeshInstance3D" parent="." unique_id=346035885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.061751842, 0.24334717, 0)
 material_override = ExtResource("6_ukrpy")
-instance_shader_parameters/albedo = Color(1, 1, 1, 1)
+instance_shader_parameters/albedo = Color(0.30980393, 0.6666667, 0.58431375, 1)
 mesh = SubResource("QuadMesh_wcy7k")
 
 [node name="StarMask" type="MeshInstance3D" parent="." unique_id=201612684]
@@ -120,8 +194,7 @@ instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_841x3")
 
 [node name="HappyFace" type="MeshInstance3D" parent="." unique_id=1969286780]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15808105, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02264586, 0.23824579, 0)
 material_override = ExtResource("9_77i4v")
 instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_y136q")
