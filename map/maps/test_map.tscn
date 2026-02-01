@@ -32,9 +32,6 @@ metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 [node name="Map" unique_id=752743956 node_paths=PackedStringArray("player_start_point") instance=ExtResource("1_idu2j")]
 player_start_point = NodePath("Components/PlayerStartPoint")
 
-[node name="DirectionalLight3D" parent="Environment" parent_id_path=PackedInt32Array(1627753690) index="1" unique_id=789622418]
-visible = false
-
 [node name="NavigationRegion3D" parent="." index="1" unique_id=1353544295]
 navigation_mesh = SubResource("NavigationMesh_isx6k")
 
