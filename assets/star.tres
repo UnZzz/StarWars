@@ -4,9 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="1_rec3u"]
 
 [resource]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("1_qlf5b")
-shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = ExtResource("1_rec3u")
 shader_parameter/roughness = 0.0
 shader_parameter/metallic = 0.0
