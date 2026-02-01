@@ -209,7 +209,7 @@ size = Vector3(35.67915, 26.243347, 1.9769921)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="NavigationRegion3D" unique_id=315049870]
-transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 27.156971, 0.48012996, -42.597248)
+transform = Transform3D(1.2387686, 0, 0, 0, 0.45846865, 0, 0, 0, 2.0503263, 27.156967, 0.48012996, -43.40234)
 use_collision = true
 collision_mask = 2
 size = Vector3(2.233972, 20.728882, 1.9769921)
@@ -272,10 +272,17 @@ size = Vector3(12.231466, 26.641693, 8.715058)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D41" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1517242430]
-transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 107.934616, 0.48012996, 20.273273)
+transform = Transform3D(1.2387668, 0, 0, 0, 0.45846814, 0, 0, 0, 2.0503263, 107.9346, 1.5359312, 20.273273)
 use_collision = true
 collision_mask = 2
-size = Vector3(2.233972, 20.728882, 1.9769921)
+size = Vector3(2.233972, 25.334656, 1.9769921)
+material = ExtResource("2_hbirn")
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1589623316]
+transform = Transform3D(1.23875, 0, 0, 0, 0.45846355, 0, 0, 0, 2.0503263, 95.83064, -1.4801183, 25.2482)
+use_collision = true
+collision_mask = 2
+size = Vector3(18.98635, 12.177582, 6.8298044)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D42" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2048393261]
@@ -293,10 +300,10 @@ size = Vector3(2.233972, 20.728882, 1.9769921)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D54" type="CSGBox3D" parent="NavigationRegion3D" unique_id=71163964]
-transform = Transform3D(1.2387688, 0, 0, 0, 0.4584687, 0, 0, 0, 2.0503263, 107.934616, 0.48012996, -3.4130945)
+transform = Transform3D(1.238766, 0, 0, 0, 0.45846793, 0, 0, 0, 2.0503263, 107.9346, 1.476468, -3.4130926)
 use_collision = true
 collision_mask = 2
-size = Vector3(2.233972, 20.728882, 1.9769921)
+size = Vector3(2.233972, 25.075256, 1.9769921)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D61" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1424205122]
@@ -306,25 +313,32 @@ collision_mask = 2
 size = Vector3(3.5532775, 2.9230347, 13.140351)
 material = ExtResource("2_hbirn")
 
-[node name="CSGBox3D70" type="CSGBox3D" parent="NavigationRegion3D" unique_id=275409876]
-transform = Transform3D(-1.1405559, 0, -0.607442, 0, 0.45846707, 0, 0.5239632, 0, -1.947814, -20.84525, -0.2436586, 22.497972)
-use_collision = true
-collision_mask = 2
-size = Vector3(3.5532775, 2.9230347, 13.140351)
-material = ExtResource("2_hbirn")
-
 [node name="CSGBox3D71" type="CSGBox3D" parent="NavigationRegion3D" unique_id=479693160]
-transform = Transform3D(0.088540375, 0.0014896207, -2.036922, 0.23517765, 0.45027366, -0.015641814, 1.229735, -0.08622062, -0.116881296, 0.13998222, -0.30108118, 22.65762)
+transform = Transform3D(0.088540375, 0.0014896207, -2.036922, 0.23517765, 0.45027214, -0.015641814, 1.229735, -0.08622062, -0.116881296, 109.49103, -1.2797382, 19.74181)
 use_collision = true
 collision_mask = 2
-size = Vector3(13.179231, 3.0420837, 8.6361)
+size = Vector3(17.732193, 5.7407684, 8.6361)
 material = ExtResource("2_hbirn")
 
-[node name="CSGBox3D72" type="CSGBox3D" parent="NavigationRegion3D" unique_id=545278297]
-transform = Transform3D(-1.2227476, 0.09966099, 0.37727362, 0.27469075, 0.4472639, -0.01940085, -0.069267586, 0.014424619, -2.0050564, -17.51659, -1.173441, 21.195335)
+[node name="CSGBox3D74" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1786578297]
+transform = Transform3D(0.088540375, 0.0014896207, -2.036922, 0.23517765, 0.45027143, -0.015641814, 1.229735, -0.08622062, -0.116881296, 13.959248, -1.3619817, 19.958782)
 use_collision = true
 collision_mask = 2
-size = Vector3(8.825443, 4.2544403, 12.36813)
+size = Vector3(17.732193, 10.773705, 8.6361)
+material = ExtResource("2_hbirn")
+
+[node name="CSGBox3D72" type="CSGBox3D" parent="NavigationRegion3D" unique_id=918716172]
+transform = Transform3D(0.088540375, 0.0014896207, -2.036922, 0.23517765, 0.45027217, -0.015641814, 1.229735, -0.08622062, -0.116881296, 146.27385, -0.22888643, 19.74181)
+use_collision = true
+collision_mask = 2
+size = Vector3(17.732193, 5.7407684, 8.6361)
+material = ExtResource("2_hbirn")
+
+[node name="CSGBox3D75" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1293241059]
+transform = Transform3D(-0.16656226, 0.00399632, 2.0402315, 0.23517765, 0.4502721, -0.015641814, -1.2216157, 0.086140834, -0.012886896, 110.1837, -0.22888643, -9.9770155)
+use_collision = true
+collision_mask = 2
+size = Vector3(17.732193, 5.7407684, 8.6361)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D31" type="CSGBox3D" parent="NavigationRegion3D" unique_id=877628891]
@@ -348,64 +362,29 @@ collision_mask = 2
 size = Vector3(27.60414, 6.09111, 21.210903)
 material = ExtResource("2_hbirn")
 
-[node name="CSGBox3D58" type="CSGBox3D" parent="NavigationRegion3D" unique_id=572567098]
-transform = Transform3D(1.2154205, 0, -0.23933747, 0.039805166, 0.4561459, 0.20214157, 0.3941324, -0.046068195, 2.0015125, -18.752045, -1.2662053, 26.172552)
-use_collision = true
-collision_mask = 2
-size = Vector3(3.8276916, 5.094208, 8.874294)
-material = ExtResource("2_hbirn")
-
-[node name="CSGBox3D45" type="CSGBox3D" parent="NavigationRegion3D" unique_id=605005479]
-transform = Transform3D(-1.1551757, 0, -0.44734102, 0, 0.45846575, 0, 0.74041414, 0, -1.911969, 110.537, -0.48464745, -13.48153)
-use_collision = true
-collision_mask = 2
-size = Vector3(4.5606565, 2.9230347, 9.4892845)
-material = ExtResource("2_hbirn")
-
-[node name="CSGBox3D59" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1741759737]
-transform = Transform3D(-1.1603363, 0.038553137, -0.42158505, -0.011272592, 0.45174235, 0.32080644, 0.7322125, 0.068050526, -1.8907897, 113.43277, -1.0617025, -0.9448595)
-use_collision = true
-collision_mask = 2
-size = Vector3(4.5606565, 2.9230347, 3.872199)
-material = ExtResource("2_hbirn")
-
-[node name="CSGBox3D48" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2059635474]
-transform = Transform3D(1.1770382, 0, 0.38931426, 0, 0.45846447, 0, -0.7051406, 0, 1.9246222, 98.3934, -0.48464745, 30.41333)
-use_collision = true
-collision_mask = 2
-size = Vector3(4.5606565, 2.9230347, 9.306891)
-material = ExtResource("2_hbirn")
-
-[node name="CSGBox3D63" type="CSGBox3D" parent="NavigationRegion3D" unique_id=959871860]
-transform = Transform3D(1.1819443, -0.036477458, 0.36421064, -0.011272592, 0.4517343, 0.32080644, -0.6967866, -0.06918533, 1.9026744, 94.42284, -1.0766749, 25.450089)
-use_collision = true
-collision_mask = 2
-size = Vector3(4.218886, 5.019623, 7.7436075)
-material = ExtResource("2_hbirn")
-
 [node name="CSGBox3D56" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2003685289]
-transform = Transform3D(-1.1551757, 0, -0.44734022, 0, 0.45846504, 0, 0.74041414, 0, -1.911969, 152.60469, -0.48464745, -15.749209)
+transform = Transform3D(-1.1551757, 0, -0.4473402, 0, 0.458465, 0, 0.74041414, 0, -1.911969, 152.60469, -0.48464745, 81.28339)
 use_collision = true
 collision_mask = 2
 size = Vector3(10.68609, 2.9230347, 9.4892845)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D68" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1424599781]
-transform = Transform3D(-1.1603363, 0.03855313, -0.421585, -0.011272592, 0.4517423, 0.32080644, 0.7322125, 0.068050526, -1.8907897, 151.96251, -1.0617025, -0.9448576)
+transform = Transform3D(-1.1603363, 0.038553126, -0.42158496, -0.011272592, 0.45174226, 0.32080644, 0.7322125, 0.068050526, -1.8907897, 151.96251, -1.0617025, 61.33609)
 use_collision = true
 collision_mask = 2
 size = Vector3(4.5606565, 2.9230347, 3.872199)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D57" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1028149802]
-transform = Transform3D(1.1770382, 0, 0.38931426, 0, 0.45846444, 0, -0.7051406, 0, 1.9246222, 139.32587, -0.48464745, 30.41333)
+transform = Transform3D(1.1770382, 0, 0.38931426, 0, 0.4584644, 0, -0.7051406, 0, 1.9246222, 139.32585, -0.48464745, 60.654892)
 use_collision = true
 collision_mask = 2
 size = Vector3(4.5606565, 2.9230347, 9.306891)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D69" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1543435853]
-transform = Transform3D(1.1819443, -0.036477458, 0.36421064, -0.011272592, 0.45173427, 0.32080644, -0.6967866, -0.06918533, 1.9026744, 135.35532, -1.0766748, 25.450089)
+transform = Transform3D(1.1819443, -0.036477458, 0.36421064, -0.011272592, 0.45173422, 0.32080644, -0.6967866, -0.06918533, 1.9026744, 131.16786, -1.0766748, 50.35555)
 use_collision = true
 collision_mask = 2
 size = Vector3(4.218886, 5.019623, 7.7436075)
@@ -426,31 +405,10 @@ size = Vector3(5.996976, 11.967949, 11.931816)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D47" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1930786253]
-transform = Transform3D(-1.1551757, 0, -0.4473413, 0, 0.458466, 0, 0.74041414, 0, -1.911969, 65.46623, 2.0262375, -12.090386)
+transform = Transform3D(-1.1551757, 0, -0.44733813, 0, 0.45846322, 0, 0.74041414, 0, -1.911969, 66.48624, 2.6853662, -12.744182)
 use_collision = true
 collision_mask = 2
-size = Vector3(4.5606565, 13.876434, 11.097317)
-material = ExtResource("2_hbirn")
-
-[node name="CSGBox3D38" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1101805549]
-transform = Transform3D(-0.95699364, -1.5763392e-17, -0.786567, 0.035532795, 0.4582931, -0.043232143, 1.3013897, -0.012513243, -1.583379, 84.01715, -0.45256823, -3.6159172)
-use_collision = true
-collision_mask = 2
-size = Vector3(8.507013, 3.79599, 5.6458592)
-material = ExtResource("2_hbirn")
-
-[node name="CSGBox3D44" type="CSGBox3D" parent="NavigationRegion3D" unique_id=707812375]
-transform = Transform3D(-0.7878834, 0.13551453, -0.8961504, 0.48385182, 0.43117592, 0.009854917, 1.3250796, -0.07686936, -1.5246086, 80.82565, -1.5071777, -14.60134)
-use_collision = true
-collision_mask = 2
-size = Vector3(4.3559847, 5.22995, 8.838218)
-material = ExtResource("2_hbirn")
-
-[node name="CSGBox3D39" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1520412958]
-transform = Transform3D(-0.93843204, 0.08988223, -0.7713033, 0.18761967, 0.44957125, 0.15420568, 1.3018749, 0, -1.58397, 76.66383, 0.18616128, -8.626573)
-use_collision = true
-collision_mask = 2
-size = Vector3(5.4263244, 6.09111, 16.585869)
+size = Vector3(6.326688, 16.751816, 11.097317)
 material = ExtResource("2_hbirn")
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1611479591]
