@@ -119,7 +119,7 @@ bus = &"Player"
 
 [node name="SFX_Plyr_Dash" type="AudioStreamPlayer" parent="." unique_id=897030061]
 stream = SubResource("AudioStreamRandomizer_p04la")
-volume_db = -9.0
+volume_db = -8.0
 bus = &"Player"
 
 [node name="UI_Restart" type="AudioStreamPlayer" parent="." unique_id=37795089]
