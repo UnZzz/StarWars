@@ -16,7 +16,7 @@ func _generate_name() -> String:
 
 # Called to initialize the task.
 func _setup() -> void:
-	var agent_node = blackboard.get_var("navigation_agent_node")
+	var agent_node = (agent as BaseStar).navigation_agent
 	_navigation_agent = agent_node
 	_navigation_agent.velocity_computed.connect(_on_velocity_computed)
 	pass
@@ -34,7 +34,7 @@ func _exit() -> void:
 
 # Called each time this task is ticked (aka executed).
 func _tick(delta: float) -> Status:
-	var target_global_position : Vector3 = blackboard.get_var("target_global_position")
+	var target_global_position : Vector3 = (agent as BaseStar).global_target_position
 	_navigation_agent.target_position = target_global_position
 	(agent as CharacterBody3D).velocity = _now_velocity
 	

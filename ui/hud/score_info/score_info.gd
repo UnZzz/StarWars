@@ -12,7 +12,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	now_score = lerp(now_score, WaveManager.now_total_score, 0.01)
+	#now_score = lerp(now_score, WaveManager.now_total_score, 0.1)
+	if(now_score <  WaveManager.now_total_score):
+		now_score+=1
+	print("score",now_score)
 	score.text = format_grouped_number(now_score)
 	pass
 
