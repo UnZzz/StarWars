@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5tp4mq68iy5" path="res://mask/masks/mask_4_points.tscn" id="3_2aemt"]
 [ext_resource type="Texture2D" uid="uid://dmlyytu2t3r2w" path="res://assets/crosshair2.png" id="3_noubn"]
 [ext_resource type="PackedScene" uid="uid://cu2vjbdlqc5pu" path="res://assets/gun.blend" id="4_7yv0e"]
+[ext_resource type="PackedScene" uid="uid://bpu6svip404ns" path="res://mask/masks/mask_6_points.tscn" id="4_u0g4s"]
 [ext_resource type="Script" uid="uid://hmf41p7xadtr" path="res://assets/gun.gd" id="5_noubn"]
 [ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="6_noubn"]
 [ext_resource type="Material" uid="uid://g6mewby2n6wn" path="res://assets/gun_materials/skin.tres" id="8_6def7"]
@@ -111,7 +112,7 @@ alpha_curve = SubResource("CurveTexture_ox5ju")
 
 [node name="MaskGun" type="Node3D" unique_id=1764099407]
 script = ExtResource("1_oab67")
-mask_scene = Array[PackedScene]([ExtResource("1_red2b"), ExtResource("3_2aemt")])
+mask_scene = Array[PackedScene]([ExtResource("3_2aemt"), ExtResource("1_red2b"), ExtResource("4_u0g4s")])
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1268529477]
 modulate = Color(1, 1, 1, 0.8901961)
@@ -137,56 +138,45 @@ expand_mode = 2
 transform = Transform3D(-0.019369831, 0, -0.5996873, 0, 0.6, 0, 0.5996873, 0, -0.019369831, -1.1129854, -0.64308083, -0.956177)
 script = ExtResource("5_noubn")
 
-[node name="Hand" parent="gun" index="0" unique_id=63973014]
+[node name="Hand" parent="gun" index="0" unique_id=1508801197]
 transform = Transform3D(0.6716269, 0, 0, 0, 0.15390977, -0.6537542, 0, 0.6537542, 0.15390977, -0.17778108, 0.93506, -1.411388)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gun/Hand" index="0" unique_id=895215868]
 transform = Transform3D(1.4889218, 9.350095e-10, 1.558379e-08, -1.490116e-08, 0.5284252, 1.391997, -4.656616e-09, -1.3919964, 0.52842546, 0.28209823, 4.796659, 0.018226743)
-layers = 2
 material_override = SubResource("StandardMaterial3D_2aemt")
 mesh = SubResource("QuadMesh_rk80v")
 
-[node name="Cube" parent="gun/Hand" index="1" unique_id=41288875]
-layers = 2
+[node name="Cube" parent="gun/Hand" index="1" unique_id=1200836200]
 material_override = ExtResource("8_6def7")
 
-[node name="Plane" parent="gun/Hand" index="2" unique_id=1034615266]
-layers = 2
+[node name="Plane" parent="gun/Hand" index="2" unique_id=902995630]
 material_override = ExtResource("9_u0g4s")
 
-[node name="Plane_001" parent="gun/Hand" index="3" unique_id=1734698560]
-layers = 2
+[node name="Plane_001" parent="gun/Hand" index="3" unique_id=942543603]
 material_override = ExtResource("9_u0g4s")
 
-[node name="Plane_002" parent="gun/Hand" index="4" unique_id=434948945]
-layers = 2
+[node name="Plane_002" parent="gun/Hand" index="4" unique_id=43725579]
 material_override = ExtResource("9_u0g4s")
 
-[node name="Plane_003" parent="gun/Hand" index="5" unique_id=9260312]
-layers = 2
+[node name="Plane_003" parent="gun/Hand" index="5" unique_id=41225624]
 material_override = ExtResource("9_u0g4s")
 
-[node name="Plane_004" parent="gun/Hand" index="6" unique_id=1640987454]
-layers = 2
+[node name="Plane_004" parent="gun/Hand" index="6" unique_id=495642436]
 material_override = ExtResource("10_faf2g")
 
-[node name="Plane_005" parent="gun/Hand" index="7" unique_id=1575306942]
-layers = 2
+[node name="Plane_005" parent="gun/Hand" index="7" unique_id=1799842480]
 material_override = ExtResource("10_faf2g")
 
-[node name="Plane_006" parent="gun/Hand" index="8" unique_id=1483439566]
-layers = 2
+[node name="Plane_006" parent="gun/Hand" index="8" unique_id=1196139044]
 material_override = ExtResource("10_faf2g")
 
-[node name="Plane_007" parent="gun/Hand" index="9" unique_id=1644563792]
-layers = 2
+[node name="Plane_007" parent="gun/Hand" index="9" unique_id=617246914]
 material_override = ExtResource("10_faf2g")
 
-[node name="Sphere_001" parent="gun/Hand" index="10" unique_id=760388383]
-layers = 2
+[node name="Sphere_001" parent="gun/Hand" index="10" unique_id=1175112727]
 material_override = ExtResource("10_faf2g")
 
-[node name="Skeleton3D" parent="gun/Hand" index="11" unique_id=1890352516]
+[node name="Skeleton3D" parent="gun/Hand" index="11" unique_id=1162566651]
 bones/0/position = Vector3(2.220446e-16, -0.039352402, -0.009264516)
 bones/1/rotation = Quaternion(-0.5171032, -0.17957523, -0.19593045, 0.81361437)
 bones/2/rotation = Quaternion(0.32889473, -0.05541808, -0.22686836, 0.91503435)
