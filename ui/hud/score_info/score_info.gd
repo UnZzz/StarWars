@@ -1,7 +1,7 @@
 extends Control
 
 @onready
-var score : Label = $MarginContainer/VBoxContainer/HBoxContainer/Score
+var score : Label = $MarginContainer/VBoxContainer/Score
 
 var now_score : int = 0
 
