@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b777yixs85n3e"
-path.s3tc="res://.godot/imported/title.png-f520a0d529e74edf0d3ba77895c4527c.s3tc.ctex"
+uid="uid://4yrxsh5h211r"
+path.s3tc="res://.godot/imported/stripes1-1916790050.jpg-4193924c3b2cdaffd0c854c7d3cb7884.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/title.png"
-dest_files=["res://.godot/imported/title.png-f520a0d529e74edf0d3ba77895c4527c.s3tc.ctex"]
+source_file="res://assets/stripes1-1916790050.jpg"
+dest_files=["res://.godot/imported/stripes1-1916790050.jpg-4193924c3b2cdaffd0c854c7d3cb7884.s3tc.ctex"]
 
 [params]
 
