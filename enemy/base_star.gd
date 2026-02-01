@@ -18,10 +18,10 @@ var type = 1
 @onready var star_mask : MeshInstance3D = $StarMask
 @onready var indicator : MeshInstance3D = $Indicator
 
+var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
 @onready var navigation_agent : NavigationAgent3D = $NavigationAgent3D
 var global_target_position : Vector3
 
-var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300]
 var current_face_angle : int
 
 # Called when the node enters the scene tree for the first time.
