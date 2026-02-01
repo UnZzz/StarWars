@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://xvbfw5dhkj6k"]
 
 [ext_resource type="Script" uid="uid://b2lkxv6ha532k" path="res://map/components/door/door.gd" id="1_n5bq6"]
+[ext_resource type="Texture2D" uid="uid://4yrxsh5h211r" path="res://assets/stripes1-1916790050.jpg" id="2_vewfm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5b42"]
+albedo_texture = ExtResource("2_vewfm")
 
 [sub_resource type="BoxMesh" id="BoxMesh_vewfm"]
 size = Vector3(7, 7, 1)
@@ -12,6 +16,7 @@ data = PackedVector3Array(-3.5, 3.5, 0.5, 3.5, 3.5, 0.5, -3.5, -3.5, 0.5, 3.5, 3
 script = ExtResource("1_n5bq6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1384986682]
+material_override = SubResource("StandardMaterial3D_s5b42")
 mesh = SubResource("BoxMesh_vewfm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2045104498]

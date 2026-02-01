@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d1jr3cpiq4jhj" path="res://map/components/spawn_area/spawn_area.tscn" id="5_hrl7j"]
 [ext_resource type="PackedScene" uid="uid://dtla4qa34a6m7" path="res://map/components/wave_sequencer/wave_sequencer.tscn" id="6_os8q6"]
 [ext_resource type="Script" uid="uid://cnwgu6p0oup7u" path="res://wave/wave.gd" id="7_os8q6"]
+[ext_resource type="PackedScene" uid="uid://xvbfw5dhkj6k" path="res://map/components/door/door.tscn" id="10_ptrnm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6i3h"]
 sky_top_color = Color(0.035710335, 0.052548207, 0.0750955, 1)
@@ -736,3 +737,28 @@ metadata/_edit_lock_ = true
 
 [node name="WaveSequencer" parent="Components" unique_id=149701953 instance=ExtResource("6_os8q6")]
 wave_sequence = Array[ExtResource("7_os8q6")]([SubResource("Resource_kxpcs"), SubResource("Resource_lorcm"), SubResource("Resource_ptrnm"), SubResource("Resource_aroxu"), SubResource("Resource_mgemm"), SubResource("Resource_axnj7"), SubResource("Resource_bvnqq"), SubResource("Resource_a735s"), SubResource("Resource_tkaob"), SubResource("Resource_0dxob"), SubResource("Resource_3bkjj"), SubResource("Resource_omd5b"), SubResource("Resource_6oflt"), SubResource("Resource_2ntrb")])
+
+[node name="DoorA" parent="Components" unique_id=196103221 instance=ExtResource("10_ptrnm")]
+transform = Transform3D(0.0029845622, -2.0312866e-06, -0.9999957, -0.00068059756, -0.99999976, -2.2737368e-13, -0.99999535, 0.00068059453, -0.0029845634, 76.42436, 5.718638, 1.6141262)
+
+[node name="DoorB" parent="Components" unique_id=2009501107 instance=ExtResource("10_ptrnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.830685, 5.718638, -16.633928)
+
+[node name="DoorB2" parent="Components" unique_id=703625610 instance=ExtResource("10_ptrnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.951344, 5.718638, -16.633928)
+
+[node name="DoorC" parent="Components" unique_id=922043762 instance=ExtResource("10_ptrnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.29664, 5.718638, -16.633928)
+
+[node name="DoorC2" parent="Components" unique_id=568962863 instance=ExtResource("10_ptrnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.26395, 5.718638, -16.633928)
+
+[node name="DoorC3" parent="Components" unique_id=1442988209 instance=ExtResource("10_ptrnm")]
+transform = Transform3D(-0.003927026, 0, 0.9999923, 0, 1, 0, -0.9999923, 0, -0.003927026, 76.56113, 5.718638, -36.768936)
+
+[connection signal="segment_four" from="Components/WaveSequencer" to="Components/DoorC" method="open"]
+[connection signal="segment_four" from="Components/WaveSequencer" to="Components/DoorC2" method="open"]
+[connection signal="segment_four" from="Components/WaveSequencer" to="Components/DoorC3" method="open"]
+[connection signal="segment_three" from="Components/WaveSequencer" to="Components/DoorB" method="open"]
+[connection signal="segment_three" from="Components/WaveSequencer" to="Components/DoorB2" method="open"]
+[connection signal="segment_two" from="Components/WaveSequencer" to="Components/DoorA" method="open"]
