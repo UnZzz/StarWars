@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hs8li5f5ecnb" path="res://assets/star_base_6point.PNG" id="2_bntyd"]
 
 [resource]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("1_bntyd")
 shader_parameter/texture_albedo = ExtResource("2_bntyd")
 shader_parameter/color = Color(1, 1, 1, 1)
