@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cn8mg0ilis261"]
+
+[ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_467qw"]
+[ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="2_ivcmm"]
+[ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="3_2dsqs"]
+[ext_resource type="BehaviorTree" uid="uid://b88y6pt524e5" path="res://enemy/fast_grow.tres" id="4_ivcmm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tsqth"]
+render_priority = -1
+shader = ExtResource("2_ivcmm")
+shader_parameter/texture_albedo = ExtResource("3_2dsqs")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_5qmfc"]
+size = Vector2(2, 2)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_7n3fp"]
+
+[node name="BaseStar" unique_id=467415892 instance=ExtResource("1_467qw")]
+
+[node name="Hitbox" parent="." index="0" unique_id=1004183964]
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="StarBody" parent="." index="1" unique_id=467282083]
+material_override = SubResource("ShaderMaterial_tsqth")
+mesh = SubResource("QuadMesh_5qmfc")
+
+[node name="BTPlayer" parent="." index="7" unique_id=842027526]
+behavior_tree = ExtResource("4_ivcmm")
+blackboard_plan = SubResource("BlackboardPlan_7n3fp")

@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://d1jr3cpiq4jhj"]
 
 [ext_resource type="Script" uid="uid://bw4eqpl42hslg" path="res://map/components/spawn_area/spawn_area.gd" id="1_goi5r"]
-[ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="3_5dlar"]
-[ext_resource type="PackedScene" uid="uid://cn8mg0ilis261" path="res://enemy/stars/slow_star.tscn" id="3_68g8v"]
+[ext_resource type="PackedScene" uid="uid://dpm66x36j2ssk" path="res://enemy/stars/4_point_star_slow.tscn" id="2_s8884"]
+[ext_resource type="PackedScene" uid="uid://dxodc2034pfo7" path="res://enemy/stars/4_point_star_wander.tscn" id="3_8kjdj"]
+[ext_resource type="PackedScene" uid="uid://cn8mg0ilis261" path="res://enemy/stars/5_point_star_grow.tscn" id="3_68g8v"]
+[ext_resource type="PackedScene" uid="uid://bn4pdnepwp5n" path="res://enemy/stars/5_point_star_fast.tscn" id="4_w6fln"]
+[ext_resource type="PackedScene" uid="uid://rsnsgt4xgsds" path="res://enemy/stars/6_point_star_chase.tscn" id="6_8kjdj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1mmsn"]
 
 [node name="SpawnArea" type="Area3D" unique_id=1285392178]
 script = ExtResource("1_goi5r")
-enemy_scenes = Array[PackedScene]([ExtResource("3_68g8v"), ExtResource("3_5dlar")])
+enemy_scenes = Array[PackedScene]([ExtResource("2_s8884"), ExtResource("3_8kjdj"), ExtResource("4_w6fln"), ExtResource("3_68g8v"), ExtResource("6_8kjdj")])
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1080779571]
 aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)

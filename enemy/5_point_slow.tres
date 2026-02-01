@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bxm5p7q3n8r4a"]
+
+[ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_slow5"]
+[ext_resource type="BehaviorTree" uid="uid://c8n2m4k9x5y1w" path="res://enemy/very_slow_chase.tres" id="2_slow5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_slow5"]
+load_path = "res://.godot/imported/star_base_5point.png-6796fb4427360f2335b474b4bd709e3f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slow5"]
+render_priority = -1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 1, 1, 1)
+albedo_texture = SubResource("CompressedTexture2D_slow5")
+billboard_mode = 2
+emission_enabled = true
+emission = Color(0, 0.8, 0.8, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_slow5"]
+material = SubResource("StandardMaterial3D_slow5")
+size = Vector2(2, 2)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_slow5"]
+
+[node name="Slow5Point" unique_id=467415892 instance=ExtResource("1_slow5")]
+
+[node name="StarBody" parent="." index="1" unique_id=467282083]
+mesh = SubResource("QuadMesh_slow5")
+
+[node name="BTPlayer" parent="." index="7" unique_id=842027526]
+behavior_tree = ExtResource("2_slow5")
+blackboard_plan = SubResource("BlackboardPlan_slow5")

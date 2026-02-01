@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3868otnoqu6q"
-path.s3tc="res://.godot/imported/star_faceangry_4point.png-574fa45524c6a21222d02e62c5731156.s3tc.ctex"
+uid="uid://bk7vkl5m75dd0"
+path.s3tc="res://.godot/imported/particle_flash02.png-0bed716a34f06a1aab69735e82f43570.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/star_faceangry_4point.png"
-dest_files=["res://.godot/imported/star_faceangry_4point.png-574fa45524c6a21222d02e62c5731156.s3tc.ctex"]
+source_file="res://assets/particles/particle_flash02.png"
+dest_files=["res://.godot/imported/particle_flash02.png-0bed716a34f06a1aab69735e82f43570.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,37 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://beaay0px5w4i5"]
+
+[ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_pchase"]
+[ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_pchase"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_pchase"]
+var/target_global_position/name = &"target_global_position"
+var/target_global_position/type = 9
+var/target_global_position/value = Vector3(0, 0, 0)
+var/target_global_position/hint = 0
+var/target_global_position/hint_string = ""
+var/navigation_agent_node/name = &"navigation_agent_node"
+var/navigation_agent_node/type = 22
+var/navigation_agent_node/value = NodePath("NavigationAgent3D")
+var/navigation_agent_node/hint = 0
+var/navigation_agent_node/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_pchase"]
+script = ExtResource("1_pchase")
+
+[sub_resource type="BTAction" id="BTAction_pchase_move"]
+script = ExtResource("2_pchase")
+movement_speed = 6.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_pchase"]
+time_limit = 1.0
+children = [SubResource("BTAction_pchase_move")]
+
+[sub_resource type="BTSequence" id="BTSequence_pchase"]
+children = [SubResource("BTAction_pchase"), SubResource("BTTimeLimit_pchase")]
+
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_pchase"]
+children = [SubResource("BTSequence_pchase")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_pchase")
+root_task = SubResource("BTProbabilitySelector_pchase")

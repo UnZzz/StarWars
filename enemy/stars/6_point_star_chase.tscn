@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://rsnsgt4xgsds"]
+
+[ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_4b620"]
+[ext_resource type="BehaviorTree" uid="uid://beaay0px5w4i5" path="res://enemy/persistent_chase.tres" id="2_4b620"]
+[ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="2_avj3h"]
+[ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="3_3px7g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yqbgv"]
+render_priority = -1
+shader = ExtResource("2_avj3h")
+shader_parameter/texture_albedo = ExtResource("3_3px7g")
+shader_parameter/color = Color(0, 1, 1, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_7n3fp"]
+
+[node name="6PersistChase" unique_id=467415892 instance=ExtResource("1_4b620")]
+
+[node name="Hitbox" parent="." index="0" unique_id=1004183964]
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="StarBody" parent="." index="1" unique_id=467282083]
+material_override = SubResource("ShaderMaterial_yqbgv")
+
+[node name="BTPlayer" parent="." index="7" unique_id=842027526]
+behavior_tree = ExtResource("2_4b620")
+blackboard_plan = SubResource("BlackboardPlan_7n3fp")

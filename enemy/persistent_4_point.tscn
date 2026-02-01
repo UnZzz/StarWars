@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b2n7k4nap6x3q"]
+
+[ext_resource type="PackedScene" uid="uid://ohvlr6ih6pg2" path="res://enemy/stars/4_point_star.tscn" id="1_persist4"]
+[ext_resource type="BehaviorTree" uid="uid://e8n5k2m7p4y9w" path="res://enemy/persistent_chase.tres" id="2_persist4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_persist4"]
+load_path = "res://.godot/imported/star_base_4point.png-6796fb4427360f2335b474b4bd709e3f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_persist4"]
+render_priority = -1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.3, 0.3, 1)
+albedo_texture = SubResource("CompressedTexture2D_persist4")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_persist4"]
+material = SubResource("StandardMaterial3D_persist4")
+size = Vector2(2, 2)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_persist4"]
+
+[node name="Persistent4Point" unique_id=467415892 instance=ExtResource("1_persist4")]
+points = 4
+
+[node name="StarBody" parent="." index="1" unique_id=467282083]
+mesh = SubResource("QuadMesh_persist4")
+
+[node name="BTPlayer" parent="." index="7" unique_id=842027526]
+behavior_tree = ExtResource("2_persist4")
+blackboard_plan = SubResource("BlackboardPlan_persist4")
