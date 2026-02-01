@@ -1,13 +1,15 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://4c1qvhdnf4mc"]
 
 [ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="1_vdtmu"]
-[ext_resource type="Texture2D" uid="uid://cx0qgf8b2jopw" path="res://assets/star_base_4point.png" id="2_vdtmu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u8uv7"]
+load_path = "res://.godot/imported/star_base_4point.png-41a8957238a4117d66f52327fa7ebd36.s3tc.ctex"
 
 [resource]
 render_priority = -1
 shader = ExtResource("1_vdtmu")
-shader_parameter/texture_albedo = ExtResource("2_vdtmu")
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_u8uv7")
+shader_parameter/color = Color(0.08336911, 0.9766088, 0.45088577, 1)
 shader_parameter/roughness = 0.0
 shader_parameter/metallic = 0.0
 shader_parameter/specular = 0.0

@@ -101,6 +101,7 @@ mesh = SubResource("QuadMesh_2o4cy")
 
 [node name="ScaryFace" type="MeshInstance3D" parent="." unique_id=1173086346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07650572, 0.15730113, 0)
+visible = false
 material_override = SubResource("ShaderMaterial_n4253")
 instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_fam0b")
