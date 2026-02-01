@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dpltptwskh7tr" path="res://enemy/stars/base_star.tscn" id="1_467qw"]
 [ext_resource type="Shader" uid="uid://dd16u6bf0438q" path="res://assets/shader.gdshader" id="2_ivcmm"]
 [ext_resource type="Texture2D" uid="uid://dkrtgena0mqvc" path="res://assets/star_base_5point.png" id="3_2dsqs"]
-[ext_resource type="BehaviorTree" uid="uid://b88y6pt524e5" path="res://enemy/fast_grow.tres" id="4_ivcmm"]
+[ext_resource type="BehaviorTree" uid="uid://6lnttxys1rhu" path="res://enemy/fast_grow.tres" id="4_ivcmm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tsqth"]
 render_priority = -1
@@ -26,6 +26,10 @@ size = Vector2(2, 2)
 [node name="StarBody" parent="." index="1" unique_id=467282083]
 material_override = SubResource("ShaderMaterial_tsqth")
 mesh = SubResource("QuadMesh_5qmfc")
+
+[node name="StarMask" parent="." index="4" unique_id=201612684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25516814, 0)
+visible = false
 
 [node name="BTPlayer" parent="." index="7" unique_id=842027526]
 behavior_tree = ExtResource("4_ivcmm")

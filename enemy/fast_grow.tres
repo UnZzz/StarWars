@@ -21,7 +21,7 @@ script = ExtResource("1_fgrow")
 
 [sub_resource type="BTAction" id="BTAction_fgrow_chase_move"]
 script = ExtResource("2_fgrow")
-movement_speed = 25.0
+movement_speed = 10.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_fgrow_chase"]
 time_limit = 1.0

@@ -11,7 +11,7 @@ script = ExtResource("1_57y8x")
 
 [sub_resource type="BTAction" id="BTAction_fam0b"]
 script = ExtResource("2_j76ap")
-movement_speed = 10.0
+movement_speed = 25.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
 time_limit = 2.0
@@ -26,6 +26,7 @@ script = ExtResource("3_j76ap")
 
 [sub_resource type="BTAction" id="BTAction_n5nar"]
 script = ExtResource("2_j76ap")
+movement_speed = 15.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_j4335"]
 time_limit = 2.0
