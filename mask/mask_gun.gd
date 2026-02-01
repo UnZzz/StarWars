@@ -57,4 +57,4 @@ func _setup_new_projectile() -> void:
 	_now_projectile = mask_scene.pick_random().instantiate()
 	var texture : Texture2D = _now_projectile.get_meta("texture")
 	(star_mesh.material_override as StandardMaterial3D).albedo_texture = texture
-	set_now_mask_rotation_degree(_possible_angles.pick_random())
+	# set_now_mask_rotation_degree(_possible_angles.pick_random())

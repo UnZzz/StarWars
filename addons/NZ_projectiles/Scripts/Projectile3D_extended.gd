@@ -10,6 +10,7 @@ extends Projectile3D
 @export var r_move_extended : Move_extended_projectile3D ## Changes projectile movement
 @export var r_hit_extended : Hit_extended_projectile ## Changes arguments for the "hit" function
 @export var r_remove_projectile : Remove_projectile ## Changes consequences for projectile when body enters it
+@onready var mesh : MeshInstance3D = $MeshInstance3D
 #@export var r_custom : Resource
 
 enum {QUEUE_FREE,FREE,ACTIVATE_REMOVE_RESOURCE}
@@ -18,6 +19,7 @@ var can_move: bool = true
 
 func _ready() -> void:
 	super()
+	mesh.set_instance_shader_parameter("rotation_angle", deg_to_rad(atk))
 	_check_everything()
 
 func _move(delta:float) -> void:
