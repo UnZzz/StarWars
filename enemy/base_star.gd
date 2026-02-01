@@ -1,7 +1,11 @@
 extends CharacterBody3D
 
 class_name BaseStar
+
+
 var type = 1
+
+@export var points : int = 5
 
 @export var gravity : float = 0.98
 @export var scary_distance : float = 5.0
@@ -61,8 +65,12 @@ func _physics_process(delta: float) -> void:
 			PlayerManager.stop_player()
 	pass
 
-func hit(atk: int) -> void:
+
+func hit_extended(atk: int, id: String) -> void:
 	print("atk: ", atk)
+	print("points:", id)
+	if(id.to_int() != points):
+		return
 	is_shot = true
 	if(abs(current_face_angle - atk) % 180 == 0):
 		var other_exploded_stars = explosion_area.get_other_exploded_stars()
