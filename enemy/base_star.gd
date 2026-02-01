@@ -70,6 +70,7 @@ func hit(atk: int) -> void:
 			if star.is_in_group("enemies") and star != self and !(star.is_shot):
 				if star.has_method("hit"):
 					star.death_persist() #this kills the neighbor 
+					AudioManager.enemy_smile_face.play()
 		death_persist()
 	pass
 	

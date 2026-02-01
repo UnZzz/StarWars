@@ -119,7 +119,7 @@ bus = &"Player"
 
 [node name="SFX_Plyr_Dash" type="AudioStreamPlayer" parent="." unique_id=897030061]
 stream = SubResource("AudioStreamRandomizer_p04la")
-volume_db = -7.0
+volume_db = -9.0
 bus = &"Player"
 
 [node name="UI_Restart" type="AudioStreamPlayer" parent="." unique_id=37795089]
@@ -139,6 +139,7 @@ volume_db = -2.5
 
 [node name="Enemy_SmileFace" type="AudioStreamPlayer3D" parent="." unique_id=1030914847]
 stream = SubResource("AudioStreamRandomizer_1vsaw")
-unit_size = 4.0
+unit_size = 6.0
+max_db = 6.0
 max_distance = 547.59
 area_mask = 15
