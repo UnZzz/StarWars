@@ -11,6 +11,7 @@ func _setup() -> void:
 func _enter() -> void:
 	map_manager.switch_to(map_manager.init_map)
 	WaveManager.is_active = true
+	WaveManager.now_total_score = 0
 	pass
 
 ## Called when state is exited.

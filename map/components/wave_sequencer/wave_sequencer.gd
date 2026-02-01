@@ -5,6 +5,10 @@ extends Node
 
 var now_wave_idx = 0
 
+signal segment_two
+signal segment_three
+signal segment_four
+
 func _ready() -> void:
 	WaveManager.wave_finished.connect(_on_wave_finished)
 	_start_first_wave()
@@ -13,6 +17,12 @@ func _on_wave_finished():
 		WaveManager.start_new_wave(wave_sequence[now_wave_idx])
 		now_wave_idx+=1
 		now_wave_idx = posmod(now_wave_idx, wave_sequence.size())
+		if now_wave_idx == 2:
+			emit_signal("segment_two")
+		elif now_wave_idx == 4:
+			emit_signal("segment_three")
+		elif now_wave_idx == 6:
+			emit_signal("segment_four")
 
 func _start_first_wave():
 	WaveManager.start_new_wave(wave_sequence[0])

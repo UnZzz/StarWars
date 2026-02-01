@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://due1xmelwtnsf" path="res://assets/mask.tres" id="7_mf08w"]
 [ext_resource type="BehaviorTree" uid="uid://nayljaiuh2h0" path="res://enemy/slow_chase.tres" id="7_rr5jx"]
 [ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="8_3hdd0"]
-[ext_resource type="Script" path="res://enemy/tasks/explode.gd" id="8_q1pqd"]
+[ext_resource type="Script" uid="uid://drg72xl38t27g" path="res://enemy/tasks/explode.gd" id="8_q1pqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -79,6 +79,7 @@ script = ExtResource("1_j4wau")
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=1004183964]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_mggwb")
+debug_color = Color(1, 1, 1, 0.41960785)
 
 [node name="StarBody" type="MeshInstance3D" parent="." unique_id=467282083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23101807, 0)
