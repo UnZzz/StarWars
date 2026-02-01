@@ -25,6 +25,9 @@ size = Vector2(2, 2)
 [node name="StarBody" parent="." index="1" unique_id=467282083]
 mesh = SubResource("QuadMesh_5qmfc")
 
+[node name="StarMask" parent="." index="4" unique_id=201612684]
+visible = false
+
 [node name="BTPlayer" parent="." index="7" unique_id=842027526]
 behavior_tree = ExtResource("2_7n3fp")
 blackboard_plan = SubResource("BlackboardPlan_7n3fp")
