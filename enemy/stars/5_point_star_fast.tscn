@@ -24,7 +24,7 @@ shader_parameter/uv1_offset = Vector3(0, 0, 0)
 material_override = SubResource("ShaderMaterial_boy6u")
 
 [node name="StarMask" parent="." index="4" unique_id=201612684]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23887837, 0)
 
 [node name="BTPlayer" parent="." index="7" unique_id=842027526]
 behavior_tree = ExtResource("4_iawed")

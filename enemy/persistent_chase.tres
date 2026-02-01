@@ -20,7 +20,7 @@ script = ExtResource("1_pchase")
 
 [sub_resource type="BTAction" id="BTAction_pchase_move"]
 script = ExtResource("2_pchase")
-movement_speed = 6.0
+movement_speed = 8.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_pchase"]
 time_limit = 1.0
@@ -29,8 +29,12 @@ children = [SubResource("BTAction_pchase_move")]
 [sub_resource type="BTSequence" id="BTSequence_pchase"]
 children = [SubResource("BTAction_pchase"), SubResource("BTTimeLimit_pchase")]
 
+[sub_resource type="BTSetVar" id="BTSetVar_a0xv4"]
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_a0xv4"]
+
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_pchase"]
-children = [SubResource("BTSequence_pchase")]
+children = [SubResource("BTSequence_pchase"), SubResource("BTSetVar_a0xv4"), SubResource("BTCheckVar_a0xv4")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_pchase")

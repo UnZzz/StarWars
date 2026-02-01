@@ -11,7 +11,7 @@ script = ExtResource("1_fid2c")
 
 [sub_resource type="BTAction" id="BTAction_fam0b"]
 script = ExtResource("2_2el1o")
-movement_speed = 10.0
+movement_speed = 2.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_4n5wd"]
 time_limit = 2.0
@@ -24,8 +24,16 @@ metadata/_weight_ = 2.3502880658436203
 [sub_resource type="BTAction" id="BTAction_wt680"]
 script = ExtResource("3_2el1o")
 
+[sub_resource type="BTAction" id="BTAction_2el1o"]
+script = ExtResource("2_2el1o")
+movement_speed = 2.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_xuao5"]
+time_limit = 2.0
+children = [SubResource("BTAction_2el1o")]
+
 [sub_resource type="BTSequence" id="BTSequence_gxpj4"]
-children = [SubResource("BTAction_wt680")]
+children = [SubResource("BTAction_wt680"), SubResource("BTTimeLimit_xuao5")]
 metadata/_weight_ = 0.78
 
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_a4w72"]

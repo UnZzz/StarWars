@@ -38,6 +38,6 @@ func _tick(delta: float) -> Status:
 		randf_range(-wander_radius, wander_radius)
 	)
 
-	blackboard.set_var("target_global_position", current_pos + random_offset)
+	(enemy as BaseStar).global_target_position = current_pos + random_offset
 	
 	return SUCCESS
