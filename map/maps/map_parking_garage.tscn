@@ -35,81 +35,80 @@ metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 [sub_resource type="Resource" id="Resource_lorcm"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 30.0
-max_enemy_count = 3.0
+max_enemy_count = 2.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_ptrnm"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 40.0
-max_enemy_count = 5.0
+max_enemy_count = 3.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_aroxu"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 50.0
-max_enemy_count = 8.0
+max_enemy_count = 4.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_mgemm"]
 script = ExtResource("7_os8q6")
-max_enemy_count = 12.0
+max_enemy_count = 6.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_axnj7"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 70.0
-max_enemy_count = 16.0
+max_enemy_count = 8.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_bvnqq"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 80.0
-max_enemy_count = 20.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_a735s"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 90.0
-max_enemy_count = 25.0
+max_enemy_count = 12.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_tkaob"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 90.0
-max_enemy_count = 30.0
+max_enemy_count = 16.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_0dxob"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 90.0
-max_enemy_count = 40.0
+max_enemy_count = 20.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_3bkjj"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 90.0
-max_enemy_count = 50.0
+max_enemy_count = 25.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_omd5b"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 90.0
-max_enemy_count = 80.0
+max_enemy_count = 35.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_6oflt"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 90.0
-max_enemy_count = 120.0
+max_enemy_count = 50.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
 [sub_resource type="Resource" id="Resource_2ntrb"]
 script = ExtResource("7_os8q6")
 wave_length_sec = 90.0
-max_enemy_count = 200.0
+max_enemy_count = 75.0
 metadata/_custom_type_script = "uid://cnwgu6p0oup7u"
 
-[node name="Map" type="Node3D" unique_id=752743956 node_paths=PackedStringArray("player_start_point")]
+[node name="Map2" type="Node3D" unique_id=752743956 node_paths=PackedStringArray("player_start_point")]
 script = ExtResource("1_2rymc")
 player_start_point = NodePath("Components/PlayerStartPoint")
 
