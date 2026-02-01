@@ -75,7 +75,7 @@ func hit_extended(atk: int, id: String) -> void:
 	if(id.to_int() != points):
 		return
 	is_shot = true
-	if(abs(current_face_angle - atk) % 180 == 0):
+	if(abs(current_face_angle - atk) % 180 < 45):
 		var other_exploded_stars = explosion_area.get_other_exploded_stars()
 		for star in other_exploded_stars:
 			if star.is_in_group("enemies") and star != self and !(star.is_shot):
