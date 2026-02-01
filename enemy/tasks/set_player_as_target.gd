@@ -30,7 +30,8 @@ func _exit() -> void:
 
 # Called each time this task is ticked (aka executed).
 func _tick(delta: float) -> Status:
-	blackboard.set_var("target_global_position", _player.global_position)
+	#blackboard.set_var("target_global_position", _player.global_position)
+	(agent as BaseStar).global_target_position =  _player.global_position
 	return SUCCESS
 
 
