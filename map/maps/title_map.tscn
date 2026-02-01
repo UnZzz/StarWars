@@ -8,6 +8,26 @@
 [ext_resource type="Texture2D" uid="uid://bk7vkl5m75dd0" path="res://assets/particles/particle_flash02.png" id="6_vuv0r"]
 [ext_resource type="ArrayMesh" uid="uid://di6akeoenqysh" path="res://assets/particles/particleplanes02.obj" id="7_mr1la"]
 [ext_resource type="Texture2D" uid="uid://m6m7dk56y63d" path="res://assets/particles/particle_flash03.png" id="8_ldbkh"]
+[ext_resource type="FontFile" uid="uid://qv36cjyrefof" path="res://assets/AdventPro-VariableFont_wdth,wght.ttf" id="9_mr1la"]
+[ext_resource type="Texture2D" uid="uid://b777yixs85n3e" path="res://assets/title.png" id="10_ldbkh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6i3h"]
+sky_top_color = Color(0.1062691, 0.13032454, 0.16864356, 1)
+sky_horizon_color = Color(0.0422242, 0.044060975, 0.047738828, 1)
+ground_bottom_color = Color(0.012056427, 0.008762386, 0.0057649696, 1)
+ground_horizon_color = Color(0.022027276, 0.023040788, 0.025150632, 1)
+
+[sub_resource type="Sky" id="Sky_43bpn"]
+sky_material = SubResource("ProceduralSkyMaterial_l6i3h")
+
+[sub_resource type="Environment" id="Environment_mr1la"]
+background_mode = 2
+sky = SubResource("Sky_43bpn")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dnfa"]
 transparency = 1
@@ -26,7 +46,7 @@ point_count = 2
 curve = SubResource("Curve_sdkj0")
 
 [sub_resource type="Curve" id="Curve_8jo5k"]
-_data = [Vector2(0, 0.024121404), 0.0, 0.71714634, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 28.149717, 0, 0, Vector2(0.9722222, 0.96137846), 0.84117645, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_cbp8e"]
@@ -61,10 +81,18 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
+[sub_resource type="Curve" id="Curve_vuv0r"]
+_data = [Vector2(0.0069444478, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.6764708, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mr1la"]
+curve = SubResource("Curve_vuv0r")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rmihu"]
 gravity = Vector3(0, 0, 0)
+linear_accel_curve = SubResource("CurveTexture_mr1la")
 scale_curve = SubResource("CurveTexture_cbp8e")
-color = Color(1.602499, 1.162012, 1.2461801e-06, 1)
+color = Color(1.602, 1.602, 1.602, 1)
 alpha_curve = SubResource("CurveTexture_ox5ju")
 
 [sub_resource type="QuadMesh" id="QuadMesh_134tj"]
@@ -89,66 +117,143 @@ curve = SubResource("Curve_lelqp")
 lifetime_randomness = 1.0
 particle_flag_align_y = true
 emission_shape = 1
-emission_sphere_radius = 0.2
-direction = Vector3(0, 0, 1)
-spread = 10.0
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
 initial_velocity_min = 5.0
 initial_velocity_max = 10.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.049999997
-scale_max = 0.29999998
-color = Color(1.0655953, 0.7483217, 8.070073e-07, 1)
+scale_min = 0.19999999
+scale_max = 0.5
+color = Color(1.066, 1.066, 1.066, 1)
 alpha_curve = SubResource("CurveTexture_1w1od")
 
 [sub_resource type="QuadMesh" id="QuadMesh_vuv0r"]
 size = Vector2(0.2, 1)
 
+[sub_resource type="QuadMesh" id="QuadMesh_0dnfa"]
+size = Vector2(8, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdkj0"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("10_ldbkh")
+
 [node name="Map" unique_id=752743956 node_paths=PackedStringArray("player_start_point") instance=ExtResource("1_jtjiu")]
 player_start_point = NodePath("Components/PlayerStartPoint")
+
+[node name="WorldEnvironment" parent="Environment" parent_id_path=PackedInt32Array(1627753690) index="0" unique_id=140801785]
+environment = SubResource("Environment_mr1la")
 
 [node name="NavigationRegion3D" parent="." index="1" unique_id=1353544295]
 visible = false
 
 [node name="PlayerStartPoint" parent="Components" parent_id_path=PackedInt32Array(71344139) index="0" unique_id=253034820 instance=ExtResource("2_ji76p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.54767, 1.4999962, -31.614048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.442066, 1.4999962, -31.614048)
 
 [node name="ExtractionPoint" parent="Components" parent_id_path=PackedInt32Array(71344139) index="1" unique_id=1238818511 node_paths=PackedStringArray("map_root") instance=ExtResource("3_ji76p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1.1874802, -32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.866623, 1.1874802, -32)
 next_map = "uid://dn45jadr8y3du"
 map_root = NodePath("../..")
 
 [node name="particle" type="Node3D" parent="." index="3" unique_id=1194436529]
+visible = false
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="particle" index="0" unique_id=1048060796]
+visible = false
 material_override = SubResource("StandardMaterial3D_0dnfa")
 amount = 1
-lifetime = 0.09999999999999999
+lifetime = 0.1
 randomness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_ypbeh")
 draw_pass_1 = ExtResource("5_sca1x")
 
 [node name="particlecone" type="GPUParticles3D" parent="particle" index="1" unique_id=1945256525]
+visible = false
 material_override = SubResource("StandardMaterial3D_c02ml")
 amount = 1
-lifetime = 0.09999999999999999
+lifetime = 0.1
 randomness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_ypbeh")
 draw_pass_1 = ExtResource("7_mr1la")
 
 [node name="particleflash" type="GPUParticles3D" parent="particle" index="2" unique_id=2142802269]
+visible = false
 material_override = SubResource("StandardMaterial3D_3ny5j")
 amount = 1
-lifetime = 0.09999999999999999
-randomness = 1.0
+lifetime = 0.99
+speed_scale = 1.7
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_rmihu")
 draw_pass_1 = SubResource("QuadMesh_134tj")
 
 [node name="trail" type="GPUParticles3D" parent="particle" index="3" unique_id=176147269]
 material_override = SubResource("StandardMaterial3D_v3ckv")
-amount = 40
-lifetime = 1.33
+amount = 100
+lifetime = 0.2
+speed_scale = 0.5
 process_material = SubResource("ParticleProcessMaterial_cjig1")
 draw_pass_1 = SubResource("QuadMesh_vuv0r")
+
+[node name="particle2" type="Node3D" parent="." index="4" unique_id=1468945751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.792786, 0, -32.070274)
+
+[node name="particleflash" type="GPUParticles3D" parent="particle2" index="0" unique_id=524106362]
+material_override = SubResource("StandardMaterial3D_3ny5j")
+amount = 2
+lifetime = 22.59
+speed_scale = 1.7
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_rmihu")
+draw_pass_1 = SubResource("QuadMesh_134tj")
+
+[node name="trail" type="GPUParticles3D" parent="particle2" index="1" unique_id=257004121]
+material_override = SubResource("StandardMaterial3D_v3ckv")
+amount = 100
+lifetime = 0.5
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_cjig1")
+draw_pass_1 = SubResource("QuadMesh_vuv0r")
+
+[node name="text2" type="Node3D" parent="." index="5" unique_id=1303148116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.78094, 3.087453, -31.589405)
+
+[node name="Label3D2" type="Label3D" parent="text2" index="0" unique_id=1359549549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.489891, -0.83341694, -2.6545906)
+billboard = 1
+modulate = Color(0.79836637, 0.7983663, 0.7983663, 1)
+text = "LEFT CLICK TO SHOOT"
+font = ExtResource("9_mr1la")
+font_size = 48
+outline_size = 3
+uppercase = true
+
+[node name="Label3D3" type="Label3D" parent="text2" index="1" unique_id=1300489834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.489891, -1.2938254, -2.6545906)
+billboard = 1
+modulate = Color(0.79836637, 0.7983663, 0.7983663, 1)
+text = "SCROLL WHEEL TO ROTATE MASK"
+font = ExtResource("9_mr1la")
+font_size = 48
+outline_size = 3
+uppercase = true
+
+[node name="text" type="Node3D" parent="." index="6" unique_id=1432503711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.266453, 2.7017035, -27.342058)
+
+[node name="Label3D" type="Label3D" parent="text" index="0" unique_id=1563551963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.489891, -0.4086709, -2.6545906)
+billboard = 1
+modulate = Color(0.79836637, 0.7983663, 0.7983663, 1)
+text = "WASD TO MOVE"
+font = ExtResource("9_mr1la")
+font_size = 48
+outline_size = 3
+uppercase = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="7" unique_id=210560287]
+transform = Transform3D(0.01530595, 0, 0.9998829, 0, 1, 0, -0.9998829, 0, 0.01530595, 30.474977, 3.6575441, -31.851217)
+mesh = SubResource("QuadMesh_0dnfa")
+surface_material_override/0 = SubResource("StandardMaterial3D_sdkj0")
