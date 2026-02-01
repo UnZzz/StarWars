@@ -34,6 +34,7 @@ metadata/_weight_ = 3.0
 [sub_resource type="BTAction" id="BTAction_fgrow"]
 script = ExtResource("3_fgrow")
 grow_chance = 0.8
+growth_factor = 2.5
 
 [sub_resource type="BTCooldown" id="BTCooldown_fgrow"]
 duration = 2.0

@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cu2vjbdlqc5pu" path="res://assets/gun.blend" id="4_7yv0e"]
 [ext_resource type="Script" uid="uid://hmf41p7xadtr" path="res://assets/gun.gd" id="5_noubn"]
 [ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="6_noubn"]
+[ext_resource type="Texture2D" uid="uid://blk355kr6wl71" path="res://assets/particles/particle_flash01.png" id="8_xbt5p"]
+[ext_resource type="ArrayMesh" uid="uid://c52tavassooqe" path="res://assets/ParticlePlane01.obj" id="9_orm82"]
+[ext_resource type="Texture2D" uid="uid://bk7vkl5m75dd0" path="res://assets/particles/particle_flash02.png" id="10_xcjm1"]
+[ext_resource type="ArrayMesh" uid="uid://di6akeoenqysh" path="res://assets/particles/particleplanes02.obj" id="11_6def7"]
+[ext_resource type="Texture2D" uid="uid://m6m7dk56y63d" path="res://assets/particles/particle_flash03.png" id="12_u0g4s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2aemt"]
 transparency = 1
@@ -16,6 +21,87 @@ albedo_texture = ExtResource("6_noubn")
 [sub_resource type="QuadMesh" id="QuadMesh_rk80v"]
 flip_faces = true
 size = Vector2(2, 2)
+
+[sub_resource type="GDScript" id="GDScript_faf2g"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7e16s"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("8_xbt5p")
+
+[sub_resource type="Curve" id="Curve_vrost"]
+_data = [Vector2(0.016069226, 0.96350604), 0.0, 0.0, 0, 0, Vector2(0.9777504, 0.005198598), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ox5ju"]
+curve = SubResource("Curve_vrost")
+
+[sub_resource type="Curve" id="Curve_raow5"]
+_data = [Vector2(0, 0.024121404), 0.0, 0.71714634, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cbp8e"]
+curve = SubResource("Curve_raow5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_36th3"]
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_cbp8e")
+color = Color(3.6528325, 3.3799133, 2.0331361, 1)
+alpha_curve = SubResource("CurveTexture_ox5ju")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgjj4"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("10_xcjm1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xwcbc"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_cbp8e")
+color = Color(3.6528325, 3.3799133, 2.0331361, 1)
+alpha_curve = SubResource("CurveTexture_ox5ju")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2joq"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("12_u0g4s")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v7i3i"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_cbp8e")
+color = Color(1.602499, 1.162012, 1.2461801e-06, 1)
+alpha_curve = SubResource("CurveTexture_ox5ju")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wphm8"]
 
 [node name="MaskGun" type="Node3D" unique_id=1764099407]
 script = ExtResource("1_oab67")
@@ -45,7 +131,7 @@ expand_mode = 2
 transform = Transform3D(-0.019369831, 0, -0.5996873, 0, 0.6, 0, 0.5996873, 0, -0.019369831, -1.1129854, -0.64308083, -0.956177)
 script = ExtResource("5_noubn")
 
-[node name="Hand" parent="gun" index="0" unique_id=290478523]
+[node name="Hand" parent="gun" index="0" unique_id=1941440139]
 transform = Transform3D(0.6716269, 0, 0, 0, 0.15390977, -0.6537542, 0, 0.6537542, 0.15390977, -0.17778108, 0.93506, -1.411388)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gun/Hand" index="0" unique_id=895215868]
@@ -53,7 +139,7 @@ transform = Transform3D(1.4889218, 9.350095e-10, 1.558379e-08, -1.490116e-08, 0.
 material_override = SubResource("StandardMaterial3D_2aemt")
 mesh = SubResource("QuadMesh_rk80v")
 
-[node name="Skeleton3D" parent="gun/Hand" index="11" unique_id=619517420]
+[node name="Skeleton3D" parent="gun/Hand" index="11" unique_id=1719518447]
 bones/0/position = Vector3(2.220446e-16, -0.039352402, -0.009264516)
 bones/1/rotation = Quaternion(-0.5171032, -0.17957523, -0.19593045, 0.81361437)
 bones/2/rotation = Quaternion(0.32889473, -0.05541808, -0.22686836, 0.91503435)
@@ -74,5 +160,42 @@ bones/16/rotation = Quaternion(0.29446185, -7.438494e-15, 7.020518e-08, 0.955663
 bones/17/rotation = Quaternion(-0.051545095, -0.100595824, -0.3788882, 0.91851366)
 bones/18/rotation = Quaternion(-0.091868885, -0.026322514, -0.24140373, 0.9657078)
 bones/19/rotation = Quaternion(-0.08126992, 0.11658333, -0.6140164, 0.77639395)
+
+[node name="particle" type="Node3D" parent="gun" unique_id=1080556644]
+transform = Transform3D(-1.6664954, 0, -0.023881229, 0, 1.6666665, 0, 0.023881229, 0, -1.6664954, 0.0025379658, 1.6299601, 1.6967902)
+script = SubResource("GDScript_faf2g")
+
+[node name="particlelargflash" type="GPUParticles3D" parent="gun/particle" unique_id=343461074]
+material_override = SubResource("StandardMaterial3D_7e16s")
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_36th3")
+draw_pass_1 = ExtResource("9_orm82")
+
+[node name="particlecone" type="GPUParticles3D" parent="gun/particle" unique_id=341760204]
+material_override = SubResource("StandardMaterial3D_cgjj4")
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_xwcbc")
+draw_pass_1 = ExtResource("11_6def7")
+
+[node name="particleflash" type="GPUParticles3D" parent="gun/particle" unique_id=560342223]
+material_override = SubResource("StandardMaterial3D_x2joq")
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+randomness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_v7i3i")
+draw_pass_1 = SubResource("QuadMesh_wphm8")
 
 [editable path="gun"]
