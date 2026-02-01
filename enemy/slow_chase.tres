@@ -21,11 +21,7 @@ children = [SubResource("BTAction_fam0b")]
 children = [SubResource("BTAction_y136q"), SubResource("BTTimeLimit_4n5wd")]
 metadata/_weight_ = 2.3502880658436203
 
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_xuao5"]
-time_limit = 3.0
-
 [sub_resource type="BTAction" id="BTAction_wt680"]
-children = [SubResource("BTTimeLimit_xuao5")]
 script = ExtResource("3_2el1o")
 
 [sub_resource type="BTSequence" id="BTSequence_gxpj4"]

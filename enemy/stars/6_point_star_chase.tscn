@@ -20,9 +20,6 @@ shader_parameter/uv1_offset = Vector3(0, 0, 0)
 
 [node name="6PersistChase" unique_id=467415892 instance=ExtResource("1_4b620")]
 
-[node name="Hitbox" parent="." index="0" unique_id=1004183964]
-debug_color = Color(1, 1, 1, 0.41960785)
-
 [node name="StarBody" parent="." index="1" unique_id=467282083]
 material_override = SubResource("ShaderMaterial_yqbgv")
 
