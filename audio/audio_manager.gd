@@ -4,3 +4,4 @@ extends Node
 @onready var plyr_gun_shoot: AudioStreamPlayer = $SFX_GunShoot
 @onready var plyr_fs: AudioStreamPlayer = $SFX_Plyr_FS
 @onready var plyr_jump: AudioStreamPlayer = $SFX_Plyr_Jump
+@onready var ui_restart: AudioStreamPlayer = $UI_Restart

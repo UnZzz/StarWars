@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://rdf5c3u1k4e5"]
 
 [ext_resource type="Script" uid="uid://cpc56f6dj5gwi" path="res://audio/audio_manager.gd" id="1_drlug"]
-[ext_resource type="AudioStream" uid="uid://54rmq7805bbh" path="res://assets/audio/music/mus_main_scene.mp3" id="2_mhfhn"]
+[ext_resource type="AudioStream" uid="uid://dkldu141s0nph" path="res://assets/audio/music/mus_main_scene_01.mp3" id="2_h3g62"]
+[ext_resource type="AudioStream" uid="uid://b7rxm4wihi5yw" path="res://assets/audio/music/mus_main_scene_02.mp3" id="3_gnfy0"]
 [ext_resource type="AudioStream" uid="uid://d3qbwxlu2w73x" path="res://assets/audio/sfx/plyr_gun_shoot_01.wav" id="3_mhfhn"]
 [ext_resource type="AudioStream" uid="uid://db1kfag5ejb50" path="res://assets/audio/sfx/plyr_gun_shoot_02.wav" id="4_i1k7u"]
 [ext_resource type="AudioStream" uid="uid://b2ucoiuy56cdc" path="res://assets/audio/sfx/plyr_gun_shoot_03.wav" id="5_8j4p3"]
@@ -12,6 +13,15 @@
 [ext_resource type="AudioStream" uid="uid://upktdinfrreh" path="res://assets/audio/sfx/plyr_jump_01.wav" id="10_tmngx"]
 [ext_resource type="AudioStream" uid="uid://c0kt6govfyket" path="res://assets/audio/sfx/plyr_jump_02.wav" id="11_h3g62"]
 [ext_resource type="AudioStream" uid="uid://5wtls011uwx" path="res://assets/audio/sfx/plyr_jump_03.wav" id="12_gnfy0"]
+[ext_resource type="AudioStream" uid="uid://cevftuuyt654w" path="res://assets/audio/sfx/ui_restart.wav" id="14_gnfy0"]
+[ext_resource type="AudioStream" uid="uid://bcpaxbcdinawu" path="res://assets/audio/sfx/enemy_vox_01.wav" id="15_sgp2o"]
+[ext_resource type="AudioStream" uid="uid://foap4dugikh1" path="res://assets/audio/sfx/enemy_vox_02.wav" id="16_qus7j"]
+[ext_resource type="AudioStream" uid="uid://cfilhshfopess" path="res://assets/audio/sfx/enemy_vox_03.wav" id="17_tu6k2"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ji21h"]
+streams_count = 2
+stream_0/stream = ExtResource("2_h3g62")
+stream_1/stream = ExtResource("3_gnfy0")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mhfhn"]
 random_pitch = 1.1892071
@@ -43,19 +53,24 @@ stream_0/stream = ExtResource("10_tmngx")
 stream_1/stream = ExtResource("11_h3g62")
 stream_2/stream = ExtResource("12_gnfy0")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2qk0m"]
+streams_count = 3
+stream_0/stream = ExtResource("15_sgp2o")
+stream_1/stream = ExtResource("16_qus7j")
+stream_2/stream = ExtResource("17_tu6k2")
+
 [node name="AudioManager" type="Node2D" unique_id=1083692004]
 script = ExtResource("1_drlug")
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=158938632]
-stream = ExtResource("2_mhfhn")
+stream = SubResource("AudioStreamRandomizer_ji21h")
 volume_db = -12.0
 bus = &"Music"
-parameters/looping = true
 
 [node name="SFX_GunShoot" type="AudioStreamPlayer" parent="." unique_id=1879664619]
 stream = SubResource("AudioStreamRandomizer_mhfhn")
 volume_db = -6.0
-bus = &"SFX"
+bus = &"Gun"
 
 [node name="SFX_Plyr_FS" type="AudioStreamPlayer" parent="." unique_id=578985861]
 stream = SubResource("AudioStreamRandomizer_oyqdx")
@@ -66,3 +81,11 @@ bus = &"Player"
 stream = SubResource("AudioStreamRandomizer_pyj8m")
 volume_db = -9.0
 bus = &"Player"
+
+[node name="UI_Restart" type="AudioStreamPlayer" parent="." unique_id=37795089]
+stream = ExtResource("14_gnfy0")
+volume_db = -2.0
+bus = &"UI"
+
+[node name="Enemy_Vox" type="AudioStreamPlayer3D" parent="." unique_id=969623703]
+stream = SubResource("AudioStreamRandomizer_2qk0m")
