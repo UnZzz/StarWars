@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bggah5tylxpjs" path="res://ui/hud/score_info/score_info.tscn" id="4_tncax"]
 
 [node name="PlayerCharacter" unique_id=2077823591 instance=ExtResource("1_1v1wt")]
+walk_speed = 6.0
+walk_accel = 8.0
+walk_deccel = 7.5
+run_speed = 9.0
+run_accel = 8.0
+run_deccel = 7.5
 jump_height = 1.8
 nb_jumps_in_air_allowed = 0
 
