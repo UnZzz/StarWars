@@ -2,7 +2,7 @@
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
 resource_name = "Compressor"
-threshold = -9.2
+threshold = -11.4
 ratio = 8.1
 sidechain = &"SFX"
 
@@ -10,6 +10,11 @@ sidechain = &"SFX"
 resource_name = "Compressor"
 threshold = -13.5
 ratio = 5.8
+sidechain = &"Gun"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_n8wo2"]
+resource_name = "Compressor"
+threshold = -10.6
 sidechain = &"Gun"
 
 [resource]
@@ -47,3 +52,11 @@ bus/5/mute = false
 bus/5/bypass_fx = false
 bus/5/volume_db = 0.0
 bus/5/send = &"SFX"
+bus/6/name = &"Enemy"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = 0.0
+bus/6/send = &"SFX"
+bus/6/effect/0/effect = SubResource("AudioEffectCompressor_n8wo2")
+bus/6/effect/0/enabled = true
