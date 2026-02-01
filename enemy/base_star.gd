@@ -79,6 +79,7 @@ func death_persist():
 	get_tree().create_timer(1.0).timeout.connect(remove)
 	
 func remove():
+	WaveManager.now_total_score += 100
 	queue_free()
 
 func _exit_tree() -> void:
