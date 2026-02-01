@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://da3dshsqb6la4" path="res://assets/concrete_floor_damaged_01_ao_4k.jpg" id="1_ttdos"]
 
 [resource]
-albedo_color = Color(0.43326545, 0.43326575, 0.43326542, 1)
+albedo_color = Color(0.25, 0.25, 0.25, 1)
 albedo_texture = ExtResource("1_ttdos")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
