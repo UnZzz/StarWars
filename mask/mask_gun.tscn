@@ -45,7 +45,7 @@ expand_mode = 2
 transform = Transform3D(-0.019369831, 0, -0.5996873, 0, 0.6, 0, 0.5996873, 0, -0.019369831, -1.1129854, -0.64308083, -0.956177)
 script = ExtResource("5_noubn")
 
-[node name="Hand" parent="gun" index="0" unique_id=699504646]
+[node name="Hand" parent="gun" index="0" unique_id=290478523]
 transform = Transform3D(0.6716269, 0, 0, 0, 0.15390977, -0.6537542, 0, 0.6537542, 0.15390977, -0.17778108, 0.93506, -1.411388)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gun/Hand" index="0" unique_id=895215868]
@@ -53,7 +53,7 @@ transform = Transform3D(1.4889218, 9.350095e-10, 1.558379e-08, -1.490116e-08, 0.
 material_override = SubResource("StandardMaterial3D_2aemt")
 mesh = SubResource("QuadMesh_rk80v")
 
-[node name="Skeleton3D" parent="gun/Hand" index="11" unique_id=87341845]
+[node name="Skeleton3D" parent="gun/Hand" index="11" unique_id=619517420]
 bones/0/position = Vector3(2.220446e-16, -0.039352402, -0.009264516)
 bones/1/rotation = Quaternion(-0.5171032, -0.17957523, -0.19593045, 0.81361437)
 bones/2/rotation = Quaternion(0.32889473, -0.05541808, -0.22686836, 0.91503435)

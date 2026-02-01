@@ -9,8 +9,10 @@
 [ext_resource type="Script" uid="uid://cnwgu6p0oup7u" path="res://wave/wave.gd" id="7_os8q6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6i3h"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.035710335, 0.052548207, 0.0750955, 1)
+sky_horizon_color = Color(0.059339978, 0.061497204, 0.06581655, 1)
+ground_bottom_color = Color(0.08549497, 0.06805372, 0.04842461, 1)
+ground_horizon_color = Color(0.06583962, 0.06811801, 0.07268029, 1)
 
 [sub_resource type="Sky" id="Sky_43bpn"]
 sky_material = SubResource("ProceduralSkyMaterial_l6i3h")

@@ -17,10 +17,10 @@ func _ready() -> void:
 	return
 
 func _physics_process(delta: float) -> void:
-	if(Input.is_action_just_released("rotate_clockwise")):
+	if(Input.is_action_just_released("rotate_clockwise") or Input.is_action_just_pressed("rotate_clockwise_key")):
 		current_angle += 30
 		set_now_mask_rotation_degree(current_angle)
-	elif(Input.is_action_just_released("rotate_anti_clockwise")):
+	elif(Input.is_action_just_released("rotate_anti_clockwise") or Input.is_action_just_pressed("rotate_anti_clockwise_key")):
 		current_angle -= 30
 		set_now_mask_rotation_degree(current_angle)
 	if(Input.is_action_just_pressed("fire")):
