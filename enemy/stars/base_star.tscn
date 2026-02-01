@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://due1xmelwtnsf" path="res://assets/mask.tres" id="7_mf08w"]
 [ext_resource type="BehaviorTree" uid="uid://nayljaiuh2h0" path="res://enemy/slow_chase.tres" id="7_rr5jx"]
 [ext_resource type="Texture2D" uid="uid://c3hm64ycxe2o3" path="res://assets/star_mask_5point2.png" id="8_3hdd0"]
-[ext_resource type="Script" uid="uid://drg72xl38t27g" path="res://enemy/tasks/explode.gd" id="8_q1pqd"]
+[ext_resource type="Script" path="res://enemy/tasks/explode.gd" id="8_q1pqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mggwb"]
 radius = 1.0
@@ -102,6 +102,7 @@ mesh = SubResource("QuadMesh_wcy7k")
 
 [node name="StarMask" type="MeshInstance3D" parent="." unique_id=201612684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33754432, 0)
+visible = false
 material_override = ExtResource("7_mf08w")
 instance_shader_parameters/albedo = Color(1, 1, 1, 1)
 mesh = SubResource("QuadMesh_841x3")
@@ -122,6 +123,7 @@ blackboard_plan = SubResource("BlackboardPlan_68d2x")
 
 [node name="Rotation" type="Label3D" parent="." unique_id=1035925262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0996094, 0)
+visible = false
 billboard = 2
 
 [node name="ProximityExplosion" type="Area3D" parent="." unique_id=2072447290]

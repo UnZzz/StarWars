@@ -161,6 +161,8 @@ func end_anger_state() -> void:
 	
 func death_persist():
 	star_mask.visible = true
+	AudioManager.enemy_smile_face.play()
+	AudioManager.enemy_mask_smash.play()
 	process_mode = Node.PROCESS_MODE_DISABLED
 	get_tree().create_timer(1.0).timeout.connect(remove)
 	

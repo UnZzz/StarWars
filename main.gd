@@ -1,13 +1,13 @@
 extends Node
 
 @onready
-var state_machine : LimboHSM = $LimboHSM
+var state_machine : LimboHSM = $SubViewportContainer/SubViewport/LimboHSM
 @onready
-var intro_state : LimboState = $LimboHSM/Intro
+var intro_state : LimboState = $SubViewportContainer/SubViewport/LimboHSM/Intro
 @onready
-var playing_state : LimboState = $LimboHSM/Playing
+var playing_state : LimboState = $SubViewportContainer/SubViewport/LimboHSM/Playing
 @onready
-var result_state : LimboState = $LimboHSM/Result
+var result_state : LimboState = $SubViewportContainer/SubViewport/LimboHSM/Result
 
 func _ready() -> void:
 	_init_state_machine()
@@ -20,5 +20,5 @@ func _init_state_machine():
 	
 	state_machine.initialize(self)
 	state_machine.set_active(true)
-	AudioManager.bgm_player.play()
+	AudioManager.bg_music_lobby.play()
 	pass
