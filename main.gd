@@ -20,5 +20,5 @@ func _init_state_machine():
 	
 	state_machine.initialize(self)
 	state_machine.set_active(true)
-	AudioManager.bgm_player.play()
+	AudioManager.bg_music_lobby.play()
 	pass
