@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" format=3 uid="uid://b88y6pt524e5"]
+[gd_resource type="BehaviorTree" format=3 uid="uid://6lnttxys1rhu"]
 
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_fgrow"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_fgrow"]
@@ -34,6 +34,7 @@ metadata/_weight_ = 3.0
 [sub_resource type="BTAction" id="BTAction_fgrow"]
 script = ExtResource("3_fgrow")
 grow_chance = 0.8
+growth_factor = 2.5
 
 [sub_resource type="BTCooldown" id="BTCooldown_fgrow"]
 duration = 2.0

@@ -23,9 +23,6 @@ size = Vector2(2, 2)
 
 [node name="BaseStar" unique_id=467415892 instance=ExtResource("1_467qw")]
 
-[node name="Hitbox" parent="." index="0" unique_id=1004183964]
-debug_color = Color(1, 1, 1, 0.41960785)
-
 [node name="StarBody" parent="." index="1" unique_id=467282083]
 material_override = SubResource("ShaderMaterial_tsqth")
 mesh = SubResource("QuadMesh_5qmfc")

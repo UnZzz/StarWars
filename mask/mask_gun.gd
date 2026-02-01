@@ -9,16 +9,20 @@ extends Node3D
 var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
 var _now_projectile : Projectile3D_extended
 var _can_fire : bool = true
+var current_angle : int
 
 func _ready() -> void:
+	current_angle = 0
 	_setup_new_projectile()
 	return
 
 func _physics_process(delta: float) -> void:
-	if(Input.is_action_just_released("rotate_clockwise")):
-		set_now_mask_rotation_degree(get_now_mask_rotation_degree() + 30)
-	elif(Input.is_action_just_released("rotate_anti_clockwise")):
-		set_now_mask_rotation_degree(get_now_mask_rotation_degree() - 30)
+	if(Input.is_action_just_released("rotate_clockwise") or Input.is_action_just_pressed("rotate_clockwise_key")):
+		current_angle += 30
+		set_now_mask_rotation_degree(current_angle)
+	elif(Input.is_action_just_released("rotate_anti_clockwise") or Input.is_action_just_pressed("rotate_anti_clockwise_key")):
+		current_angle -= 30
+		set_now_mask_rotation_degree(current_angle)
 	if(Input.is_action_just_pressed("fire")):
 		fire()
 		AudioManager.plyr_gun_shoot.play()
@@ -57,4 +61,4 @@ func _setup_new_projectile() -> void:
 	_now_projectile = mask_scene.pick_random().instantiate()
 	var texture : Texture2D = _now_projectile.get_meta("texture")
 	(star_mesh.material_override as StandardMaterial3D).albedo_texture = texture
-	# sset_now_mask_rotation_degree(_possible_angles.pick_random())
+	set_now_mask_rotation_degree(current_angle)

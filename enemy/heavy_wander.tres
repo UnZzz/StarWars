@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" format=3 uid="uid://b5k8n3nax2y7w"]
+[gd_resource type="BehaviorTree" format=3 uid="uid://boi1aou38nqib"]
 
 [ext_resource type="Script" uid="uid://bhgdnkfjxh77j" path="res://enemy/tasks/set_player_as_target.gd" id="1_hwander"]
 [ext_resource type="Script" uid="uid://bpq0xfyba1cr7" path="res://enemy/tasks/move_to_target_3d.gd" id="2_hwander"]
@@ -21,7 +21,7 @@ script = ExtResource("1_hwander")
 
 [sub_resource type="BTAction" id="BTAction_hwander_chase_move"]
 script = ExtResource("2_hwander")
-movement_speed = 3.0
+movement_speed = 7.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_hwander_chase"]
 time_limit = 0.5
@@ -36,7 +36,6 @@ script = ExtResource("3_hwander")
 
 [sub_resource type="BTAction" id="BTAction_hwander_move"]
 script = ExtResource("2_hwander")
-movement_speed = 2.5
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_hwander"]
 time_limit = 4.0
