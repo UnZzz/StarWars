@@ -1,7 +1,11 @@
 extends CharacterBody3D
 
 class_name BaseStar
+
+
 var type = 1
+
+@export var points : int = 5
 
 @export var gravity : float = 0.98
 @export var scary_distance : float = 5.0
@@ -14,7 +18,10 @@ var type = 1
 @onready var star_mask : MeshInstance3D = $StarMask
 @onready var indicator : MeshInstance3D = $Indicator
 
-var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300]
+var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
+@onready var navigation_agent : NavigationAgent3D = $NavigationAgent3D
+var global_target_position : Vector3
+
 var current_face_angle : int
 
 # Called when the node enters the scene tree for the first time.
@@ -61,8 +68,12 @@ func _physics_process(delta: float) -> void:
 			PlayerManager.stop_player()
 	pass
 
-func hit(atk: int) -> void:
+
+func hit_extended(atk: int, id: String) -> void:
 	print("atk: ", atk)
+	print("points:", id)
+	if(id.to_int() != points):
+		return
 	is_shot = true
 	if(abs(current_face_angle - atk) % 180 == 0):
 		var other_exploded_stars = explosion_area.get_other_exploded_stars()
@@ -75,6 +86,7 @@ func hit(atk: int) -> void:
 	
 func death_persist():
 	star_mask.visible = true
+	AudioManager.enemy_smile_face.play()
 	process_mode = Node.PROCESS_MODE_DISABLED
 	get_tree().create_timer(1.0).timeout.connect(remove)
 	

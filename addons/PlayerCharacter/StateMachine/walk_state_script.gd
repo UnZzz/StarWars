@@ -6,6 +6,9 @@ var state_name : String = "Walk"
 
 var play_char : CharacterBody3D
 
+var footstep_walk_timer: float = 0.0
+var footstep_walk_interval: float = 0.4  # every 0.5 per footstep
+
 func enter(play_char_ref : CharacterBody3D) -> void:
 	play_char = play_char_ref
 	
@@ -34,6 +37,16 @@ func physics_update(delta : float) -> void:
 	input_management()
 	
 	move(delta)
+	
+	# Footstep Walk Timer Logic
+	if play_char.is_on_floor() and play_char.input_direction != Vector2.ZERO:
+		footstep_walk_timer -= delta
+		if footstep_walk_timer <= 0.0:
+			AudioManager.plyr_fs.play()
+			footstep_walk_timer = footstep_walk_interval
+	else:
+		footstep_walk_timer = footstep_walk_interval
+	
 	
 func applies(delta : float) -> void:
 	if play_char.hit_ground_cooldown > 0.0: play_char.hit_ground_cooldown -= delta

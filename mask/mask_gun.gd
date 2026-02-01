@@ -6,7 +6,7 @@ extends Node3D
 @export var mask_scene : Array[PackedScene]
 @export var fire_cooldown : float = 0.5
 
-var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300]
+var _possible_angles : Array[int] = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
 var _now_projectile : Projectile3D_extended
 var _can_fire : bool = true
 
@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		set_now_mask_rotation_degree(get_now_mask_rotation_degree() - 30)
 	if(Input.is_action_just_pressed("fire")):
 		fire()
+		AudioManager.plyr_gun_shoot.play()
 	return
 	
 func fire() -> void:
@@ -54,4 +55,6 @@ func get_now_mask_rotation_degree() -> int:
 	
 func _setup_new_projectile() -> void:
 	_now_projectile = mask_scene.pick_random().instantiate()
-	# set_now_mask_rotation_degree(_possible_angles.pick_random())
+	var texture : Texture2D = _now_projectile.get_meta("texture")
+	(star_mesh.material_override as StandardMaterial3D).albedo_texture = texture
+	set_now_mask_rotation_degree(_possible_angles.pick_random())
