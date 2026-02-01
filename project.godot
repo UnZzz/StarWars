@@ -13,7 +13,7 @@ config_version=5
 config/name="StarWars"
 run/main_scene="uid://1kf2ay1ki5d0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dkrtgena0mqvc"
 
 [audio]
 

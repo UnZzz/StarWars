@@ -60,7 +60,7 @@ func get_now_mask_rotation_degree() -> int:
 	return _now_projectile.atk
 	
 	
-var idx = 0	
+var idx = 0
 
 func _setup_new_projectile() -> void:
 	_now_projectile = mask_scene[idx].instantiate()
