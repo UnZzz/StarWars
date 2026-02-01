@@ -23,6 +23,8 @@ metadata/_weight_ = 2.3502880658436203
 
 [sub_resource type="BTAction" id="BTAction_ivv6a"]
 script = ExtResource("3_j76ap")
+wander_radius = 20.0
+movement_speed = 10.0
 
 [sub_resource type="BTAction" id="BTAction_n5nar"]
 script = ExtResource("2_j76ap")

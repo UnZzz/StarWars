@@ -86,10 +86,8 @@ children = [SubResource("BTAction_asbe1")]
 children = [SubResource("BTCooldown_wegm5")]
 metadata/_weight_ = 0.46102880658436174
 
-[sub_resource type="BTSetVar" id="BTSetVar_ylg3a"]
-
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_a4w72"]
-children = [SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv"), SubResource("BTSequence_6bk02"), SubResource("BTSequence_g28il"), SubResource("BTSequence_c5ukq"), SubResource("BTSetVar_ylg3a")]
+children = [SubResource("BTSequence_ttaj7"), SubResource("BTSequence_7tikv"), SubResource("BTSequence_6bk02"), SubResource("BTSequence_g28il"), SubResource("BTSequence_c5ukq")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_uvkam")

@@ -21,7 +21,7 @@ script = ExtResource("1_fgrow")
 
 [sub_resource type="BTAction" id="BTAction_fgrow_chase_move"]
 script = ExtResource("2_fgrow")
-movement_speed = 10.0
+movement_speed = 8.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_fgrow_chase"]
 time_limit = 1.0
@@ -35,6 +35,7 @@ metadata/_weight_ = 3.0
 script = ExtResource("3_fgrow")
 grow_chance = 0.8
 growth_factor = 2.5
+growth_duration = 3.0
 color = Color(0.77254903, 0.14901961, 0.24313726, 1)
 
 [sub_resource type="BTCooldown" id="BTCooldown_fgrow"]

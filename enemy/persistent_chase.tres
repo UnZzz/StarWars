@@ -29,12 +29,8 @@ children = [SubResource("BTAction_pchase_move")]
 [sub_resource type="BTSequence" id="BTSequence_pchase"]
 children = [SubResource("BTAction_pchase"), SubResource("BTTimeLimit_pchase")]
 
-[sub_resource type="BTSetVar" id="BTSetVar_a0xv4"]
-
-[sub_resource type="BTCheckVar" id="BTCheckVar_a0xv4"]
-
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_pchase"]
-children = [SubResource("BTSequence_pchase"), SubResource("BTSetVar_a0xv4"), SubResource("BTCheckVar_a0xv4")]
+children = [SubResource("BTSequence_pchase")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_pchase")
